@@ -7,6 +7,7 @@ import { Toast } from './components/common/Toast';
 import { LogoPreloader } from './components/common/LogoPreloader';
 import { AdminLoginModal } from './components/admin/AdminLoginModal';
 import { StickyConsultationWidget } from './components/common/StickyConsultationWidget';
+import { WhatsAppButton } from './components/common/WhatsAppButton';
 import { HomePage } from './pages/HomePage';
 import { ServicesPage } from './pages/ServicesPage';
 import { CollegesPage } from './pages/CollegesPage';
@@ -15,7 +16,6 @@ import { CounsellorsPage } from './pages/CounsellorsPage';
 import { EventsPage } from './pages/EventsPage';
 import { AboutPage } from './pages/AboutPage';
 import { AdminPage } from './pages/AdminPage';
-import { MessageSquare } from 'lucide-react';
 
 // Scroll to top on route change
 function ScrollToTop() {
@@ -81,21 +81,8 @@ const MainAppLayout: React.FC = () => {
         onClose={() => setAdminLoginOpen(false)}
       />
 
-      {/* WhatsApp Floating Action Button */}
-      <div className="fixed bottom-20 right-6 md:bottom-6 md:left-6 z-40 flex flex-col gap-3">
-        <a
-          href="https://wa.me/919860777069?text=Hi%20Admission%20Suggestion%2C%20I%20need%20assistance%20regarding%20CAP%20Round%20and%20College%20Cutoffs."
-          target="_blank"
-          rel="noreferrer"
-          className="p-2.5 rounded-full bg-emerald-500/90 hover:bg-emerald-500 text-white shadow-md shadow-emerald-500/20 hover:scale-110 transition-all duration-300 flex items-center justify-center group"
-          title="Chat on WhatsApp (+91 9860 777 069)"
-        >
-          <MessageSquare className="w-5 h-5 fill-current" />
-          <span className="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs group-hover:ml-2 transition-all duration-300 text-[10px] font-bold uppercase font-heading opacity-90 group-hover:opacity-100">
-            WhatsApp
-          </span>
-        </a>
-      </div>
+      {/* WhatsApp Aesthetic Floating Action Button */}
+      <WhatsAppButton />
 
       {/* Global Sticky 1:1 Consultation Widget */}
       <StickyConsultationWidget />
