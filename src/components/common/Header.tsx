@@ -37,6 +37,10 @@ export const Header: React.FC<HeaderProps> = ({
       link: "/",
     },
     {
+      name: "CAP Generator 🔥",
+      link: "/cap-generator",
+    },
+    {
       name: "CAP Services",
       link: "/services",
     },

@@ -18,7 +18,34 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenConsultation }) => {
       {/* 1. Hero Banner Carousel */}
       <HeroSection onOpenConsultation={onOpenConsultation} />
 
-      {/* 2. Interactive CAP Predictor Widget */}
+      {/* 2. Featured Viral Tool: CAP Option Form Generator Banner */}
+      <div className="max-w-7xl mx-auto px-4 lg:px-8">
+        <div className="rounded-3xl p-6 sm:p-8 bg-gradient-to-r from-slate-900 via-sky-950 to-slate-900 text-white border border-sky-500/30 shadow-2xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="absolute -right-10 -bottom-10 w-72 h-72 bg-[#00A3FF]/20 rounded-full blur-3xl pointer-events-none" />
+          
+          <div className="space-y-2 text-center md:text-left relative z-10">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00A3FF]/20 border border-[#00A3FF]/40 text-[#00A3FF] text-xs font-black uppercase tracking-wider font-heading">
+              🔥 Free Maharashtra Student Tool
+            </div>
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-black text-white font-heading">
+              Build Your 3-Tier CAP Round Option Form (2026-27)
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-300 max-w-2xl font-medium">
+              Calculate personalized Dream, Target & Safe college preferences with 9-digit DTE Choice Codes and instant printable PDF preview.
+            </p>
+          </div>
+
+          <Link
+            to="/cap-generator"
+            className="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-[#00A3FF] to-[#0284C7] hover:from-[#0284C7] hover:to-[#0369A1] text-white font-extrabold text-xs uppercase tracking-wider shadow-lg shadow-sky-500/30 hover:scale-105 active:scale-95 transition-all flex items-center gap-2 font-heading shrink-0 relative z-10"
+          >
+            <span>Launch Generator</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+      </div>
+
+      {/* 3. Interactive CAP Predictor Widget */}
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <CollegePredictorWidget onOpenConsultation={onOpenConsultation} />
       </div>

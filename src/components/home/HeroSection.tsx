@@ -135,13 +135,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenConsultation }) 
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </button>
 
-                  <a
-                    href="#process"
-                    className="px-7 py-4 rounded-xl bg-white hover:bg-slate-100 text-slate-800 border border-slate-300 font-bold text-xs uppercase tracking-wider transition-colors flex items-center gap-2 shadow-sm font-heading"
+                  <button
+                    onClick={() => navigate('/cap-generator')}
+                    className="px-7 py-4 rounded-xl bg-white hover:bg-sky-50 text-slate-800 hover:text-[#00A3FF] border border-slate-300 hover:border-[#00A3FF]/40 font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-2 shadow-xs font-heading"
                   >
-                    <span>{currentBanner?.secondaryCtaText || 'Understand 5-Step Process'}</span>
+                    <span>⚡ Build CAP Option Form</span>
                     <ChevronRight className="w-4 h-4 text-[#00A3FF]" />
-                  </a>
+                  </button>
                 </div>
               </motion.div>
             </AnimatePresence>
