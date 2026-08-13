@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Target, Search, CheckCircle2, ArrowRight, Building2, MapPin, Award, FileText, PhoneCall } from 'lucide-react';
+import { Target, Search, CheckCircle2, ArrowRight, Building2, MapPin, Award, FileText, PhoneCall, Calculator } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { initialColleges } from '../../data/initialData';
 import { College } from '../../types';
 
@@ -9,6 +10,7 @@ interface CollegePredictorWidgetProps {
 }
 
 export const CollegePredictorWidget: React.FC<CollegePredictorWidgetProps> = ({ onOpenConsultation }) => {
+  const navigate = useNavigate();
   const [exam, setExam] = useState<'MHT-CET' | 'JEE Main' | 'NEET' | 'DSE'>('MHT-CET');
   const [percentile, setPercentile] = useState<string>('97.5');
   const [category, setCategory] = useState<string>('Open / General');
@@ -105,6 +107,22 @@ export const CollegePredictorWidget: React.FC<CollegePredictorWidgetProps> = ({ 
               </button>
             ))}
           </div>
+        </div>
+
+        {/* Quick Marks vs Percentile Prompt */}
+        <div className="p-3 bg-blue-50/60 rounded-2xl border border-blue-100 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+          <div className="flex items-center gap-2 text-slate-700 font-medium">
+            <Calculator className="w-4 h-4 text-[#00A3FF] shrink-0" />
+            <span>Don't have your official percentile yet? Calculate raw marks to percentile with shift analysis:</span>
+          </div>
+          <button
+            type="button"
+            onClick={() => navigate('/marks-vs-percentile')}
+            className="px-3 py-1.5 rounded-lg bg-[#00A3FF] hover:bg-[#0284C7] text-white font-bold font-heading text-[11px] shrink-0 transition-all flex items-center gap-1 shadow-xs"
+          >
+            <span>Marks Estimator</span>
+            <ArrowRight className="w-3 h-3" />
+          </button>
         </div>
 
         {/* Form Inputs */}

@@ -17,6 +17,7 @@ import { EventsPage } from './pages/EventsPage';
 import { AboutPage } from './pages/AboutPage';
 import { AdminPage } from './pages/AdminPage';
 import { CapPreferenceGeneratorPage } from './pages/CapPreferenceGeneratorPage';
+import { MarksEstimatorPage } from './pages/MarksEstimatorPage';
 
 // Scroll to top on route change
 function ScrollToTop() {
@@ -67,6 +68,8 @@ const MainAppLayout: React.FC = () => {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/cap-generator" element={<CapPreferenceGeneratorPage onOpenConsultation={scrollToConsultation} />} />
           <Route path="/preference-generator" element={<CapPreferenceGeneratorPage onOpenConsultation={scrollToConsultation} />} />
+          <Route path="/marks-vs-percentile" element={<MarksEstimatorPage onOpenConsultation={scrollToConsultation} />} />
+          <Route path="/estimator" element={<MarksEstimatorPage onOpenConsultation={scrollToConsultation} />} />
           <Route path="/admin" element={<AdminPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
