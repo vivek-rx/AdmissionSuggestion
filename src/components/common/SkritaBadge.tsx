@@ -16,7 +16,7 @@ export const SkritaBadge: React.FC = () => {
       <img
         src={skritaLogo}
         alt="Skrita"
-        className="h-8 md:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+        className="h-8 md:h-10 w-auto object-contain mix-blend-screen transition-transform duration-300 group-hover:scale-105"
       />
     </a>
   );
