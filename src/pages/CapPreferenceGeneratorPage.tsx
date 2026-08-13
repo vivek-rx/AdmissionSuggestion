@@ -49,7 +49,10 @@ const BRANCH_OPTIONS = [
   'Electronics & Telecommunication (ENTC)',
   'Mechanical Engineering',
   'Electrical Engineering',
-  'Civil Engineering'
+  'Civil Engineering',
+  'Chemical Engineering',
+  'Automation & Robotics',
+  'Instrumentation Engineering'
 ];
 
 const BRANCH_CODE_MAP: Record<string, string> = {
@@ -60,7 +63,10 @@ const BRANCH_CODE_MAP: Record<string, string> = {
   'Electronics & Telecommunication (ENTC)': '37210',
   'Mechanical Engineering': '61210',
   'Electrical Engineering': '29310',
-  'Civil Engineering': '19110'
+  'Civil Engineering': '19110',
+  'Chemical Engineering': '50710',
+  'Automation & Robotics': '91110',
+  'Instrumentation Engineering': '46610'
 };
 
 export const CapPreferenceGeneratorPage: React.FC<{ onOpenConsultation: () => void }> = ({ onOpenConsultation }) => {
@@ -509,8 +515,11 @@ export const CapPreferenceGeneratorPage: React.FC<{ onOpenConsultation: () => vo
                   >
                     <option value="All">All Maharashtra</option>
                     <option value="Pune">Pune Institutes Only</option>
-                    <option value="Mumbai">Mumbai Institutes Only</option>
-                    <option value="Sangli">Sangli / Western MH</option>
+                    <option value="Mumbai">Mumbai & Navi Mumbai</option>
+                    <option value="Sangli">Sangli & Western MH</option>
+                    <option value="Nagpur">Nagpur & Vidarbha</option>
+                    <option value="Nashik">Nashik & North MH</option>
+                    <option value="Chhatrapati Sambhajinagar">Sambhajinagar / Marathwada</option>
                   </select>
                 </div>
 
