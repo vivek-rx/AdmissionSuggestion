@@ -1,0 +1,757 @@
+import { Banner, EventItem, InquiryLead, DocumentRequirement, College, ServiceItem, CollegeLogoItem } from '../types';
+
+// College Logos Assets from Brochure
+import coepLogo from '../assets/colleges/coep.png';
+import vjtiLogo from '../assets/colleges/vjti.png';
+import spitLogo from '../assets/colleges/spit.png';
+import djsceLogo from '../assets/colleges/djsce.png';
+import vuLogo from '../assets/colleges/vu.png';
+import walchandLogo from '../assets/colleges/walchand.png';
+import cumminsLogo from '../assets/colleges/cummins.png';
+import vitLogo from '../assets/colleges/vit.png';
+import tsecLogo from '../assets/colleges/tsec.png';
+import aissmsLogo from '../assets/colleges/aissms.png';
+import somaiyaLogo from '../assets/colleges/somaiya.png';
+import pccoeLogo from '../assets/colleges/pccoe.png';
+import pvgLogo from '../assets/colleges/pvg.png';
+import dypLogo from '../assets/colleges/dyp.png';
+import raisoniLogo from '../assets/colleges/raisoni.png';
+import mitwpuLogo from '../assets/colleges/mitwpu.png';
+import jspmLogo from '../assets/colleges/jspm_rscoe.png';
+import mitaoeLogo from '../assets/colleges/mitaoe.png';
+import modernWadiaLogo from '../assets/colleges/modern_wadia.png';
+import mitadtLogo from '../assets/colleges/mitadt.png';
+import dpguLogo from '../assets/colleges/dpgu.png';
+import mgmLogo from '../assets/colleges/mgm.png';
+
+
+export const initialBanners: Banner[] = [
+  {
+    id: 'b-1',
+    badge: '🏆 #1 Trusted Admission Counselling Partner',
+    title: 'Unlock Your Dream College With Expert Guidance',
+    subtitle: 'Navigating MHT-CET, JEE Main, CAP Rounds & Top Engineering / Medical / Management Admissions across Maharashtra & India.',
+    ctaText: 'Book Free Counselling',
+    ctaLink: '#consultation',
+    secondaryCtaText: 'Explore CAP Process',
+    imageUrl: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=1200',
+    active: true,
+    order: 1
+  },
+  {
+    id: 'b-2',
+    badge: '⚡ CAP Round Guidance Open',
+    title: 'Master Your Option Form & College Cut-off Strategy',
+    subtitle: 'Avoid critical option form mistakes. Get 1-on-1 personalized preference list crafted by 20+ years experienced counsellors.',
+    ctaText: 'Get Preference List',
+    ctaLink: '#consultation',
+    secondaryCtaText: 'View Required Documents',
+    imageUrl: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=1200',
+    active: true,
+    order: 2
+  },
+  {
+    id: 'b-3',
+    badge: '🎓 Direct & Institute Level Quota',
+    title: 'Secure Seats in Premium Autonomous & Private Universities',
+    subtitle: 'Expert admission assistance for COEP, VJTI, SPIT, VIT Pune, DY Patil, MIT-WPU, Somaiya and leading institutes.',
+    ctaText: 'Enquire Seats Now',
+    ctaLink: '#consultation',
+    secondaryCtaText: 'View Partner Colleges',
+    imageUrl: 'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=1200',
+    active: true,
+    order: 3
+  }
+];
+
+export const initialEvents: EventItem[] = [
+  {
+    id: 'ev-1',
+    title: 'MHT-CET & JEE CAP Round Option Form Strategy',
+    category: 'Webinar',
+    date: 'August 12, 2026',
+    time: '06:00 PM IST',
+    venueOrUrl: 'Live on Zoom / YouTube Live',
+    speaker: 'Prof. R. K. Sharma (Chief Counsellor)',
+    status: 'Live',
+    active: true,
+    description: 'Learn step-by-step how to fill Option Forms for CAP Round 1 & 2 without risking seat allotment.'
+  },
+  {
+    id: 'ev-2',
+    title: 'Pune 1-on-1 Offline Admission Counselling Drive',
+    category: '1-on-1 Drive',
+    date: 'August 15 - 18, 2026',
+    time: '10:00 AM - 07:00 PM',
+    venueOrUrl: 'Office No. 333, Sohrab Hall, Tadiwala Road, Pune',
+    speaker: 'Senior Counselling Team',
+    status: 'Upcoming',
+    active: true,
+    description: 'Face-to-face consultation to analyze your rank, cutoff trends, and build your customized college preference list.'
+  },
+  {
+    id: 'ev-3',
+    title: 'Institute Level (IL) & Management Quota Masterclass',
+    category: 'Webinar',
+    date: 'August 22, 2026',
+    time: '05:00 PM IST',
+    venueOrUrl: 'Google Meet Session',
+    speaker: 'Mrs. Sneha Kulkarni',
+    status: 'Upcoming',
+    active: true,
+    description: 'Detailed insights on seat matrix, merit cutoff, fee structure and institutional round rules.'
+  }
+];
+
+export const initialDocuments: DocumentRequirement[] = [
+  {
+    id: 'doc-1',
+    title: 'CAP Allotment Letter',
+    category: 'mandatory',
+    description: 'Final seat allotment letter downloaded from official State CET Cell portal after allotment result.',
+    issuedBy: 'State CET Cell Maharashtra',
+    issuingAuthority: 'State CET Cell Maharashtra',
+    mandatory: true
+  },
+  {
+    id: 'doc-2',
+    title: 'ARC Confirmation Letter',
+    category: 'mandatory',
+    description: 'Admission Reporting Center confirmation receipt verifying seat acceptance or freeze/float status.',
+    issuedBy: 'ARC Facilitation Center',
+    issuingAuthority: 'ARC Facilitation Center',
+    mandatory: true
+  },
+  {
+    id: 'doc-3',
+    title: 'KYC Documents (Aadhar Card & PAN Card)',
+    category: 'mandatory',
+    description: 'Government issued identity proof of candidate and parents with matching name spellings.',
+    issuedBy: 'UIDAI / Govt. of India',
+    issuingAuthority: 'UIDAI / Govt. of India',
+    mandatory: true
+  },
+  {
+    id: 'doc-4',
+    title: 'Passport Size Photographs (8 Copies)',
+    category: 'mandatory',
+    description: 'Recent colored passport photographs with white background (same as uploaded in CET portal).',
+    issuedBy: 'Self',
+    issuingAuthority: 'Self',
+    mandatory: true
+  },
+  {
+    id: 'doc-5',
+    title: 'SSC (10th) Marksheet & Passing Certificate',
+    category: 'mandatory',
+    description: 'Proof of date of birth and secondary school completion from recognized state or central board.',
+    issuedBy: 'State Board / CBSE / ICSE',
+    issuingAuthority: 'State Board / CBSE / ICSE',
+    mandatory: true
+  },
+  {
+    id: 'doc-6',
+    title: 'HSC (12th) / Diploma Marksheet & Passing Certificate',
+    category: 'mandatory',
+    description: 'Qualifying examination marksheet verifying minimum PCM/PCB aggregate eligibility.',
+    issuedBy: 'State Board / CBSE / MSBTE',
+    issuingAuthority: 'State Board / CBSE / MSBTE',
+    mandatory: true
+  },
+  {
+    id: 'doc-7',
+    title: 'Entrance Exam Score Card (MHT-CET / JEE / NEET)',
+    category: 'mandatory',
+    description: 'Official scorecard showing percentile and subject-wise score used for State Merit Number calculation.',
+    issuedBy: 'State CET Cell / NTA',
+    issuingAuthority: 'State CET Cell / NTA',
+    mandatory: true
+  },
+  {
+    id: 'doc-8',
+    title: 'School / College Leaving Certificate (TC / LC)',
+    category: 'mandatory',
+    description: 'Original Transfer Certificate indicating nationality, place of birth, and mother tongue.',
+    issuedBy: 'Last Attended Junior College',
+    issuingAuthority: 'Last Attended Junior College',
+    mandatory: true
+  },
+  {
+    id: 'doc-9',
+    title: 'Domicile Certificate of Maharashtra State',
+    category: 'mandatory',
+    description: 'Required for claiming Maharashtra State (Type A, B, C, D) candidate seat benefits.',
+    issuedBy: 'Tehsildar / SDO / Collector',
+    issuingAuthority: 'Tehsildar / SDO / Collector',
+    mandatory: true
+  },
+  {
+    id: 'doc-10',
+    title: 'Indian Nationality Certificate',
+    category: 'mandatory',
+    description: 'Certificate proving Indian citizenship (or TC mentioning Indian nationality).',
+    issuedBy: 'Tehsildar / Magistrate / TC',
+    issuingAuthority: 'Tehsildar / Magistrate / TC',
+    mandatory: true
+  },
+  {
+    id: 'doc-11',
+    title: 'Migration Certificate (For OMS / CBSE / ICSE Candidates)',
+    category: 'mandatory',
+    description: 'Mandatory for students coming from boards other than Maharashtra State Board.',
+    issuedBy: 'CBSE / ICSE / Respective Board',
+    issuingAuthority: 'CBSE / ICSE / Respective Board',
+    mandatory: false
+  },
+  {
+    id: 'doc-12',
+    title: 'Gap Certificate (Affidavit on Rs. 100 Stamp Paper)',
+    category: 'mandatory',
+    description: 'Notarized undertaking explaining gap year(s) after passing 12th / Diploma.',
+    issuedBy: 'Executive Magistrate / Notary',
+    issuingAuthority: 'Executive Magistrate / Notary',
+    mandatory: false
+  },
+  {
+    id: 'doc-13',
+    title: 'Anti-Ragging Undertaking (Online UGC Affidavit)',
+    category: 'mandatory',
+    description: 'Signed affidavit generated from www.antiragging.in signed by student and parent.',
+    issuedBy: 'UGC Portal / Online',
+    issuingAuthority: 'UGC Portal / Online',
+    mandatory: true
+  },
+  {
+    id: 'doc-14',
+    title: 'Medical Fitness Certificate',
+    category: 'mandatory',
+    description: 'Prescribed proforma signed by Registered Medical Practitioner (MBBS).',
+    issuedBy: 'Registered Medical Practitioner',
+    issuingAuthority: 'Registered Medical Practitioner',
+    mandatory: true
+  },
+  {
+    id: 'doc-15',
+    title: 'Caste Certificate (For SC, ST, VJ/NT, OBC, SBC)',
+    category: 'category',
+    description: 'Caste certificate issued by Competent Authority of Maharashtra State.',
+    issuedBy: 'Sub-Divisional Officer / Dy. Collector',
+    issuingAuthority: 'Sub-Divisional Officer / Dy. Collector',
+    mandatory: true
+  },
+  {
+    id: 'doc-16',
+    title: 'Caste Validity Certificate (Mandatory for Reserved Seats)',
+    category: 'category',
+    description: 'Certificate issued by Divisional Caste Scrutiny Committee of Maharashtra.',
+    issuedBy: 'Divisional Caste Scrutiny Committee',
+    issuingAuthority: 'Divisional Caste Scrutiny Committee',
+    mandatory: true
+  },
+  {
+    id: 'doc-17',
+    title: 'Non-Creamy Layer Certificate (NCL)',
+    category: 'category',
+    description: 'Valid up to 31st March of current financial year (Required for VJ/NT, OBC, SBC candidates).',
+    issuedBy: 'Sub-Divisional Officer / Tehsildar',
+    issuingAuthority: 'Sub-Divisional Officer / Tehsildar',
+    mandatory: true
+  },
+  {
+    id: 'doc-18',
+    title: 'EWS Certificate (Economically Weaker Section)',
+    category: 'category',
+    description: 'Valid EWS certificate for 10% reservation under Open EWS category.',
+    issuedBy: 'Tehsildar / Competent Authority',
+    issuingAuthority: 'Tehsildar / Competent Authority',
+    mandatory: true
+  },
+  {
+    id: 'doc-19',
+    title: 'Income Certificate for TFWS / Scholarship',
+    category: 'category',
+    description: 'Annual family income certificate issued for current financial year for TFWS & Scholarship.',
+    issuedBy: 'Tehsildar',
+    issuingAuthority: 'Tehsildar',
+    mandatory: true
+  }
+];
+
+export const initialColleges: College[] = [
+  {
+    id: 'col-1',
+    name: 'COEP Technological University',
+    code: '6006',
+    dteCode: '6006',
+    location: 'Shivajinagar',
+    city: 'Pune',
+    type: 'Autonomous',
+    autonomous: true,
+    courses: ['Computer Engg', 'AI & Robotics', 'ENTC', 'Mechanical', 'Electrical', 'Civil'],
+    cutoffRange: '99.2% - 99.9% Percentile',
+    cutoffPercentile: '99.45',
+    highestPackage: '₹50.5 LPA',
+    averagePackage: '₹14.2 LPA',
+    fees: '₹1,35,000 / yr',
+    ranking: 'NIRF #73 • Top Govt Autonomous',
+    badge: 'Premier Govt. Autonomous',
+    website: 'coep.org.in',
+    logoUrl: coepLogo
+  },
+  {
+    id: 'col-2',
+    name: 'VJTI Mumbai (Veermata Jijabai Technological Institute)',
+    code: '3012',
+    dteCode: '3012',
+    location: 'Matunga',
+    city: 'Mumbai',
+    type: 'Autonomous',
+    autonomous: true,
+    courses: ['Computer Engg', 'IT', 'EXTC', 'Electrical', 'Mechanical', 'Textile'],
+    cutoffRange: '99.4% - 99.95% Percentile',
+    cutoffPercentile: '99.60',
+    highestPackage: '₹62.0 LPA',
+    averagePackage: '₹15.8 LPA',
+    fees: '₹92,000 / yr',
+    ranking: 'Top Tier Maharashtra State Institute',
+    badge: 'Top Tier Institute',
+    website: 'vjti.ac.in',
+    logoUrl: vjtiLogo
+  },
+  {
+    id: 'col-3',
+    name: 'Sardar Patel Institute of Technology (SPIT)',
+    code: '3215',
+    dteCode: '3215',
+    location: 'Andheri West',
+    city: 'Mumbai',
+    type: 'Autonomous',
+    autonomous: true,
+    courses: ['Computer Engg', 'Computer Science & Data Science', 'EXTC'],
+    cutoffRange: '99.0% - 99.8% Percentile',
+    cutoffPercentile: '99.10',
+    highestPackage: '₹42.0 LPA',
+    averagePackage: '₹13.5 LPA',
+    fees: '₹1,75,000 / yr',
+    ranking: 'Leading Private Autonomous in Mumbai',
+    badge: 'Top Private Autonomous',
+    website: 'spit.ac.in',
+    logoUrl: spitLogo
+  },
+  {
+    id: 'col-4',
+    name: 'Dwarkadas J. Sanghvi College of Engineering (DJSCE)',
+    code: '3199',
+    dteCode: '3199',
+    location: 'Vile Parle',
+    city: 'Mumbai',
+    type: 'Autonomous',
+    autonomous: true,
+    courses: ['Computer Engg', 'IT', 'AI & DS', 'AI & ML', 'IOT & Cyber Security'],
+    cutoffRange: '97.5% - 99.5% Percentile',
+    cutoffPercentile: '98.20',
+    highestPackage: '₹38.0 LPA',
+    averagePackage: '₹11.2 LPA',
+    fees: '₹2,10,000 / yr',
+    ranking: 'Top Ranked Gujarati Minority Institute',
+    badge: 'Popular Choice',
+    website: 'djsce.ac.in',
+    logoUrl: djsceLogo
+  },
+  {
+    id: 'col-5',
+    name: 'Vishwakarma Institute of Technology (VIT Pune)',
+    code: '6273',
+    dteCode: '6273',
+    location: 'Bibwewadi',
+    city: 'Pune',
+    type: 'Autonomous',
+    autonomous: true,
+    courses: ['Computer Engg', 'IT', 'AI & Data Science', 'ENTC', 'Mechanical', 'Chemical'],
+    cutoffRange: '97.0% - 99.3% Percentile',
+    cutoffPercentile: '97.80',
+    highestPackage: '₹44.0 LPA',
+    averagePackage: '₹10.5 LPA',
+    fees: '₹1,90,000 / yr',
+    ranking: 'Top Tier Autonomous Pune Campus',
+    badge: 'Top Pune Autonomous',
+    website: 'vit.edu',
+    logoUrl: vitLogo
+  },
+  {
+    id: 'col-6',
+    name: 'Walchand College of Engineering (WCE Sangli)',
+    code: '6007',
+    dteCode: '6007',
+    location: 'Vishrambag',
+    city: 'Sangli',
+    type: 'Autonomous',
+    autonomous: true,
+    courses: ['Computer Science', 'IT', 'Electronics', 'Mechanical', 'Civil', 'Electrical'],
+    cutoffRange: '97.2% - 99.4% Percentile',
+    cutoffPercentile: '97.90',
+    highestPackage: '₹37.5 LPA',
+    averagePackage: '₹10.8 LPA',
+    fees: '₹95,000 / yr',
+    ranking: 'Historic Govt. Autonomous Engineering Landmark',
+    badge: 'Govt. Autonomous Sangli',
+    website: 'walchandsangli.ac.in',
+    logoUrl: walchandLogo
+  },
+  {
+    id: 'col-7',
+    name: 'MKSSS Cummins College of Engineering for Women',
+    code: '6276',
+    dteCode: '6276',
+    location: 'Karvenagar',
+    city: 'Pune',
+    type: 'Autonomous',
+    autonomous: true,
+    courses: ['Computer Engg', 'IT', 'ENTC', 'Instrumentation', 'Mechanical'],
+    cutoffRange: '96.5% - 99.1% Percentile',
+    cutoffPercentile: '97.40',
+    highestPackage: '₹43.5 LPA',
+    averagePackage: '₹11.8 LPA',
+    fees: '₹1,80,000 / yr',
+    ranking: '#1 Women Engineering College in Maharashtra',
+    badge: 'Top Women Institute',
+    website: 'cumminscollege.org',
+    logoUrl: cumminsLogo
+  },
+  {
+    id: 'col-8',
+    name: 'Pimpri Chinchwad College of Engineering (PCCOE)',
+    code: '6175',
+    dteCode: '6175',
+    location: 'Akurdi',
+    city: 'Pune',
+    type: 'Autonomous',
+    autonomous: true,
+    courses: ['Computer Engg', 'IT', 'AI & ML', 'ENTC', 'Mechanical', 'Civil'],
+    cutoffRange: '96.0% - 98.9% Percentile',
+    cutoffPercentile: '96.85',
+    highestPackage: '₹36.0 LPA',
+    averagePackage: '₹8.6 LPA',
+    fees: '₹1,60,000 / yr',
+    ranking: 'Highest Volume Placement Records in Pune',
+    badge: 'Excellent Placement Track',
+    website: 'pccoepune.com',
+    logoUrl: pccoeLogo
+  },
+  {
+    id: 'col-9',
+    name: 'Somaiya Vidyavihar University / K. J. Somaiya',
+    code: '3027',
+    dteCode: '3027',
+    location: 'Vidyavihar',
+    city: 'Mumbai',
+    type: 'Private University',
+    autonomous: true,
+    courses: ['Computer Engg', 'IT', 'AI & DS', 'Robotics', 'Management'],
+    cutoffRange: '95.0% - 98.8% Percentile',
+    cutoffPercentile: '95.50',
+    highestPackage: '₹40.0 LPA',
+    averagePackage: '₹10.2 LPA',
+    fees: '₹3,50,000 / yr',
+    ranking: 'Premier 65-Acre Mumbai Campus',
+    badge: 'World Class Infrastructure',
+    website: 'somaiya.edu',
+    logoUrl: somaiyaLogo
+  },
+  {
+    id: 'col-10',
+    name: 'MIT World Peace University (MIT-WPU)',
+    code: 'MITWPU',
+    dteCode: '6000',
+    location: 'Kothrud',
+    city: 'Pune',
+    type: 'Private University',
+    autonomous: true,
+    courses: ['B.Tech CSE', 'AI & ML', 'Cyber Security', 'Data Science', 'BBA/MBA'],
+    cutoffRange: '88.0% - 97.5% Percentile',
+    cutoffPercentile: '92.00',
+    highestPackage: '₹44.1 LPA',
+    averagePackage: '₹8.5 LPA',
+    fees: '₹3,20,000 / yr',
+    ranking: 'State of Art Research Infrastructure',
+    badge: 'State of Art Campus',
+    website: 'mitwpu.edu.in',
+    logoUrl: mitwpuLogo
+  },
+  {
+    id: 'col-11',
+    name: 'D. Y. Patil International University / DYP Akurdi',
+    code: '6272',
+    dteCode: '6272',
+    location: 'Akurdi / Pimpri',
+    city: 'Pune',
+    type: 'Autonomous',
+    autonomous: true,
+    courses: ['Computer Engg', 'AI & DS', 'IT', 'Robotics', 'Civil', 'Medical'],
+    cutoffRange: '92.0% - 97.8% Percentile',
+    cutoffPercentile: '94.50',
+    highestPackage: '₹41.0 LPA',
+    averagePackage: '₹7.8 LPA',
+    fees: '₹1,55,000 / yr',
+    ranking: 'Leading Educational Conglomerate in Pune',
+    badge: 'Highly Preferred',
+    website: 'dypatil.edu',
+    logoUrl: dypLogo
+  },
+  {
+    id: 'col-12',
+    name: 'Thadomal Shahani Engineering College (TSEC)',
+    code: '3182',
+    dteCode: '3182',
+    location: 'Bandra West',
+    city: 'Mumbai',
+    type: 'Aided',
+    autonomous: false,
+    courses: ['Computer Engg', 'IT', 'AI & DS', 'Chemical'],
+    cutoffRange: '96.2% - 98.9% Percentile',
+    cutoffPercentile: '97.20',
+    highestPackage: '₹35.0 LPA',
+    averagePackage: '₹9.4 LPA',
+    fees: '₹1,85,000 / yr',
+    ranking: 'Prime Location in Bandra, Mumbai',
+    badge: 'Bandra Prime Campus',
+    website: 'tsec.edu',
+    logoUrl: tsecLogo
+  },
+  {
+    id: 'col-13',
+    name: 'AISSMS College of Engineering',
+    code: '6278',
+    dteCode: '6278',
+    location: 'Near Pune Station',
+    city: 'Pune',
+    type: 'Autonomous',
+    autonomous: true,
+    courses: ['Computer Engg', 'IT', 'ENTC', 'Electrical', 'Mechanical'],
+    cutoffRange: '92.5% - 97.2% Percentile',
+    cutoffPercentile: '94.00',
+    highestPackage: '₹28.0 LPA',
+    averagePackage: '₹6.8 LPA',
+    fees: '₹1,40,000 / yr',
+    ranking: 'Central Pune Heritage Campus',
+    badge: 'Central Pune Location',
+    website: 'aissmscoe.com',
+    logoUrl: aissmsLogo
+  },
+  {
+    id: 'col-14',
+    name: 'Pune Vidyarthi Griha (PVG COET)',
+    code: '6274',
+    dteCode: '6274',
+    location: 'Sahakar Nagar',
+    city: 'Pune',
+    type: 'Autonomous',
+    autonomous: true,
+    courses: ['Computer Engg', 'IT', 'AI & DS', 'ENTC', 'Mechanical', 'Printing'],
+    cutoffRange: '93.0% - 97.6% Percentile',
+    cutoffPercentile: '95.10',
+    highestPackage: '₹26.0 LPA',
+    averagePackage: '₹7.2 LPA',
+    fees: '₹1,30,000 / yr',
+    ranking: 'Top Centrally Located Pune College',
+    badge: 'Pune Centrally Located',
+    website: 'pvgcoet.ac.in',
+    logoUrl: pvgLogo
+  },
+  {
+    id: 'col-15',
+    name: 'MIT Academy of Engineering (MITAOE)',
+    code: '6146',
+    dteCode: '6146',
+    location: 'Alandi',
+    city: 'Pune',
+    type: 'Autonomous',
+    autonomous: true,
+    courses: ['Computer Engg', 'IT', 'ENTC', 'Mechanical', 'Chemical'],
+    cutoffRange: '91.0% - 96.5% Percentile',
+    cutoffPercentile: '93.40',
+    highestPackage: '₹24.0 LPA',
+    averagePackage: '₹6.5 LPA',
+    fees: '₹1,70,000 / yr',
+    ranking: 'Autonomous Engineering Institute in Pune',
+    badge: 'Autonomous Pune',
+    website: 'mitaoe.ac.in',
+    logoUrl: mitaoeLogo
+  },
+  {
+    id: 'col-16',
+    name: 'JSPM Rajarshi Shahu College (RSCOE)',
+    code: '6141',
+    dteCode: '6141',
+    location: 'Tathawade',
+    city: 'Pune',
+    type: 'Autonomous',
+    autonomous: true,
+    courses: ['Computer Engg', 'IT', 'AI & DS', 'ENTC', 'Civil', 'Mechanical'],
+    cutoffRange: '89.0% - 95.8% Percentile',
+    cutoffPercentile: '92.10',
+    highestPackage: '₹22.0 LPA',
+    averagePackage: '₹5.8 LPA',
+    fees: '₹1,25,000 / yr',
+    ranking: 'Prominent Engineering Hub in PCMC',
+    badge: 'PCMC Tech Hub',
+    website: 'jspmrscoe.edu.in',
+    logoUrl: jspmLogo
+  },
+  {
+    id: 'col-17',
+    name: 'Modern Education Society COE (Wadia Campus)',
+    code: '6281',
+    dteCode: '6281',
+    location: 'Wadia College Campus',
+    city: 'Pune',
+    type: 'Aided',
+    autonomous: false,
+    courses: ['Computer Engg', 'ENTC', 'Mechanical', 'Automation & Robotics'],
+    cutoffRange: '90.5% - 96.0% Percentile',
+    cutoffPercentile: '93.00',
+    highestPackage: '₹21.0 LPA',
+    averagePackage: '₹6.0 LPA',
+    fees: '₹1,20,000 / yr',
+    ranking: 'Prime City Center Campus near Station',
+    badge: 'Central Pune Campus',
+    website: 'mescoepune.org',
+    logoUrl: modernWadiaLogo
+  }
+];
+
+
+export const initialServices: ServiceItem[] = [
+  {
+    id: 'srv-1',
+    title: 'CAP Round Assistance & Option Form Filling',
+    description: 'End-to-end guidance for MHT-CET, JEE Main, Direct 2nd Year, MBA, NEET CAP rounds. We analyze category cutoffs and build error-free option forms.',
+    iconName: 'Compass',
+    highlights: [
+      'Personalized Preference List based on your Percentile',
+      'Option Form Verification before Locking',
+      'Freeze / Float / Betterment decision advisory',
+      'Real-time Cutoff trend comparison'
+    ]
+  },
+  {
+    id: 'srv-2',
+    title: '1-on-1 Personal Educational Counselling',
+    description: 'Sit face-to-face with our senior counselling directors at our Pune head office or join over private video sessions.',
+    iconName: 'Users',
+    highlights: [
+      'Rank vs College probability mapping',
+      'Branch selection roadmap (CSE vs AI vs ENTC vs Core)',
+      'Career scope & placement reality check',
+      'Fee concession & scholarship eligibility analysis'
+    ]
+  },
+  {
+    id: 'srv-3',
+    title: 'Top Autonomous & Private University Seats',
+    description: 'Direct institutional admissions across premium universities like MIT-WPU, Symbiosis, Somaiya, DY Patil, Bharati Vidyapeeth, and NMIMS.',
+    iconName: 'GraduationCap',
+    highlights: [
+      'Guaranteed seat confirmation support',
+      'Transparent merit assessment',
+      'Direct interaction with university departments',
+      'Spot round & vacant seat alerts'
+    ]
+  },
+  {
+    id: 'srv-4',
+    title: 'Live Webinars & Online Interactive Workshops',
+    description: 'Interactive webinars addressing CAP round intricacies, choice filling techniques, and common student mistakes.',
+    iconName: 'Video',
+    highlights: [
+      'Live Q&A with Senior Educationists',
+      'Document Checklist Walkthrough',
+      'Special sessions on TFWS & EWS reservation',
+      'Recorded sessions & PDF reference handouts'
+    ]
+  },
+  {
+    id: 'srv-5',
+    title: 'Management & Institute Level (IL) Quota Guidance',
+    description: '100% legal, transparent, and merit-based guidance for institutional round seats across leading institutes in Maharashtra.',
+    iconName: 'Briefcase',
+    highlights: [
+      'Genuine guidance with zero misleading commitments',
+      'Seat availability monitoring in Round 3 / Spot Rounds',
+      'Complete fee structure clarity with no hidden costs',
+      'Support throughout the entire tenure till final enrollment'
+    ]
+  },
+  {
+    id: 'srv-6',
+    title: 'Document Scrubbing & E-Scrutiny Verification Support',
+    description: 'Ensure complete document readiness for Facilitation Center (FC) verification, eliminating seat cancellation risks.',
+    iconName: 'FileCheck',
+    highlights: [
+      'Caste Validity & Non-Creamy Layer (NCL) validity checks',
+      'EWS / TFWS income certificate verification',
+      'Gap certificate & Domicile format checks',
+      'Assistance during FC objection resolution'
+    ]
+  }
+];
+
+export const initialLeads: InquiryLead[] = [
+  {
+    id: 'lead-1',
+    name: 'Atharva Kulkarni',
+    phone: '9822012345',
+    email: 'atharva.k@gmail.com',
+    exam: 'MHT-CET',
+    scorePercentile: '98.42 %ile',
+    preferredBranch: 'Computer Engg / AI & DS',
+    targetLocation: 'Pune',
+    message: 'Looking for option form preference list for COEP, PICT and VIT Pune with TFWS eligibility.',
+    status: 'New',
+    createdAt: new Date().toISOString(),
+    notes: 'Urgent: Candidate scored 98.42, Open category, wants TFWS in Pune.'
+  },
+  {
+    id: 'lead-2',
+    name: 'Snehal Patil',
+    phone: '9890123456',
+    email: 'snehal.patil@outlook.com',
+    exam: 'JEE Main',
+    scorePercentile: '96.50 %ile',
+    preferredBranch: 'Information Technology / CS',
+    targetLocation: 'Mumbai / Pune',
+    message: 'Need help choosing between DJSCE Mumbai and PCCOE Pune through All-India quota seats.',
+    status: 'Contacted',
+    createdAt: new Date(Date.now() - 86400000).toISOString(),
+    notes: 'Called on Aug 07, sent comparison report for DJSCE vs PCCOE.'
+  }
+];
+
+export const initialTickerMessage = '⚡ Admissions 2026-27 Open! Book 1-on-1 CAP Round Strategy Session at Pune Head Office (Sohrab Hall). Helpline: +91 9860 777 069';
+
+export const collegeBrochureLogos: CollegeLogoItem[] = [
+  { name: 'COEP Technological University', subText: 'Pune • Govt. Autonomous', badge: 'DTE 6006', link: '/colleges', logoUrl: coepLogo },
+  { name: 'VJTI Mumbai', subText: 'Matunga • Govt. Autonomous', badge: 'DTE 3012', link: '/colleges', logoUrl: vjtiLogo },
+  { name: 'Sardar Patel Inst. (SPIT)', subText: 'Andheri West • Autonomous', badge: 'DTE 3215', link: '/colleges', logoUrl: spitLogo },
+  { name: 'D.J. Sanghvi (DJSCE)', subText: 'Vile Parle, Mumbai', badge: 'DTE 3197', link: '/colleges', logoUrl: djsceLogo },
+  { name: 'Vishwakarma University (VU)', subText: 'Pune • Premier Univ', badge: 'Pune', link: '/colleges', logoUrl: vuLogo },
+  { name: 'Walchand College (WCE)', subText: 'Sangli • Govt. Autonomous', badge: 'DTE 6007', link: '/colleges', logoUrl: walchandLogo },
+  { name: 'MKSSS Cummins College', subText: 'Karve Nagar, Pune', badge: 'DTE 6276', link: '/colleges', logoUrl: cumminsLogo },
+  { name: 'VIT Pune (Vishwakarma)', subText: 'Bibwewadi • Autonomous', badge: 'DTE 6273', link: '/colleges', logoUrl: vitLogo },
+  { name: 'Thadomal Shahani (TSEC)', subText: 'Bandra, Mumbai', badge: 'DTE 3182', link: '/colleges', logoUrl: tsecLogo },
+  { name: 'AISSMS COE', subText: 'Shivajinagar, Pune', badge: 'DTE 6278', link: '/colleges', logoUrl: aissmsLogo },
+  { name: 'Somaiya Vidyavihar Univ', subText: 'Vidyavihar, Mumbai', badge: 'Mumbai', link: '/colleges', logoUrl: somaiyaLogo },
+  { name: 'PCCOE & PCCOER', subText: 'Nigdi / Ravet, Pune', badge: 'DTE 6175', link: '/colleges', logoUrl: pccoeLogo },
+  { name: 'PVG College of Engineering', subText: 'Sahakar Nagar, Pune', badge: 'DTE 6274', link: '/colleges', logoUrl: pvgLogo },
+  { name: 'DY Patil Group (DYP)', subText: 'Akurdi & Pimpri, Pune', badge: 'DTE 6272', link: '/colleges', logoUrl: dypLogo },
+  { name: 'GH Raisoni College', subText: 'Wagholi, Pune', badge: 'DTE 6155', link: '/colleges', logoUrl: raisoniLogo },
+  { name: 'MIT World Peace Univ (MIT-WPU)', subText: 'Kothrud, Pune', badge: 'Pune', link: '/colleges', logoUrl: mitwpuLogo },
+  { name: 'JSPM / RSCOE', subText: 'Tathawade, Pune', badge: 'DTE 6141', link: '/colleges', logoUrl: jspmLogo },
+  { name: 'MIT Academy (MITAOE)', subText: 'Alandi, Pune', badge: 'DTE 6146', link: '/colleges', logoUrl: mitaoeLogo },
+  { name: 'Modern Education (Wadia)', subText: 'Pune • Wadia Campus', badge: 'DTE 6281', link: '/colleges', logoUrl: modernWadiaLogo },
+  { name: 'MIT-ADT University', subText: 'Loni Kalbhor, Pune', badge: 'Pune', link: '/colleges', logoUrl: mitadtLogo },
+  { name: 'Dr. D.Y. Patil (DPGU)', subText: 'Pune • Deemed Univ', badge: 'Pune', link: '/colleges', logoUrl: dpguLogo },
+  { name: 'MGM University', subText: 'Chhatrapati Sambhajinagar', badge: 'Autonomous', link: '/colleges', logoUrl: mgmLogo }
+];
+
+
