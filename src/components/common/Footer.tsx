@@ -140,17 +140,9 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Bottom Bar with Admin Access & Skrita Credit Badge */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-          <p className="text-center md:text-left">
-            © {new Date().getFullYear()} Admission Suggestion. All rights reserved. Registered Educational Mentorship Firm.
-          </p>
-
-          {/* Strategic Fun Skrita Credit Badge */}
-          <div className="my-1 md:my-0">
-            <SkritaBadge />
-          </div>
-
+        {/* Bottom Bar with Admin Access */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+          <p>© {new Date().getFullYear()} Admission Suggestion. All rights reserved.</p>
           <div className="flex items-center gap-4">
             <Link to="/about" className="hover:text-slate-300 transition-colors">
               Privacy Policy
@@ -168,6 +160,11 @@ export const Footer: React.FC = () => {
               <span>Admin Portal</span>
             </Link>
           </div>
+        </div>
+
+        {/* Skrita Credit — very bottom */}
+        <div className="pt-5 flex justify-center">
+          <SkritaBadge />
         </div>
       </div>
     </footer>
