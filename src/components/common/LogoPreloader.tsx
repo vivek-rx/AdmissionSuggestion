@@ -103,7 +103,7 @@ export const LogoPreloader: React.FC<LogoPreloaderProps> = ({
         </div>
 
         <p className="text-[11px] font-bold text-slate-500 uppercase tracking-widest mt-3 font-heading">
-          Pune's Trusted Counselling Partner
+          Your Trusted Counselling Partner
         </p>
       </div>
     </div>
