@@ -2,6 +2,7 @@ import React from 'react';
 import { Shield, Phone, Mail, MapPin, Globe, ArrowUpRight, GraduationCap, CheckCircle2, ShieldCheck, Lock } from 'lucide-react';
 import trustedLogo from '../../assets/logo.png';
 import { Link } from 'react-router-dom';
+import { SkritaBadge } from './SkritaBadge';
 
 export const Footer: React.FC = () => {
   return (
@@ -139,16 +140,24 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Bottom Bar with Admin Access */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-          <p>© {new Date().getFullYear()} Admission Suggestion. All rights reserved. Registered Educational Mentorship Firm.</p>
+        {/* Bottom Bar with Admin Access & Skrita Credit Badge */}
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+          <p className="text-center md:text-left">
+            © {new Date().getFullYear()} Admission Suggestion. All rights reserved. Registered Educational Mentorship Firm.
+          </p>
+
+          {/* Strategic Fun Skrita Credit Badge */}
+          <div className="my-1 md:my-0">
+            <SkritaBadge />
+          </div>
+
           <div className="flex items-center gap-4">
             <Link to="/about" className="hover:text-slate-300 transition-colors">
               Privacy Policy
             </Link>
             <span>•</span>
             <Link to="/about" className="hover:text-slate-300 transition-colors">
-              Terms & Compliance
+              Terms
             </Link>
             <span>•</span>
             <Link
