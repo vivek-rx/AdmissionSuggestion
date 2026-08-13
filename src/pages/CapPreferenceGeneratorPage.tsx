@@ -27,6 +27,7 @@ import {
 import { initialColleges } from '../data/initialData';
 import { College } from '../types';
 import { useApp } from '../context/AppContext';
+import trustedLogo from '../assets/logo.png';
 import confetti from 'canvas-confetti';
 
 interface ChoiceItem {
@@ -841,53 +842,91 @@ export const CapPreferenceGeneratorPage: React.FC<{ onOpenConsultation: () => vo
 
         {/* Printable Official Option Form Template (Hidden on Screen, Appears on Print) */}
         <div id="printable-option-form" className="hidden print:block font-sans text-black">
-          <div className="border-b-2 border-black pb-4 mb-4 text-center">
-            <h2 className="text-xl font-bold uppercase">Government of Maharashtra State CET Cell</h2>
-            <h3 className="text-base font-semibold">Provisional CAP Option Form & Preference Sequence 2026-27</h3>
-            <p className="text-xs mt-1">Generated via Admission Suggestion Counselling Portal • Pune Office</p>
+          {/* Official Letterhead Header with Logo */}
+          <div className="border-b-2 border-slate-900 pb-4 mb-4 flex items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <img
+                src={trustedLogo}
+                alt="Admission Suggestion"
+                className="h-16 w-auto object-contain"
+              />
+              <div>
+                <h1 className="text-xl font-black uppercase tracking-tight text-slate-900">
+                  Admission Suggestion
+                </h1>
+                <p className="text-[11px] font-bold text-slate-600">
+                  Maharashtra's #1 Trusted Educational & CAP Round Counselling Center
+                </p>
+                <p className="text-[10px] text-slate-500">
+                  Head Office: Office No. 333, Sohrab Hall, Tadiwala Road, Near Pune Station | Mob: +91 9860 777 069
+                </p>
+              </div>
+            </div>
+            
+            <div className="text-right border-l-2 border-slate-200 pl-3">
+              <span className="inline-block bg-slate-900 text-white text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">
+                Official Strategic Report
+              </span>
+              <p className="text-[10px] text-slate-500 font-mono mt-1">
+                Generated: {new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' })}
+              </p>
+            </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-2 text-xs border border-black p-3 mb-4">
+          <div className="text-center mb-3">
+            <h2 className="text-sm font-black uppercase text-slate-800 tracking-wide">
+              MHT-CET & JEE Centralized Admission Process (CAP) — Provisional Option Form 2026-27
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-2 gap-2 text-xs border border-slate-900 p-2.5 mb-3.5 bg-slate-50/50">
             <div><strong>Candidate Name:</strong> {studentName || 'PROVISIONAL CANDIDATE'}</div>
-            <div><strong>Contact:</strong> {studentPhone || 'N/A'}</div>
-            <div><strong>Exam & Score:</strong> {exam} — {percentile.toFixed(2)} %ile</div>
-            <div><strong>Category / Quota:</strong> {category}</div>
-            <div><strong>Home University:</strong> {homeUniversity}</div>
+            <div><strong>Contact / WhatsApp:</strong> {studentPhone || 'N/A'}</div>
+            <div><strong>Exam & Percentile:</strong> {exam} — <span className="font-bold text-blue-800">{percentile.toFixed(2)} %ile</span></div>
+            <div><strong>Applied Category / Quota:</strong> {category}</div>
+            <div><strong>Home University / Region:</strong> {homeUniversity}</div>
             <div><strong>Target Round:</strong> {capRound}</div>
           </div>
 
-          <table className="w-full text-xs border-collapse border border-black">
+          <table className="w-full text-xs border-collapse border border-slate-900">
             <thead>
-              <tr className="bg-gray-100">
-                <th className="border border-black p-1 text-center w-12">Pref #</th>
-                <th className="border border-black p-1 text-left">Choice Code</th>
-                <th className="border border-black p-1 text-left">Institute Name</th>
-                <th className="border border-black p-1 text-left">Course / Branch</th>
-                <th className="border border-black p-1 text-center">City</th>
-                <th className="border border-black p-1 text-center">Strategy Tier</th>
+              <tr className="bg-slate-100 font-bold">
+                <th className="border border-slate-900 p-1 text-center w-10">Pref #</th>
+                <th className="border border-slate-900 p-1 text-left font-mono">DTE Choice Code</th>
+                <th className="border border-slate-900 p-1 text-left">Institute Name</th>
+                <th className="border border-slate-900 p-1 text-left">Course / Branch</th>
+                <th className="border border-slate-900 p-1 text-center">Location</th>
+                <th className="border border-slate-900 p-1 text-center">Tier</th>
               </tr>
             </thead>
             <tbody>
               {generatedList?.map((item) => (
                 <tr key={item.id}>
-                  <td className="border border-black p-1 text-center font-bold">{item.preferenceNumber}</td>
-                  <td className="border border-black p-1 font-mono font-semibold">{item.choiceCode}</td>
-                  <td className="border border-black p-1">{item.college.name}</td>
-                  <td className="border border-black p-1">{item.branch}</td>
-                  <td className="border border-black p-1 text-center">{item.college.city}</td>
-                  <td className="border border-black p-1 text-center capitalize">{item.tier}</td>
+                  <td className="border border-slate-900 p-1 text-center font-bold">{item.preferenceNumber}</td>
+                  <td className="border border-slate-900 p-1 font-mono font-semibold">{item.choiceCode}</td>
+                  <td className="border border-slate-900 p-1">{item.college.name}</td>
+                  <td className="border border-slate-900 p-1">{item.branch}</td>
+                  <td className="border border-slate-900 p-1 text-center">{item.college.city}</td>
+                  <td className="border border-slate-900 p-1 text-center capitalize font-semibold">
+                    {item.tier === 'dream' ? '🔴 Dream' : item.tier === 'target' ? '🟡 Target' : '🟢 Safe'}
+                  </td>
                 </tr>
               ))}
             </tbody>
           </table>
 
-          <div className="mt-6 text-[10px] border-t border-black pt-3 flex justify-between">
+          <div className="mt-4 text-[10px] border-t border-slate-900 pt-2 flex justify-between items-end">
             <div>
-              <p>Disclaimer: This preference list is generated based on previous year DTE CAP cutoff trends.</p>
-              <p>For in-person verification, visit Admission Suggestion, Sohrab Hall, Pune (Ph: +91 9860 777 069).</p>
+              <p className="font-semibold text-slate-800">
+                Admission Suggestion • Empowering 15,000+ Maharashtra Engineering Aspirants
+              </p>
+              <p className="text-slate-500">
+                For in-person verification or management/institutional seats: Call +91 9860 777 069 / Visit Sohrab Hall, Pune.
+              </p>
             </div>
             <div className="text-right">
-              <p className="font-bold">Candidate Signature: _____________________</p>
+              <p className="font-bold">Authorized Signature / Stamp</p>
+              <div className="h-6" />
             </div>
           </div>
         </div>
