@@ -346,13 +346,13 @@ export const NavbarButton = ({
 
   const variantStyles = {
     primary:
-      "bg-gradient-to-r from-[#00A3FF] to-[#0284C7] text-white hover:shadow-md hover:shadow-blue-500/25 border border-blue-400/30",
+      "bg-[#00ADEF] hover:bg-[#0098D4] text-white hover:shadow-md border border-sky-400/30",
     secondary:
       "bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-200/80 shadow-none",
     dark:
       "bg-slate-900 hover:bg-slate-800 text-white border border-slate-800",
     gradient:
-      "bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-md shadow-blue-600/25",
+      "bg-gradient-to-r from-[#00ADEF] to-[#0284C7] text-white shadow-md shadow-sky-600/25",
   };
 
   return (

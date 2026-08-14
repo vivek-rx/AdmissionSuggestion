@@ -48,32 +48,14 @@ export const StickyConsultationWidget: React.FC = () => {
       {/* Desktop Sticky Vertical Button */}
       <button
         onClick={() => setIsOpen(true)}
-        className="hidden md:flex fixed right-0 top-1/2 -translate-y-1/2 z-40 bg-[#00A3FF] hover:bg-[#0284C7] text-white py-4 px-3 rounded-l-xl shadow-[0_0_20px_rgba(0,163,255,0.4)] transition-all items-center justify-center group border-y border-l border-blue-400 hover:scale-105"
+        className="hidden md:flex fixed right-0 top-1/2 -translate-y-1/2 z-40 bg-[#00ADEF] hover:bg-[#0098D4] text-white py-4 px-3 rounded-l-xl shadow-lg shadow-sky-500/25 transition-all items-center justify-center group border-y border-l border-sky-300 hover:scale-105"
         style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}
       >
-        <span className="flex items-center gap-2 font-extrabold text-[13px] tracking-wider uppercase font-heading">
+        <span className="flex items-center gap-2 font-bold text-[13px] tracking-wider uppercase font-heading">
           <Calendar className="w-4 h-4 rotate-90" />
-          Book 1:1 Meeting
+          Book 1:1 Counselling
         </span>
       </button>
-
-      {/* Mobile Sticky Bottom Bar */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 p-3 bg-white border-t border-slate-200 shadow-[0_-4px_20px_-10px_rgba(0,0,0,0.1)] flex items-center justify-between gap-3">
-        <a 
-          href="tel:+919860777069"
-          className="flex-1 flex items-center justify-center gap-2 py-3.5 rounded-xl bg-blue-50 text-[#00A3FF] font-bold text-xs uppercase tracking-wider border border-blue-200 font-heading"
-        >
-          <PhoneCall className="w-4 h-4" />
-          Call Now
-        </a>
-        <button 
-          onClick={() => setIsOpen(true)}
-          className="flex-1 flex items-center justify-center gap-2 py-3.5 rounded-xl bg-[#00A3FF] text-white font-bold text-xs uppercase tracking-wider shadow-md shadow-sky-500/20 font-heading"
-        >
-          <Calendar className="w-4 h-4" />
-          Book Meeting
-        </button>
-      </div>
 
       {/* Slide-out / Modal Form */}
       <AnimatePresence>

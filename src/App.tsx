@@ -18,6 +18,7 @@ import { AboutPage } from './pages/AboutPage';
 import { AdminPage } from './pages/AdminPage';
 import { CapPreferenceGeneratorPage } from './pages/CapPreferenceGeneratorPage';
 import { MarksEstimatorPage } from './pages/MarksEstimatorPage';
+import { MobileBottomBar } from './components/common/MobileBottomBar';
 
 // Scroll to top on route change
 function ScrollToTop() {
@@ -57,7 +58,7 @@ const MainAppLayout: React.FC = () => {
       />
 
       {/* Multi-Page Routes */}
-      <main className="flex-grow">
+      <main className="flex-grow pb-16 md:pb-0">
         <Routes>
           <Route path="/" element={<HomePage onOpenConsultation={scrollToConsultation} />} />
           <Route path="/services" element={<ServicesPage onOpenConsultation={scrollToConsultation} />} />
@@ -77,6 +78,9 @@ const MainAppLayout: React.FC = () => {
 
       {/* Footer with Page Links */}
       <Footer />
+
+      {/* Mobile-First Sticky App Bottom Hub */}
+      <MobileBottomBar onOpenConsultation={scrollToConsultation} />
 
       {/* Global Toast Notification */}
       <Toast />

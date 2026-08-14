@@ -41,6 +41,10 @@ export const Header: React.FC<HeaderProps> = ({
       link: "/cap-generator",
     },
     {
+      name: "Marks Estimator ⚡",
+      link: "/marks-vs-percentile",
+    },
+    {
       name: "CAP Services",
       link: "/services",
     },
@@ -55,10 +59,6 @@ export const Header: React.FC<HeaderProps> = ({
     {
       name: "Counsellors",
       link: "/counsellors",
-    },
-    {
-      name: "Live Webinars",
-      link: "/events",
     },
     {
       name: "About Us",
@@ -92,7 +92,7 @@ export const Header: React.FC<HeaderProps> = ({
       <div className="bg-slate-900 text-white text-[11px] py-1.5 px-4 font-medium border-b border-slate-800">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
           <div className="flex items-center gap-2 overflow-hidden whitespace-nowrap">
-            <span className="bg-[#00A3FF]/20 text-[#00A3FF] font-bold px-2 py-0.5 rounded text-[10px] uppercase shrink-0 font-heading">
+            <span className="bg-[#00ADEF]/20 text-[#00ADEF] font-bold px-2 py-0.5 rounded text-[10px] uppercase shrink-0 font-heading">
               Official
             </span>
             <p className="truncate text-slate-300 font-medium">
@@ -102,14 +102,14 @@ export const Header: React.FC<HeaderProps> = ({
 
           <div className="hidden sm:flex items-center gap-4 text-slate-400 shrink-0 font-medium">
             <span className="flex items-center gap-1">
-              <MapPin className="w-3 h-3 text-[#00A3FF]" />
+              <MapPin className="w-3 h-3 text-[#00ADEF]" />
               <span>Sohrab Hall, Pune</span>
             </span>
             <a
               href="tel:+919860777069"
-              className="flex items-center gap-1 font-bold text-white hover:text-[#00A3FF] transition-colors"
+              className="flex items-center gap-1 font-bold text-white hover:text-[#00ADEF] transition-colors"
             >
-              <Phone className="w-3 h-3 text-[#00A3FF]" />
+              <Phone className="w-3 h-3 text-[#00ADEF]" />
               <span>+91 9860 777 069</span>
             </a>
           </div>
@@ -184,8 +184,8 @@ export const Header: React.FC<HeaderProps> = ({
                       onClick={() => handleNavClick(item.link)}
                       className={`p-2.5 rounded-xl text-xs font-bold text-left transition-colors font-heading ${
                         isActive
-                          ? 'bg-blue-50 text-[#00A3FF]'
-                          : 'text-slate-700 hover:text-[#00A3FF] hover:bg-slate-50'
+                          ? 'bg-sky-50 text-[#00ADEF]'
+                          : 'text-slate-700 hover:text-[#00ADEF] hover:bg-slate-50'
                       }`}
                     >
                       {item.name}
