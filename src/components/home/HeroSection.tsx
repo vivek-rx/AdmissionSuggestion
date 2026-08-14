@@ -47,7 +47,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenConsultation }) 
       value: '20+',
       label: 'Years in Pune',
       sublabel: 'Trusted Counselling Legacy',
-      color: 'bg-blue-50 text-[#00A3FF] border-blue-200'
+      color: 'bg-sky-50 text-[#00ADEF] border-sky-200'
     },
     {
       icon: Users,
@@ -61,7 +61,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenConsultation }) 
       value: '100+',
       label: 'Associate Colleges',
       sublabel: 'Autonomous & Universities',
-      color: 'bg-sky-50 text-[#0284C7] border-sky-200'
+      color: 'bg-sky-50 text-[#00ADEF] border-sky-200'
     },
     {
       icon: TrendingUp,
@@ -74,12 +74,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenConsultation }) 
 
   return (
     <section id="hero" className="relative pt-6 sm:pt-10 pb-16 px-4 lg:px-8 font-sans overflow-hidden bg-slate-50 border-b border-slate-200">
-      {/* Premium SVG Dot Pattern */}
-      <div className="absolute inset-0 z-0 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(#00A3FF 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
-      
-      {/* Background ambient lighting */}
-      <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-gradient-to-b from-[#00A3FF]/20 to-transparent blur-[120px] pointer-events-none z-0" />
-      <div className="absolute top-40 right-[-10%] w-[600px] h-[400px] bg-sky-300/15 rounded-full blur-[140px] pointer-events-none z-0" />
+      {/* Subtle Dot Pattern */}
+      <div className="absolute inset-0 z-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#00ADEF 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
 
       <div className="max-w-7xl mx-auto w-full relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
@@ -88,7 +84,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenConsultation }) 
           <div className="lg:col-span-7 space-y-6">
             
             {/* Trust Pill */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 shadow-sm text-xs font-bold text-slate-700">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 shadow-xs text-xs font-bold text-slate-700">
               <div className="flex items-center text-amber-400">
                 <Star className="w-4 h-4 fill-current" />
                 <Star className="w-4 h-4 fill-current" />
@@ -96,7 +92,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenConsultation }) 
                 <Star className="w-4 h-4 fill-current" />
                 <Star className="w-4 h-4 fill-current" />
               </div>
-              <span className="text-slate-900 font-extrabold font-heading">4.9 / 5</span>
+              <span className="text-slate-900 font-bold font-heading">4.9 / 5</span>
               <span className="text-slate-500 font-normal">| 20+ Years Trusted Educational Consulting in Pune</span>
             </div>
 
@@ -110,8 +106,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenConsultation }) 
                 className="space-y-6"
               >
                 {/* Badge Tag */}
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-blue-50 border border-blue-200 text-[#0284C7] text-xs font-extrabold uppercase tracking-wider">
-                  <ShieldCheck className="w-3.5 h-3.5 text-[#00A3FF]" />
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-sky-50 border border-sky-200 text-[#00ADEF] text-xs font-bold uppercase tracking-wider">
+                  <ShieldCheck className="w-3.5 h-3.5 text-[#00ADEF]" />
                   <span>{currentBanner?.badge || 'Centralized Admission Process (CAP) Specialist'}</span>
                 </div>
 
@@ -121,7 +117,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenConsultation }) 
                 </h1>
 
                 {/* Subtitle */}
-                <p className="text-base sm:text-lg text-slate-600 font-medium leading-relaxed max-w-2xl">
+                <p className="text-base sm:text-lg text-slate-600 font-normal leading-relaxed max-w-2xl">
                   {currentBanner?.subtitle || 'Get personalized 1-on-1 guidance for MHT-CET, JEE Main, NEET UG & DSE CAP Rounds. We build strategic option forms to ensure maximum rank utilization.'}
                 </p>
 
@@ -129,7 +125,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenConsultation }) 
                 <div className="flex flex-wrap items-center gap-4 pt-2">
                   <button
                     onClick={onOpenConsultation}
-                    className="px-8 py-4 rounded-xl bg-gradient-to-r from-[#00A3FF] to-[#0284C7] hover:from-[#0284C7] hover:to-[#0369A1] text-white font-extrabold text-xs uppercase tracking-wider shadow-lg shadow-sky-500/25 hover:-translate-y-0.5 transition-all flex items-center gap-2.5 group font-heading"
+                    className="px-8 py-4 rounded-xl bg-[#00ADEF] hover:bg-[#0098D4] text-white font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition-all flex items-center gap-2.5 group font-heading"
                   >
                     <span>{currentBanner?.ctaText || 'Book In-Person Counselling'}</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -137,10 +133,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenConsultation }) 
 
                   <button
                     onClick={() => navigate('/cap-generator')}
-                    className="px-7 py-4 rounded-xl bg-white hover:bg-sky-50 text-slate-800 hover:text-[#00A3FF] border border-slate-300 hover:border-[#00A3FF]/40 font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-2 shadow-xs font-heading"
+                    className="px-7 py-4 rounded-xl bg-white hover:bg-sky-50 text-slate-800 hover:text-[#00ADEF] border border-slate-300 hover:border-[#00ADEF]/40 font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-2 shadow-xs font-heading"
                   >
                     <span>⚡ Build CAP Option Form</span>
-                    <ChevronRight className="w-4 h-4 text-[#00A3FF]" />
+                    <ChevronRight className="w-4 h-4 text-[#00ADEF]" />
                   </button>
                 </div>
               </motion.div>
@@ -175,11 +171,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenConsultation }) 
             >
               <div className="flex items-center justify-between border-b border-slate-100 pb-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-11 h-11 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-[#00A3FF]">
+                  <div className="w-11 h-11 rounded-xl bg-sky-50 border border-sky-200 flex items-center justify-center text-[#00ADEF]">
                     <ShieldCheck className="w-6 h-6" />
                   </div>
                   <div>
-                    <h3 className="font-extrabold text-slate-900 text-base font-heading">CAP Round Counselling Desk</h3>
+                    <h3 className="font-bold text-slate-900 text-base font-heading">CAP Round Counselling Desk</h3>
                     <p className="text-xs text-slate-500 font-medium">Head Office: Sohrab Hall, Pune Station</p>
                   </div>
                 </div>
@@ -209,7 +205,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenConsultation }) 
               <div className="space-y-3 pt-2">
                 <button
                   onClick={onOpenConsultation}
-                  className="w-full py-3.5 rounded-xl bg-gradient-to-r from-[#00A3FF] to-[#0284C7] hover:from-[#0284C7] hover:to-[#0369A1] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md shadow-sky-500/20 flex items-center justify-center gap-2 font-heading"
+                  className="w-full py-3.5 rounded-xl bg-[#00ADEF] hover:bg-[#0098D4] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md flex items-center justify-center gap-2 font-heading"
                 >
                   <CalendarCheck className="w-4 h-4" />
                   <span>Schedule In-Person Consultation</span>
@@ -219,7 +215,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenConsultation }) 
                   href="tel:+919860777069"
                   className="w-full py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-200 font-bold text-xs uppercase tracking-wider transition-colors flex items-center justify-center gap-2 font-heading"
                 >
-                  <PhoneCall className="w-4 h-4 text-[#00A3FF]" />
+                  <PhoneCall className="w-4 h-4 text-[#00ADEF]" />
                   <span>Call Helpline: +91 9860 777 069</span>
                 </a>
               </div>

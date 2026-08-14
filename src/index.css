@@ -4,8 +4,10 @@
   :root {
     --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     --font-heading: 'Outfit', system-ui, -apple-system, sans-serif;
-    --brand-blue: #00a3ff;
+    --brand-blue: #00ADEF;
+    --brand-blue-hover: #0098D4;
     --brand-blue-dark: #0284c7;
+    --brand-charcoal: #181818;
     --brand-navy: #0f172a;
   }
 
@@ -43,11 +45,11 @@
 }
 
 .glow-brand {
-  box-shadow: 0 10px 30px -5px rgba(0, 163, 255, 0.35);
+  box-shadow: 0 10px 30px -5px rgba(0, 173, 239, 0.3);
 }
 
 .gradient-brand {
-  background: linear-gradient(135deg, #00a3ff 0%, #0284c7 100%);
+  background: linear-gradient(135deg, #00ADEF 0%, #0284c7 100%);
 }
 
 .gradient-brand-dark {
@@ -55,7 +57,7 @@
 }
 
 .gradient-text-brand {
-  background: linear-gradient(135deg, #00a3ff 0%, #0284c7 100%);
+  background: linear-gradient(135deg, #00ADEF 0%, #0284c7 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
