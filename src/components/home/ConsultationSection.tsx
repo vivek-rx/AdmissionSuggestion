@@ -155,24 +155,36 @@ export const ConsultationSection: React.FC = () => {
                     Thank you, <strong className="text-[#0284C7]">{form.name}</strong>. Our senior admission counsellor will call you on <strong className="text-slate-900">{form.phone}</strong> within 2 hours to evaluate your option form choices.
                   </p>
 
-                  <button
-                    onClick={() => {
-                      setSubmitted(false);
-                      setForm({
-                        name: '',
-                        phone: '',
-                        email: '',
-                        exam: 'MHT-CET',
-                        scorePercentile: '',
-                        preferredBranch: 'Computer Engg / AI & DS',
-                        targetLocation: 'Pune',
-                        message: ''
-                      });
-                    }}
-                    className="px-6 py-2.5 rounded-xl bg-slate-900 text-white font-bold text-xs uppercase tracking-wider hover:bg-slate-800 transition-colors font-heading"
-                  >
-                    Submit Another Inquiry
-                  </button>
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+                    <a
+                      href={`https://wa.me/919860777069?text=${encodeURIComponent(`Hi Admission Suggestion, I just submitted an inquiry for ${form.name} (${form.exam} - ${form.scorePercentile || 'Awaiting Result'}). Please review my profile.`)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-md font-heading"
+                    >
+                      <Phone className="w-4 h-4" />
+                      <span>Instant WhatsApp Follow-up</span>
+                    </a>
+
+                    <button
+                      onClick={() => {
+                        setSubmitted(false);
+                        setForm({
+                          name: '',
+                          phone: '',
+                          email: '',
+                          exam: 'MHT-CET',
+                          scorePercentile: '',
+                          preferredBranch: 'Computer Engg / AI & DS',
+                          targetLocation: 'Pune',
+                          message: ''
+                        });
+                      }}
+                      className="w-full sm:w-auto px-6 py-3 rounded-xl bg-slate-900 text-white font-bold text-xs uppercase tracking-wider hover:bg-slate-800 transition-colors font-heading"
+                    >
+                      Submit Another Inquiry
+                    </button>
+                  </div>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">

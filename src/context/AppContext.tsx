@@ -7,6 +7,7 @@ import {
   initialColleges,
   initialLeads
 } from '../data/initialData';
+import { dispatchLeadNotification } from '../utils/leadNotifier';
 
 interface AppContextType {
   banners: Banner[];
@@ -176,6 +177,10 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     };
 
     setLeads(prev => [newLead, ...prev]);
+    
+    // Dispatch webhook / email alert asynchronously
+    dispatchLeadNotification(newLead).catch(console.error);
+
     showToast('Inquiry submitted! Our counsellor will call you shortly.');
   };
 
