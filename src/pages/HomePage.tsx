@@ -1,12 +1,17 @@
 import React from 'react';
 import { HeroSection } from '../components/home/HeroSection';
+import { LiveCutoffTicker } from '../components/home/LiveCutoffTicker';
+import { CapStageTracker } from '../components/home/CapStageTracker';
 import { CollegePredictorWidget } from '../components/home/CollegePredictorWidget';
+import { DocumentValidityChecker } from '../components/home/DocumentValidityChecker';
+import { MahaDbtFeeCalculator } from '../components/home/MahaDbtFeeCalculator';
+import { SpotRoundGuide } from '../components/home/SpotRoundGuide';
 import { ServicesSection } from '../components/home/ServicesSection';
 import { CounsellorSection } from '../components/home/CounsellorSection';
 import { EventsSection } from '../components/home/EventsSection';
 import { ConsultationSection } from '../components/home/ConsultationSection';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Compass, School, FileCheck, Users, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Compass, School, FileCheck, Users, ShieldCheck, CheckCircle2, TrendingUp, Sparkles } from 'lucide-react';
 
 interface HomePageProps {
   onOpenConsultation: () => void;
@@ -15,40 +20,72 @@ interface HomePageProps {
 export const HomePage: React.FC<HomePageProps> = ({ onOpenConsultation }) => {
   return (
     <div className="space-y-12">
-      {/* 1. Hero Banner Carousel */}
+      {/* 1. Bloomberg-Style Live Maharashtra Cutoff Ticker */}
+      <LiveCutoffTicker />
+
+      {/* 2. Hero Banner Carousel */}
       <HeroSection onOpenConsultation={onOpenConsultation} />
 
-      {/* 2. Featured Tool: CAP Option Form Generator Banner */}
+      {/* 3. CAP Round Timeline & Stage Tracker */}
+      <div className="max-w-7xl mx-auto px-4 lg:px-8">
+        <CapStageTracker />
+      </div>
+
+      {/* 4. Featured Tool: CAP Option Form Generator Banner */}
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <div className="rounded-3xl p-6 sm:p-8 bg-[#0F172A] text-white border border-slate-800 shadow-xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-2 text-center md:text-left relative z-10">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00ADEF]/15 border border-[#00ADEF]/30 text-[#00ADEF] text-xs font-bold uppercase tracking-wider font-heading">
-              Official CAP Round Guidance
+              Official CAP Round Tool
             </div>
             <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white font-heading">
               Plan Your 3-Tier CAP Round Preference Form (2026-27)
             </h2>
             <p className="text-xs sm:text-sm text-slate-300 max-w-2xl font-normal leading-relaxed">
-              Organize your Dream, Target & Safe college preferences with official 9-digit DTE Choice Codes and download an instant option form PDF.
+              Organize your Dream, Target & Safe college preferences with official 9-digit DTE Choice Codes and download an instant option form PDF to copy into mahacet.org.
             </p>
           </div>
 
-          <Link
-            to="/cap-generator"
-            className="px-6 py-3.5 rounded-xl bg-[#00ADEF] hover:bg-[#0098D4] text-white font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition-all flex items-center gap-2 font-heading shrink-0 relative z-10"
-          >
-            <span>Open Preference Generator</span>
-            <ArrowRight className="w-4 h-4" />
-          </Link>
+          <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0 relative z-10 w-full sm:w-auto">
+            <Link
+              to="/cap-generator"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-[#00ADEF] hover:bg-[#0098D4] text-white font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 font-heading"
+            >
+              <span>Option Form Generator</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+
+            <Link
+              to="/marks-vs-percentile"
+              className="w-full sm:w-auto px-5 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 font-heading"
+            >
+              <span>Marks Estimator</span>
+            </Link>
+          </div>
         </div>
       </div>
 
-      {/* 3. Interactive CAP Predictor Widget */}
+      {/* 5. Interactive DTE CAP Predictor Widget */}
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <CollegePredictorWidget onOpenConsultation={onOpenConsultation} />
       </div>
 
-      {/* 4. Direct Admission Pathways */}
+      {/* 6. Document Scrutiny & Zero-Rejection Scanner */}
+      <div className="max-w-7xl mx-auto px-4 lg:px-8">
+        <DocumentValidityChecker />
+      </div>
+
+      {/* 7. Maharashtra College Fee & MahaDBT Scholarship Calculator */}
+      <div className="max-w-7xl mx-auto px-4 lg:px-8">
+        <MahaDbtFeeCalculator />
+      </div>
+
+      {/* 8. ACAP & Institutional Quota Guide */}
+      <div className="max-w-7xl mx-auto px-4 lg:px-8">
+        <SpotRoundGuide />
+      </div>
+
+      {/* 9. Direct Admission Pathways */}
       <section className="max-w-7xl mx-auto px-4 lg:px-8">
         <div className="bg-white text-slate-900 rounded-3xl p-8 sm:p-10 border border-slate-200 shadow-md relative overflow-hidden">
           <div className="relative z-10 space-y-8">
@@ -153,16 +190,16 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenConsultation }) => {
         </div>
       </section>
 
-      {/* 4. Core Services Snapshot */}
+      {/* 10. Core Services Snapshot */}
       <ServicesSection onOpenConsultation={onOpenConsultation} />
 
-      {/* 5. Senior Mentors & Verified Student Allotments */}
+      {/* 11. Senior Mentors & Verified Student Allotments */}
       <CounsellorSection onOpenConsultation={onOpenConsultation} />
 
-      {/* 6. Live Webinars & Workshops */}
+      {/* 12. Live Webinars & Workshops */}
       <EventsSection />
 
-      {/* 7. Free Callback Consultation Form */}
+      {/* 13. Free Callback Consultation Form */}
       <ConsultationSection />
     </div>
   );

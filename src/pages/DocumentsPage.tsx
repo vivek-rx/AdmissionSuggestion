@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { DocumentChecklist } from '../components/home/DocumentChecklist';
+import { DocumentValidityChecker } from '../components/home/DocumentValidityChecker';
 import { ConsultationSection } from '../components/home/ConsultationSection';
 import { FileCheck, ShieldCheck, Download, AlertCircle } from 'lucide-react';
 
@@ -12,11 +13,9 @@ export const DocumentsPage: React.FC = () => {
     <div className="space-y-12 py-6">
       {/* Page Header */}
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        <div className="bg-gradient-to-r from-[#00A3FF] to-blue-700 rounded-3xl p-8 sm:p-12 text-white border border-blue-500 shadow-xl relative overflow-hidden">
-          <div className="absolute right-0 top-0 w-80 h-80 bg-[#00A3FF]/15 rounded-full blur-3xl pointer-events-none" />
-          
+        <div className="bg-[#0F172A] rounded-3xl p-8 sm:p-12 text-white border border-slate-800 shadow-xl relative overflow-hidden">
           <div className="relative z-10 max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-[#00A3FF] text-xs font-bold uppercase tracking-wider font-heading">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#00ADEF]/20 border border-[#00ADEF]/30 text-[#00ADEF] text-xs font-bold uppercase tracking-wider font-heading">
               <FileCheck className="w-4 h-4" />
               <span>Facilitation Center Readiness</span>
             </div>
@@ -28,6 +27,11 @@ export const DocumentsPage: React.FC = () => {
             </p>
           </div>
         </div>
+      </div>
+
+      {/* Interactive Zero-Rejection Scanner */}
+      <div className="max-w-7xl mx-auto px-4 lg:px-8">
+        <DocumentValidityChecker />
       </div>
 
       {/* Interactive Document Checklist Component */}
