@@ -78,44 +78,56 @@ export const ConsultationSection: React.FC = () => {
 
             {/* Quick Contact Cards */}
             <div className="space-y-3 pt-2">
-              <div className="flex items-start gap-3 bg-slate-50 p-4 rounded-2xl border border-slate-200 shadow-sm">
-                <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-[#00A3FF] shrink-0">
-                  <MapPin className="w-5 h-5" />
+              <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200 shadow-xs space-y-3">
+                <div className="flex items-start gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-sky-50 border border-sky-200 flex items-center justify-center text-[#00ADEF] shrink-0">
+                    <MapPin className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider font-heading">
+                      Pune Head Office
+                    </h4>
+                    <p className="text-xs text-slate-600 font-normal leading-relaxed mt-0.5">
+                      Office No. 312, 3rd Floor, Sohrab Hall, Tadiwala Road, Behind Pune Railway Station, Pune - 411001
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="text-xs font-extrabold text-slate-900 uppercase tracking-wider font-heading">
-                    Pune Head Office
-                  </h4>
-                  <p className="text-xs text-slate-600 font-medium leading-relaxed mt-0.5">
-                    Office No. 333, Sohrab Hall, Tadiwala Road, Near Pune Railway Station, Pune - 411001
-                  </p>
-                </div>
+
+                <a
+                  href="https://www.google.com/maps/dir/?api=1&destination=Sohrab+Hall+Tadiwala+Road+Pune+Station+Pune+Maharashtra+411001"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-2 px-3 rounded-xl bg-white hover:bg-sky-50 border border-slate-200 hover:border-[#00ADEF]/40 text-[#00ADEF] text-xs font-bold flex items-center justify-center gap-1.5 transition-colors font-heading shadow-2xs"
+                >
+                  <MapPin className="w-3.5 h-3.5" />
+                  <span>Get Directions in Google Maps</span>
+                </a>
               </div>
 
               <a
                 href="tel:+919860777069"
-                className="flex items-center gap-3 bg-slate-50 p-4 rounded-2xl border border-slate-200 hover:border-blue-300 transition-colors group shadow-sm"
+                className="flex items-center gap-3 bg-slate-50 p-4 rounded-2xl border border-slate-200 hover:border-sky-300 transition-colors group shadow-xs"
               >
-                <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-[#00A3FF] shrink-0 group-hover:scale-105 transition-transform">
+                <div className="w-10 h-10 rounded-xl bg-sky-50 border border-sky-200 flex items-center justify-center text-[#00ADEF] shrink-0 group-hover:scale-105 transition-transform">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-extrabold text-slate-900 uppercase tracking-wider font-heading">
+                  <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider font-heading">
                     Direct Helpline Phone
                   </h4>
-                  <p className="text-sm font-bold text-[#00A3FF] mt-0.5">+91 9860 777 069</p>
+                  <p className="text-sm font-bold text-[#00ADEF] mt-0.5">+91 9860 777 069</p>
                 </div>
               </a>
 
-              <div className="flex items-center gap-3 bg-slate-50 p-4 rounded-2xl border border-slate-200 shadow-sm">
-                <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-[#00A3FF] shrink-0">
+              <div className="flex items-center gap-3 bg-slate-50 p-4 rounded-2xl border border-slate-200 shadow-xs">
+                <div className="w-10 h-10 rounded-xl bg-sky-50 border border-sky-200 flex items-center justify-center text-[#00ADEF] shrink-0">
                   <Clock className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-extrabold text-slate-900 uppercase tracking-wider font-heading">
+                  <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider font-heading">
                     Consultation Hours
                   </h4>
-                  <p className="text-xs text-slate-600 font-medium mt-0.5">Mon - Sat: 10:00 AM to 07:00 PM (In-Person & Online)</p>
+                  <p className="text-xs text-slate-600 font-normal mt-0.5">Mon - Sat: 10:00 AM to 07:30 PM (In-Person & Online)</p>
                 </div>
               </div>
             </div>
