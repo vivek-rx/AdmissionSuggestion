@@ -4,13 +4,19 @@ import trustedLogo from '../../assets/logo.png';
 import { Link } from 'react-router-dom';
 import { SkritaBadge } from './SkritaBadge';
 
+const FacebookIcon = ({ className = "w-3.5 h-3.5" }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+  </svg>
+);
+
 export const Footer: React.FC = () => {
   return (
     <footer className="bg-slate-950 text-slate-100 pt-16 pb-12 font-sans relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
           
-          {/* Column 1: Brand Info */}
+          {/* Column 1: Brand Info & Socials */}
           <div className="space-y-4">
             <Link to="/" className="bg-white p-2.5 rounded-2xl inline-block shadow-md">
               <img
@@ -24,10 +30,22 @@ export const Footer: React.FC = () => {
               With 20+ years of expertise, Admission Suggestion provides premier educational counselling for MHT-CET, JEE, NEET, CAP Rounds, and Direct Admissions across top engineering, medical & management institutes in Maharashtra and India.
             </p>
 
-            <div className="flex items-center gap-2 pt-2">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-[#00A3FF] text-xs font-semibold">
-                <CheckCircle2 className="w-3.5 h-3.5" /> 20+ Years Ground Legacy
+            <div className="flex flex-wrap items-center gap-2 pt-2">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/30 text-[#00ADEF] text-xs font-semibold">
+                <CheckCircle2 className="w-3.5 h-3.5" /> 20+ Years Legacy
               </span>
+
+              {/* Official Facebook Page Button */}
+              <a
+                href="https://www.facebook.com/p/admission-suggestion-61573146525304/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#1877F2]/15 hover:bg-[#1877F2]/30 border border-[#1877F2]/40 text-[#4599FF] hover:text-white text-xs font-bold transition-all shadow-xs"
+                title="Follow Admission Suggestion on Facebook"
+              >
+                <FacebookIcon className="w-3.5 h-3.5" />
+                <span>Facebook Page</span>
+              </a>
             </div>
           </div>
 
@@ -110,30 +128,41 @@ export const Footer: React.FC = () => {
 
           {/* Column 4: Contact Pune Office */}
           <div className="space-y-3">
-            <h4 className="text-sm font-bold text-white uppercase tracking-wider font-heading border-l-2 border-[#00A3FF] pl-3">
+            <h4 className="text-sm font-bold text-white uppercase tracking-wider font-heading border-l-2 border-[#00ADEF] pl-3">
               Pune Head Office
             </h4>
             <div className="space-y-2.5 text-xs text-slate-400">
               <p className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 text-[#00A3FF] shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-[#00ADEF] shrink-0 mt-0.5" />
                 <span>Office No. 312, 3rd Floor, Sohrab Hall, Tadiwala Road, Behind Pune Railway Station, Pune - 411001</span>
               </p>
               <p className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-[#00A3FF] shrink-0" />
+                <Phone className="w-4 h-4 text-[#00ADEF] shrink-0" />
                 <a href="tel:+919860777069" className="hover:text-white transition-colors">
                   +91 9860 777 069
                 </a>
               </p>
               <p className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-[#00A3FF] shrink-0" />
+                <Mail className="w-4 h-4 text-[#00ADEF] shrink-0" />
                 <a href="mailto:info@admissionsuggestion.com" className="hover:text-white transition-colors">
                   info@admissionsuggestion.com
                 </a>
               </p>
               <p className="flex items-center gap-2">
-                <Globe className="w-4 h-4 text-[#00A3FF] shrink-0" />
+                <Globe className="w-4 h-4 text-[#00ADEF] shrink-0" />
                 <a href="https://admissionsuggestion.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                   admissionsuggestion.com
+                </a>
+              </p>
+              <p className="flex items-center gap-2">
+                <FacebookIcon className="w-4 h-4 text-[#1877F2] shrink-0" />
+                <a
+                  href="https://www.facebook.com/p/admission-suggestion-61573146525304/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#4599FF] transition-colors"
+                >
+                  facebook.com/admission-suggestion
                 </a>
               </p>
             </div>
