@@ -31,6 +31,8 @@ interface AppContextType {
   addEvent: (event: Omit<EventItem, 'id'>) => void;
   deleteEvent: (id: string) => void;
   updateEventStatus: (id: string, status: EventItem['status']) => void;
+  updateEventMeetingLink: (id: string, meetingLink: string) => void;
+  updateEvent: (id: string, updatedEvent: Partial<EventItem>) => void;
   
   // Leads Management
   addLead: (lead: Omit<InquiryLead, 'id' | 'createdAt' | 'status'>) => void;
@@ -165,6 +167,20 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     showToast(`Event status set to ${status}`);
   };
 
+  const updateEventMeetingLink = (id: string, meetingLink: string) => {
+    setEvents(prev =>
+      prev.map(e => (e.id === id ? { ...e, meetingLink } : e))
+    );
+    showToast('Meeting / Stream link updated successfully!');
+  };
+
+  const updateEvent = (id: string, updatedEvent: Partial<EventItem>) => {
+    setEvents(prev =>
+      prev.map(e => (e.id === id ? { ...e, ...updatedEvent } : e))
+    );
+    showToast('Event updated successfully!');
+  };
+
   const addLead = (leadData: Omit<InquiryLead, 'id' | 'createdAt' | 'status'>) => {
     const now = new Date();
     const formattedDate = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')} ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
@@ -219,6 +235,8 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         addEvent,
         deleteEvent,
         updateEventStatus,
+        updateEventMeetingLink,
+        updateEvent,
         addLead,
         updateLeadStatus,
         deleteLead,

@@ -18,6 +18,7 @@ export interface EventItem {
   date: string;
   time: string;
   venueOrUrl: string;
+  meetingLink?: string;
   speaker: string;
   status: 'Live' | 'Upcoming' | 'Registration Full' | 'Completed';
   active: boolean;

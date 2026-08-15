@@ -123,13 +123,27 @@ export const EventsSection: React.FC = () => {
                 </div>
 
                 {/* Card Action */}
-                <div className="mt-6 pt-4 border-t border-slate-100">
+                <div className="mt-6 pt-4 border-t border-slate-100 space-y-2">
+                  {evt.meetingLink && (evt.status === 'Live' || evt.status === 'Upcoming') ? (
+                    <a
+                      href={evt.meetingLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`w-full py-3 rounded-xl text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 font-heading shadow-md ${
+                        isLive ? 'bg-rose-600 hover:bg-rose-700 shadow-rose-500/25 ring-2 ring-rose-400' : 'bg-[#00ADEF] hover:bg-[#0098D4]'
+                      }`}
+                    >
+                      <Video className="w-4 h-4" />
+                      <span>{isLive ? 'Join Live Meeting Now' : 'Open Live Session Link'}</span>
+                    </a>
+                  ) : null}
+
                   <button
                     onClick={() => setSelectedEvent(evt)}
-                    className="w-full py-3 rounded-xl bg-gradient-to-r from-[#00A3FF] to-[#0284C7] hover:from-[#0284C7] hover:to-[#0369A1] text-white font-extrabold text-xs uppercase tracking-wider shadow-md shadow-sky-500/20 transition-all flex items-center justify-center gap-2 font-heading"
+                    className="w-full py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-1.5 font-heading"
                   >
-                    <UserCheck className="w-4 h-4" />
-                    <span>Reserve Free Seat</span>
+                    <UserCheck className="w-4 h-4 text-[#00ADEF]" />
+                    <span>Reserve Free Seat & Reminders</span>
                   </button>
                 </div>
               </motion.div>

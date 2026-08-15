@@ -69,37 +69,40 @@ export const initialEvents: EventItem[] = [
     id: 'ev-1',
     title: 'MHT-CET & JEE CAP Round Option Form Strategy',
     category: 'Webinar',
-    date: 'August 12, 2026',
+    date: 'August 18, 2026',
     time: '06:00 PM IST',
-    venueOrUrl: 'Live on Zoom / YouTube Live',
-    speaker: 'Prof. R. K. Sharma (Chief Counsellor)',
+    venueOrUrl: 'Live on Google Meet & YouTube Stream',
+    meetingLink: 'https://meet.google.com/adm-sugg-pun',
+    speaker: 'Er. Akshaykumar Bhandari (Director, 20+ Yrs Exp)',
     status: 'Live',
     active: true,
-    description: 'Learn step-by-step how to fill Option Forms for CAP Round 1 & 2 without risking seat allotment.'
+    description: 'Learn step-by-step how to sequence 1-to-300 Choice Codes for CAP Round 1 without risking seat loss.'
   },
   {
     id: 'ev-2',
-    title: 'Pune 1-on-1 Offline Admission Counselling Drive',
+    title: 'Pune 1-on-1 Offline Option Form Review Drive',
     category: '1-on-1 Drive',
-    date: 'August 15 - 18, 2026',
+    date: 'August 20 - 24, 2026',
     time: '10:00 AM - 07:00 PM',
-    venueOrUrl: 'Office No. 333, Sohrab Hall, Tadiwala Road, Pune',
-    speaker: 'Senior Counselling Team',
+    venueOrUrl: 'Office No. 312, 3rd Floor, Sohrab Hall, Near Pune Station',
+    meetingLink: 'https://maps.google.com/?q=Sohrab+Hall+Pune',
+    speaker: 'Er. Akshaykumar Bhandari & Senior Mentors',
     status: 'Upcoming',
     active: true,
-    description: 'Face-to-face consultation to analyze your rank, cutoff trends, and build your customized college preference list.'
+    description: 'Face-to-face consultation in Pune to analyze candidate category ranks, Home University quota, and build customized 3-tier preference forms.'
   },
   {
     id: 'ev-3',
-    title: 'Institute Level (IL) & Management Quota Masterclass',
+    title: 'Institutional (IL) & ACAP Spot Round Vacancy Masterclass',
     category: 'Webinar',
-    date: 'August 22, 2026',
+    date: 'August 28, 2026',
     time: '05:00 PM IST',
     venueOrUrl: 'Google Meet Session',
-    speaker: 'Mrs. Sneha Kulkarni',
+    meetingLink: 'https://meet.google.com/adm-spot-2026',
+    speaker: 'Akash Bhandari (Senior Advisor)',
     status: 'Upcoming',
     active: true,
-    description: 'Detailed insights on seat matrix, merit cutoff, fee structure and institutional round rules.'
+    description: 'Detailed insights on seat matrices, cutoff drops in autonomous colleges (VIT, PCCOE, Cummins), and institutional round rules.'
   }
 ];
 
