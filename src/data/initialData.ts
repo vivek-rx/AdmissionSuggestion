@@ -28,7 +28,7 @@ import mgmLogo from '../assets/colleges/mgm.png';
 export const initialBanners: Banner[] = [
   {
     id: 'b-1',
-    badge: '🏆 #1 Trusted Admission Counselling Partner',
+    badge: 'Maharashtra CAP & Engineering Counselling Partner',
     title: 'Unlock Your Dream College With Expert Guidance',
     subtitle: 'Navigating MHT-CET, JEE Main, CAP Rounds & Top Engineering / Medical / Management Admissions across Maharashtra & India.',
     ctaText: 'Book Free Counselling',
@@ -40,7 +40,7 @@ export const initialBanners: Banner[] = [
   },
   {
     id: 'b-2',
-    badge: '⚡ CAP Round Guidance Open',
+    badge: 'CAP Round Guidance Open',
     title: 'Master Your Option Form & College Cut-off Strategy',
     subtitle: 'Avoid critical option form mistakes. Get 1-on-1 personalized preference list crafted by 20+ years experienced counsellors.',
     ctaText: 'Get Preference List',
@@ -52,7 +52,7 @@ export const initialBanners: Banner[] = [
   },
   {
     id: 'b-3',
-    badge: '🎓 Direct & Institute Level Quota',
+    badge: 'Direct & Institute Level Quota',
     title: 'Secure Seats in Premium Autonomous & Private Universities',
     subtitle: 'Expert admission assistance for COEP, VJTI, SPIT, VIT Pune, DY Patil, MIT-WPU, Somaiya and leading institutes.',
     ctaText: 'Enquire Seats Now',
@@ -1087,7 +1087,7 @@ export const initialLeads: InquiryLead[] = [
   }
 ];
 
-export const initialTickerMessage = '⚡ Admissions 2026-27 Open! Book 1-on-1 CAP Round Strategy Session at Pune Head Office (Sohrab Hall). Helpline: +91 9860 777 069';
+export const initialTickerMessage = 'Admissions 2026-27 Open: Book 1-on-1 CAP Round Strategy Session at Pune Head Office (Sohrab Hall). Helpline: +91 9860 777 069';
 
 export const collegeBrochureLogos: CollegeLogoItem[] = [
   { name: 'COEP Technological University', subText: 'Pune • Govt. Autonomous', badge: 'DTE 6006', link: '/colleges', logoUrl: coepLogo },

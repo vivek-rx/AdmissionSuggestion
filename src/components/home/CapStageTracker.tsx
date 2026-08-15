@@ -36,8 +36,8 @@ export const CapStageTracker: React.FC = () => {
     {
       id: 4,
       title: 'CAP Round 1: Option Form Submission & Allotment',
-      status: 'High Stakes 🔥',
-      statusColor: 'bg-amber-500/10 text-amber-700 border-amber-300',
+      status: 'High Priority',
+      statusColor: 'bg-amber-50 text-amber-800 border-amber-200',
       period: 'July 30 – August 08',
       desc: 'Filling 1 to 300 Choice Codes. Auto-Freeze rules apply for Choice No. 1.',
       tips: 'Our counsellors build your Dream / Target / Safe sequence to maximize rank.'

@@ -86,7 +86,7 @@ export const EventManager: React.FC = () => {
                 onChange={e => setNewEvent({ ...newEvent, status: e.target.value as EventItem['status'] })}
                 className="w-full bg-slate-950 border border-slate-800 text-white text-xs px-3 py-2.5 rounded-xl outline-none focus:border-cyan-400"
               >
-                <option value="Live">🔴 Live Now</option>
+                <option value="Live">Live</option>
                 <option value="Upcoming">Upcoming</option>
                 <option value="Registration Full">Registration Full</option>
                 <option value="Completed">Completed</option>
@@ -210,7 +210,7 @@ export const EventManager: React.FC = () => {
                 onChange={e => updateEventStatus(evt.id, e.target.value as EventItem['status'])}
                 className="bg-slate-950 border border-slate-700 text-cyan-300 text-xs font-bold px-3 py-2 rounded-xl outline-none"
               >
-                <option value="Live">🔴 Live</option>
+                <option value="Live">Live</option>
                 <option value="Upcoming">Upcoming</option>
                 <option value="Registration Full">Registration Full</option>
                 <option value="Completed">Completed</option>

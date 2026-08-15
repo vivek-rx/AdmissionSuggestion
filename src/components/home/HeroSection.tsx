@@ -135,7 +135,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenConsultation }) 
                     onClick={() => navigate('/cap-generator')}
                     className="px-7 py-4 rounded-xl bg-white hover:bg-sky-50 text-slate-800 hover:text-[#00ADEF] border border-slate-300 hover:border-[#00ADEF]/40 font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-2 shadow-xs font-heading"
                   >
-                    <span>⚡ Build CAP Option Form</span>
+                    <span>Build CAP Option Form</span>
                     <ChevronRight className="w-4 h-4 text-[#00ADEF]" />
                   </button>
                 </div>

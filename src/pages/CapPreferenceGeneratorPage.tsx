@@ -319,7 +319,7 @@ export const CapPreferenceGeneratorPage: React.FC<{ onOpenConsultation: () => vo
       .map(c => `${c.preferenceNumber}. ${c.college.name} (${c.branch})`)
       .join('%0A');
 
-    const message = `Hello Admission Suggestion Team,%0A%0AI used your CAP Option Form Generator and want an expert review for my Maharashtra Engineering admission:%0A%0A👤 Name: ${studentName || 'Student'}%0A📊 Score: ${percentile}%ile (${exam})%0A🏷️ Category: ${category}%0A📍 Region: ${homeUniversity}%0A%0ATop 5 Preferences:%0A${topChoices}%0A%0APlease verify my preference strategy and suggest if any modifications are needed.`;
+    const message = `Hello Admission Suggestion Team,%0A%0AI used your CAP Option Form Generator and want an expert review for my Maharashtra Engineering admission:%0A%0AName: ${studentName || 'Student'}%0AScore: ${percentile}%ile (${exam})%0ACategory: ${category}%0ARegion: ${homeUniversity}%0A%0ATop 5 Preferences:%0A${topChoices}%0A%0APlease verify my preference strategy and suggest if any modifications are needed.`;
     
     window.open(`https://wa.me/919860777069?text=${message}`, '_blank');
   };
@@ -912,7 +912,7 @@ export const CapPreferenceGeneratorPage: React.FC<{ onOpenConsultation: () => vo
                   <td className="border border-slate-900 p-1">{item.branch}</td>
                   <td className="border border-slate-900 p-1 text-center">{item.college.city}</td>
                   <td className="border border-slate-900 p-1 text-center capitalize font-semibold">
-                    {item.tier === 'dream' ? '🔴 Dream' : item.tier === 'target' ? '🟡 Target' : '🟢 Safe'}
+                    {item.tier === 'dream' ? 'Dream' : item.tier === 'target' ? 'Target' : 'Safe'}
                   </td>
                 </tr>
               ))}

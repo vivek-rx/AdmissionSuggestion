@@ -105,7 +105,7 @@ export const LeadsManager: React.FC = () => {
             <option value="New">New ({leads.filter(l => l.status === 'New').length})</option>
             <option value="Contacted">Contacted</option>
             <option value="In Progress">In Progress</option>
-            <option value="Enrolled">Enrolled 🎉</option>
+            <option value="Enrolled">Enrolled</option>
             <option value="Archived">Archived</option>
           </select>
 

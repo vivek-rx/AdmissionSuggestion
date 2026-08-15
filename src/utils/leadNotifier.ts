@@ -47,18 +47,18 @@ export const setFormspreeId = (id: string): void => {
  */
 export const formatWhatsAppLeadMessage = (lead: InquiryLead): string => {
   return encodeURIComponent(
-    `🎓 *NEW ADMISSION INQUIRY — ADMISSION SUGGESTION*\n` +
+    `*NEW ADMISSION INQUIRY — ADMISSION SUGGESTION*\n` +
     `━━━━━━━━━━━━━━━━━━━━━━━━━\n` +
-    `👤 *Student Name:* ${lead.name}\n` +
-    `📱 *Phone:* ${lead.phone}\n` +
-    (lead.email && lead.email !== 'N/A' ? `📧 *Email:* ${lead.email}\n` : '') +
-    `📝 *Exam:* ${lead.exam} (${lead.scorePercentile || 'Awaiting Result'})\n` +
-    `🏛️ *Target Branch:* ${lead.preferredBranch || 'Not Specified'}\n` +
-    `📍 *Target Location:* ${lead.targetLocation || 'Pune'}\n` +
-    (lead.message ? `💬 *Notes:* ${lead.message}\n` : '') +
-    `⏰ *Timestamp:* ${lead.createdAt}\n` +
+    `*Student Name:* ${lead.name}\n` +
+    `*Phone:* ${lead.phone}\n` +
+    (lead.email && lead.email !== 'N/A' ? `*Email:* ${lead.email}\n` : '') +
+    `*Exam:* ${lead.exam} (${lead.scorePercentile || 'Awaiting Result'})\n` +
+    `*Target Branch:* ${lead.preferredBranch || 'Not Specified'}\n` +
+    `*Target Location:* ${lead.targetLocation || 'Pune'}\n` +
+    (lead.message ? `*Notes:* ${lead.message}\n` : '') +
+    `*Timestamp:* ${lead.createdAt}\n` +
     `━━━━━━━━━━━━━━━━━━━━━━━━━\n` +
-    `📍 *Center:* Sohrab Hall, Pune Head Office`
+    `Reply directly to student or open admin dashboard.`
   );
 };
 

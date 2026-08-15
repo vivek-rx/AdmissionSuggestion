@@ -14,7 +14,7 @@ export const StudentCornerPage: React.FC = () => {
     {
       id: 'cap-gen',
       title: '3-Tier CAP Option Form Generator',
-      badge: 'Most Popular 🔥',
+      badge: 'Preference Strategy',
       badgeColor: 'bg-rose-50 text-rose-700 border-rose-200',
       icon: FileText,
       iconBg: 'bg-rose-50 text-rose-600 border-rose-200',
@@ -25,7 +25,7 @@ export const StudentCornerPage: React.FC = () => {
     {
       id: 'marks-est',
       title: 'MHT-CET & JEE Marks vs Percentile Normalizer',
-      badge: 'Shift-Wise Model ⚡',
+      badge: 'Shift-Wise Model',
       badgeColor: 'bg-sky-50 text-[#00ADEF] border-sky-200',
       icon: BarChart3,
       iconBg: 'bg-sky-50 text-[#00ADEF] border-sky-200',

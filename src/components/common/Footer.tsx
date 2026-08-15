@@ -52,7 +52,7 @@ export const Footer: React.FC = () => {
           {/* Column 2: Student Corner & Tools */}
           <div className="space-y-3">
             <h4 className="text-sm font-bold text-white uppercase tracking-wider font-heading border-l-2 border-[#00ADEF] pl-3">
-              Student Corner 🎓
+              Student Corner
             </h4>
             <ul className="space-y-2 text-xs text-slate-400 font-medium">
               <li>

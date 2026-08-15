@@ -220,7 +220,7 @@ export const MarksEstimatorPage: React.FC<{ onOpenConsultation: () => void }> = 
 
   // WhatsApp verification
   const handleWhatsAppShare = () => {
-    const message = `Hello Admission Suggestion Team,%0A%0AI used your Marks vs Percentile Estimator:%0A%0A👤 Name: ${studentName || 'Student'}%0A📝 Exam: ${exam}%0A🎯 Raw Score: ${marks} / ${maxMarks} marks%0A📊 Estimated Percentile: ${estimates.minPct}%ile - ${estimates.maxPct}%ile%0A🏅 Estimated State Rank: ~${estimates.rankMin.toLocaleString('en-IN')} - ${estimates.rankMax.toLocaleString('en-IN')}%0A%0APlease verify my cutoff eligibility for COEP, PICT, VIT and top Maharashtra colleges.`;
+    const message = `Hello Admission Suggestion Team,%0A%0AI used your Marks vs Percentile Estimator:%0A%0AName: ${studentName || 'Student'}%0AExam: ${exam}%0ARaw Score: ${marks} / ${maxMarks} marks%0AEstimated Percentile: ${estimates.minPct}%ile - ${estimates.maxPct}%ile%0AEstimated State Rank: ~${estimates.rankMin.toLocaleString('en-IN')} - ${estimates.rankMax.toLocaleString('en-IN')}%0A%0APlease verify my cutoff eligibility for COEP, PICT, VIT and top Maharashtra colleges.`;
     window.open(`https://wa.me/919860777069?text=${message}`, '_blank');
   };
 

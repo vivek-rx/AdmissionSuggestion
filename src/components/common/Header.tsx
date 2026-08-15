@@ -43,7 +43,7 @@ export const Header: React.FC<HeaderProps> = ({
       link: "/",
     },
     {
-      name: "Student Corner 🎓",
+      name: "Student Corner",
       link: "/student-corner",
     },
     {
@@ -85,16 +85,16 @@ export const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <header className="w-full font-sans sticky top-0 z-50">
-      {/* Top Announcement Bar */}
-      <div className="bg-slate-900 text-white text-[11px] py-1.5 px-4 font-medium border-b border-slate-800">
+    <header className="sticky top-0 z-40 w-full font-sans">
+      {/* Top Notification / Ticker Strip */}
+      <div className="bg-[#0F172A] border-b border-slate-800/80 text-white text-xs py-2 px-4 lg:px-8">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
-          <div className="flex items-center gap-2 overflow-hidden whitespace-nowrap">
-            <span className="bg-[#00ADEF]/20 text-[#00ADEF] font-bold px-2 py-0.5 rounded text-[10px] uppercase shrink-0 font-heading">
-              Official
+          <div className="flex items-center gap-2 overflow-hidden">
+            <span className="bg-[#00ADEF] text-white text-[10px] font-extrabold uppercase px-2 py-0.5 rounded tracking-wider shrink-0 font-heading">
+              Notice
             </span>
             <p className="truncate text-slate-300 font-medium">
-              {tickerMessage || '⚡ Direct 2nd Year & CAP Round Counselling 2026-27: Book Expert 1-on-1 Sessions at Sohrab Hall, Pune'}
+              {tickerMessage || 'Direct 2nd Year & CAP Round Counselling 2026-27: Book Expert 1-on-1 Sessions at Sohrab Hall, Pune'}
             </p>
           </div>
 

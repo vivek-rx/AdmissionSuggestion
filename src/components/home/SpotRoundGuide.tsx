@@ -91,7 +91,7 @@ export const SpotRoundGuide: React.FC = () => {
                 PICT Pune, VIT Pune, PCCOE Akurdi, Cummins College of Engg, Walchand College of Engg (Sangli), D.Y. Patil Akurdi, AISSMS COE.
               </p>
               <div className="p-2.5 rounded-lg bg-sky-50 text-[#00ADEF] text-xs font-bold mt-2">
-                💡 Cutoffs in ACAP rounds frequently drop by 1.5% to 4.0% compared to CAP Round 1!
+                Note: Cutoffs in ACAP rounds frequently drop by 1.5% to 4.0% compared to CAP Round 1.
               </div>
             </div>
           </div>

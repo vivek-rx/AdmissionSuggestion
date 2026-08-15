@@ -71,7 +71,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 
   const [tickerMessage, setTickerMessageState] = useState<string>(() => {
     return localStorage.getItem(`${LOCAL_STORAGE_KEY}_ticker`) ||
-      '🔥 CAP Round 2026-27 Option Form Assistance Open! Call our Expert Counsellors: +91 9860 777 069 | Office: Sohrab Hall, Pune Railway Station';
+      'CAP Round 2026-27 Option Form Assistance Open: Call our Expert Counsellors at +91 9860 777 069 | Office No. 312, Sohrab Hall, Pune';
   });
 
   const [isAdminLoggedIn, setIsAdminLoggedIn] = useState<boolean>(() => {

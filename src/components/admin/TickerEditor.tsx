@@ -44,24 +44,24 @@ export const TickerEditor: React.FC = () => {
           <div className="flex flex-wrap gap-2">
             <button
               type="button"
-              onClick={() => setInputMsg('🔥 CAP Round 2026-27 Option Form Assistance Open! Call our Expert Counsellors: +91 9860 777 069 | Office: Sohrab Hall, Pune Railway Station')}
-              className="text-[11px] bg-slate-900 hover:bg-slate-800 text-cyan-300 px-3 py-1.5 rounded-lg border border-slate-800"
+              onClick={() => setInputMsg('CAP Round 2026-27 Option Form Assistance Open: Call our Expert Counsellors at +91 9860 777 069 | Office No. 312, Sohrab Hall, Pune')}
+              className="text-[11px] bg-slate-900 hover:bg-slate-800 text-sky-300 px-3 py-1.5 rounded-lg border border-slate-800"
             >
               CAP Round Alert
             </button>
             <button
               type="button"
-              onClick={() => setInputMsg('⚡ Special 1-on-1 Offline Counselling Drive ongoing at Office No. 333, Sohrab Hall, Pune! Walk-ins Welcome.')}
-              className="text-[11px] bg-slate-900 hover:bg-slate-800 text-cyan-300 px-3 py-1.5 rounded-lg border border-slate-800"
+              onClick={() => setInputMsg('Special 1-on-1 Offline Counselling Sessions ongoing at Office No. 312, Sohrab Hall, Pune. Walk-ins Welcome.')}
+              className="text-[11px] bg-slate-900 hover:bg-slate-800 text-sky-300 px-3 py-1.5 rounded-lg border border-slate-800"
             >
               Pune Office Drive
             </button>
             <button
               type="button"
-              onClick={() => setInputMsg('🎓 Direct 2nd Year (DSE) & Institute Level Seat Guidance Available! Contact +91 9860 777 069')}
-              className="text-[11px] bg-slate-900 hover:bg-slate-800 text-cyan-300 px-3 py-1.5 rounded-lg border border-slate-800"
+              onClick={() => setInputMsg('Direct 2nd Year (DSE Engineering) & Institute Level Seat Guidance Available. Contact +91 9860 777 069')}
+              className="text-[11px] bg-slate-900 hover:bg-slate-800 text-sky-300 px-3 py-1.5 rounded-lg border border-slate-800"
             >
-              Institute Quota Alert
+              DSE Engineering Alert
             </button>
           </div>
         </div>

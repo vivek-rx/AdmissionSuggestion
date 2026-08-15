@@ -25,17 +25,17 @@ export const DocumentValidityChecker: React.FC = () => {
       if (nclValid === 'valid') {
         passes.push(`Non-Creamy Layer (NCL) Certificate is valid up to 31st March 2026. Eligible for 50% tuition fee waiver and category cutoff seats.`);
       } else if (nclValid === 'receipt') {
-        issues.push(`⚠️ ATTENTION: Submitting only an NCL Receipt at FC is provisional. Original NCL must be submitted before CAP Round 3 reporting, or your seat will convert to OPEN/General.`);
+        issues.push(`[Action Required] Submitting only an NCL Receipt at FC is provisional. Original NCL must be submitted before CAP Round 3 reporting, or your seat will convert to OPEN/General.`);
       } else {
-        issues.push(`🚨 CRITICAL: Without a valid Non-Creamy Layer Certificate, you CANNOT claim ${category} reservation and will be treated as OPEN category.`);
+        issues.push(`[Critical Alert] Without a valid Non-Creamy Layer Certificate, you cannot claim ${category} reservation and will be treated as OPEN category.`);
       }
 
       if (casteValidityStatus === 'original') {
         passes.push('Original Caste Validity Certificate verified. Zero risk of seat cancellation at ARC / Institute reporting.');
       } else if (casteValidityStatus === 'receipt') {
-        issues.push('⚠️ Proforma H / Caste Validity Receipt allows CAP registration, but final admission requires Original Validity before reporting cutoff.');
+        issues.push('[Action Required] Proforma H / Caste Validity Receipt allows CAP registration, but final admission requires Original Validity before reporting cutoff.');
       } else {
-        issues.push('🚨 Missing Caste Validity leads to instant forfeiture of reserved category seat during document verification.');
+        issues.push('[Critical Alert] Missing Caste Validity leads to instant forfeiture of reserved category seat during document verification.');
       }
     }
 
@@ -44,7 +44,7 @@ export const DocumentValidityChecker: React.FC = () => {
       if (incomeCertYear === 'current') {
         passes.push('EWS Eligibility Certificate in Proforma V issued by competent Revenue Authority (Tahsildar/SDO) for financial year 2025-26 verified.');
       } else {
-        issues.push('🚨 Expired or Central Government EWS certificate is NOT accepted for Maharashtra State CAP. Must be Proforma V format issued by MH Govt.');
+        issues.push('[Critical Alert] Expired or Central Government EWS certificate is not accepted for Maharashtra State CAP. Must be Proforma V format issued by MH Govt.');
       }
     }
 
@@ -53,7 +53,7 @@ export const DocumentValidityChecker: React.FC = () => {
       if (casteValidityStatus === 'original') {
         passes.push('Caste Certificate + Caste Validity in order. 100% Tuition & Development fee waiver under Social Welfare Dept applicable.');
       } else {
-        issues.push('⚠️ Original Caste Validity certificate is strictly mandatory for SC/ST seat claim.');
+        issues.push('[Action Required] Original Caste Validity certificate is strictly mandatory for SC/ST seat claim.');
       }
     }
 
@@ -216,7 +216,7 @@ export const DocumentValidityChecker: React.FC = () => {
 
             {report.isClean ? (
               <p className="text-xs text-slate-600 leading-relaxed">
-                🎉 Your document readiness is optimal! Carry 3 self-attested sets of Xerox copies along with your original documents to the FC center.
+                Your document readiness is optimal. Carry 3 self-attested sets of Xerox copies along with your original documents to the FC center.
               </p>
             ) : (
               <ul className="space-y-2 text-xs font-medium">

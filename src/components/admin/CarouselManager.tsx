@@ -7,12 +7,12 @@ export const CarouselManager: React.FC = () => {
   const [showAddForm, setShowAddForm] = useState(false);
 
   const [newBanner, setNewBanner] = useState({
-    badge: '⚡ CAP Round Special Guidance',
+    badge: 'CAP Round Special Guidance',
     title: '',
     subtitle: '',
-    ctaText: 'Book Free Counselling',
+    ctaText: 'Explore More',
     ctaLink: '#consultation',
-    secondaryCtaText: 'View Options',
+    secondaryCtaText: '',
     imageUrl: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=1200',
     active: true,
     order: banners.length + 1
@@ -23,12 +23,12 @@ export const CarouselManager: React.FC = () => {
     if (!newBanner.title || !newBanner.subtitle) return;
     addBanner(newBanner);
     setNewBanner({
-      badge: '⚡ CAP Round Special Guidance',
+      badge: 'CAP Round Special Guidance',
       title: '',
       subtitle: '',
-      ctaText: 'Book Free Counselling',
+      ctaText: 'Explore More',
       ctaLink: '#consultation',
-      secondaryCtaText: 'View Options',
+      secondaryCtaText: '',
       imageUrl: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=1200',
       active: true,
       order: banners.length + 2
@@ -70,7 +70,7 @@ export const CarouselManager: React.FC = () => {
               <input
                 type="text"
                 required
-                placeholder="e.g. 🏆 Top Preferred Counsellors"
+                placeholder="e.g. Top Preferred Counsellors"
                 value={newBanner.badge}
                 onChange={e => setNewBanner({ ...newBanner, badge: e.target.value })}
                 className="w-full bg-slate-950 border border-slate-800 text-white text-xs px-3.5 py-2.5 rounded-xl outline-none focus:border-cyan-400"
