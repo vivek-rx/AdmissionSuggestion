@@ -122,20 +122,20 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenConsultation }) 
                 </p>
 
                 {/* CTA Action Buttons */}
-                <div className="flex flex-wrap items-center gap-4 pt-2">
+                <div className="flex flex-wrap items-center gap-3 pt-2">
                   <button
                     onClick={onOpenConsultation}
-                    className="px-8 py-4 rounded-xl bg-[#00ADEF] hover:bg-[#0098D4] text-white font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition-all flex items-center gap-2.5 group font-heading"
+                    className="px-7 py-4 rounded-xl bg-[#00ADEF] hover:bg-[#0098D4] text-white font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition-all flex items-center gap-2 group font-heading"
                   >
                     <span>{currentBanner?.ctaText || 'Book In-Person Counselling'}</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </button>
 
                   <button
-                    onClick={() => navigate('/cap-generator')}
-                    className="px-7 py-4 rounded-xl bg-white hover:bg-sky-50 text-slate-800 hover:text-[#00ADEF] border border-slate-300 hover:border-[#00ADEF]/40 font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-2 shadow-xs font-heading"
+                    onClick={() => navigate('/form-assistance')}
+                    className="px-6 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-2 shadow-xs font-heading"
                   >
-                    <span>Build CAP Option Form</span>
+                    <span>Need help filling your admission form?</span>
                     <ChevronRight className="w-4 h-4 text-[#00ADEF]" />
                   </button>
                 </div>
