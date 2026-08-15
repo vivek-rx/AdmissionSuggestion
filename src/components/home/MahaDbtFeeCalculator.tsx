@@ -167,6 +167,26 @@ export const MahaDbtFeeCalculator: React.FC = () => {
 
         </div>
 
+        {/* Contextual Counsellor Fee Advisory Hook */}
+        <div className="p-5 rounded-2xl bg-sky-50 border border-sky-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="space-y-1">
+            <span className="text-xs sm:text-sm font-bold text-slate-900 font-heading block">
+              Want to confirm your 100% TFWS or 50% EBC fee waiver eligibility?
+            </span>
+            <p className="text-xs text-slate-600 font-normal">
+              Let our advisors verify your Tahsildar Income Certificate validity and category eligibility before CAP Round 1.
+            </p>
+          </div>
+          <a
+            href="https://wa.me/919860777069?text=Hi%20Admission%20Suggestion%2C%20I%20want%20to%20verify%20my%20TFWS%20%2F%20EBC%20fee%20waiver%20eligibility%20and%20income%20certificate%20requirements."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-3 rounded-xl bg-[#00ADEF] hover:bg-[#0098D4] text-white font-bold text-xs uppercase tracking-wider shadow-sm shrink-0 transition-all font-heading text-center"
+          >
+            Talk to a Fee Concession Advisor
+          </a>
+        </div>
+
       </div>
     </div>
   );

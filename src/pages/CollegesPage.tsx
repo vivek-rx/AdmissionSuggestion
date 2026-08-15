@@ -19,11 +19,9 @@ export const CollegesPage: React.FC<CollegesPageProps> = ({ onOpenConsultation }
     <div className="space-y-12 py-6">
       {/* Page Header */}
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        <div className="bg-gradient-to-r from-[#00A3FF] to-blue-700 rounded-3xl p-8 sm:p-12 text-white border border-blue-500 shadow-xl relative overflow-hidden">
-          <div className="absolute right-0 top-0 w-80 h-80 bg-[#00A3FF]/15 rounded-full blur-3xl pointer-events-none" />
-          
+        <div className="bg-[#0F172A] rounded-3xl p-8 sm:p-12 text-white border border-slate-800 shadow-xl relative overflow-hidden">
           <div className="relative z-10 max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-[#00A3FF] text-xs font-bold uppercase tracking-wider font-heading">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#00ADEF]/20 border border-[#00ADEF]/30 text-[#00ADEF] text-xs font-bold uppercase tracking-wider font-heading">
               <School className="w-4 h-4" />
               <span>Maharashtra DTE College Database</span>
             </div>
@@ -79,6 +77,26 @@ export const CollegesPage: React.FC<CollegesPageProps> = ({ onOpenConsultation }
       {/* Side-by-Side Comparison Tool */}
       <div id="compare">
         <CollegeCompareWidget onOpenConsultation={onOpenConsultation} />
+      </div>
+
+      {/* Contextual Comparison Hook */}
+      <div className="max-w-7xl mx-auto px-4 lg:px-8">
+        <div className="p-6 sm:p-8 rounded-3xl bg-sky-50 border border-sky-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 shadow-xs">
+          <div className="space-y-1.5 max-w-2xl">
+            <h3 className="text-lg sm:text-xl font-bold text-slate-900 font-heading">
+              Confused between two colleges or branches?
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">
+              Compare actual campus coding culture, average packages, hostel facilities, and commute feasibility with our senior Pune mentors before locking your DTE Choice Codes.
+            </p>
+          </div>
+          <button
+            onClick={onOpenConsultation}
+            className="px-6 py-3.5 rounded-2xl bg-[#00ADEF] hover:bg-[#0098D4] text-white font-bold text-xs uppercase tracking-wider font-heading shrink-0 shadow-sm transition-all"
+          >
+            Talk to a Counsellor
+          </button>
+        </div>
       </div>
 
       {/* Consultation Section */}

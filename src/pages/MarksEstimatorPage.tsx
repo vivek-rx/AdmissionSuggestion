@@ -530,15 +530,34 @@ export const MarksEstimatorPage: React.FC<{ onOpenConsultation: () => void }> = 
                 ))}
               </div>
 
+              {/* Contextual Counsellor Review Hook */}
+              <div className="p-5 rounded-2xl bg-sky-50 border border-sky-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div className="space-y-1">
+                  <span className="text-xs sm:text-sm font-bold text-slate-900 font-heading block">
+                    Want us to verify your college options for this score?
+                  </span>
+                  <p className="text-xs text-slate-600 font-normal">
+                    We evaluate your shift difficulty, Category Rank, Home University quota, and TFWS fee waiver probability before you finalize choices.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  onClick={onOpenConsultation}
+                  className="px-6 py-3 rounded-xl bg-[#00ADEF] hover:bg-[#0098D4] text-white font-bold text-xs uppercase tracking-wider shadow-sm shrink-0 transition-all font-heading"
+                >
+                  Get My List Reviewed
+                </button>
+              </div>
+
               {/* Bottom CTA Banner */}
               <div className="pt-2">
                 <button
                   type="button"
                   onClick={handleLaunchCapGenerator}
-                  className="w-full py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-extrabold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 font-heading shadow-sm"
+                  className="w-full py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 font-heading shadow-sm"
                 >
-                  <span>Generate Full 3-Tier Preference List (Dream / Target / Safe)</span>
-                  <ArrowRight className="w-4 h-4 text-[#00A3FF]" />
+                  <span>Build 3-Tier Option Form With This Score</span>
+                  <ArrowRight className="w-4 h-4 text-[#00ADEF]" />
                 </button>
               </div>
             </div>

@@ -822,19 +822,19 @@ export const CapPreferenceGeneratorPage: React.FC<{ onOpenConsultation: () => vo
                       <Award className="w-5 h-5" />
                     </div>
                     <div>
-                      <h4 className="text-xs font-bold text-slate-900 font-heading">
-                        Want 100% Error-Free Option Form Submission?
+                      <h4 className="text-xs sm:text-sm font-bold text-slate-900 font-heading">
+                        Not sure which college you should choose as Preference #1?
                       </h4>
-                      <p className="text-[11px] text-slate-600">
-                        Book a 1-on-1 personalized counselling session at our Sohrab Hall, Pune Office.
+                      <p className="text-xs text-slate-600 font-normal">
+                        Auto-Freeze rules apply if Choice No. 1 is allotted. Get your 1-to-300 Choice Code sequence reviewed by our senior mentors.
                       </p>
                     </div>
                   </div>
                   <button
                     onClick={onOpenConsultation}
-                    className="px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-extrabold text-xs uppercase tracking-wider font-heading shrink-0 shadow-sm"
+                    className="px-5 py-2.5 rounded-xl bg-[#00ADEF] hover:bg-[#0098D4] text-white font-bold text-xs uppercase tracking-wider font-heading shrink-0 shadow-sm transition-all"
                   >
-                    Book Offline Session
+                    Talk to a Counsellor
                   </button>
                 </div>
 
@@ -862,7 +862,7 @@ export const CapPreferenceGeneratorPage: React.FC<{ onOpenConsultation: () => vo
                   Maharashtra's #1 Trusted Educational & CAP Round Counselling Center
                 </p>
                 <p className="text-[10px] text-slate-500">
-                  Head Office: Office No. 333, Sohrab Hall, Tadiwala Road, Near Pune Station | Mob: +91 9860 777 069
+                  Head Office: Office No. 312, 3rd Floor, Sohrab Hall, Tadiwala Road, Near Pune Station | Mob: +91 9860 777 069
                 </p>
               </div>
             </div>

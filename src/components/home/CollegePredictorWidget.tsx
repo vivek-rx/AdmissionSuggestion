@@ -305,21 +305,21 @@ export const CollegePredictorWidget: React.FC<CollegePredictorWidgetProps> = ({ 
                 ))}
               </div>
 
-              {/* Counsellor Advisory Note */}
-              <div className="p-4 rounded-2xl bg-blue-50/80 border border-blue-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              {/* Contextual Counsellor Advisory Hook */}
+              <div className="p-5 rounded-2xl bg-sky-50 border border-sky-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                 <div className="space-y-1">
-                  <span className="text-xs font-bold text-slate-900 font-heading">
-                    Need a customized 300-choice Option Form strategy for your exact merit number?
+                  <span className="text-xs sm:text-sm font-bold text-slate-900 font-heading block">
+                    Want a Senior Counsellor to verify your college options?
                   </span>
-                  <p className="text-[11px] text-slate-600 font-medium">
-                    Our senior counsellors in Pune manually analyze category shift matrices, TFWS eligibility, and past 3 years spot round trends.
+                  <p className="text-xs text-slate-600 font-normal">
+                    We evaluate your Home University quota (SPPU vs Mumbai), category seat matrices, and branch probability before you lock Choice Codes.
                   </p>
                 </div>
                 <button
                   onClick={onOpenConsultation}
-                  className="px-5 py-2.5 rounded-xl bg-[#00A3FF] hover:bg-[#0284C7] text-white font-extrabold text-xs uppercase tracking-wider shadow-md shrink-0 transition-all font-heading"
+                  className="px-6 py-3 rounded-xl bg-[#00ADEF] hover:bg-[#0098D4] text-white font-bold text-xs uppercase tracking-wider shadow-sm shrink-0 transition-all font-heading"
                 >
-                  Consult Senior Mentor
+                  Get My List Reviewed
                 </button>
               </div>
             </motion.div>
