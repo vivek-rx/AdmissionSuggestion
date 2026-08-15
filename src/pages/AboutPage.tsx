@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { AboutSection } from '../components/home/AboutSection';
 import { ConsultationSection } from '../components/home/ConsultationSection';
 import { OfficeLocationMap } from '../components/common/OfficeLocationMap';
+import { FacebookLiveFeed } from '../components/common/FacebookLiveFeed';
 import { Info, MapPin, Phone, Mail, Clock, ShieldCheck } from 'lucide-react';
 
 export const AboutPage: React.FC = () => {
@@ -31,6 +32,9 @@ export const AboutPage: React.FC = () => {
 
       {/* About Section */}
       <AboutSection />
+
+      {/* Live Facebook Community Photos & Stream */}
+      <FacebookLiveFeed />
 
       {/* Interactive Google Map & Office Details */}
       <section className="max-w-7xl mx-auto px-4 lg:px-8">
