@@ -13,17 +13,6 @@ export const StudentCornerPage: React.FC = () => {
 
   const studentTools = [
     {
-      id: 'form-assist',
-      title: 'Application Form Filling Assistance',
-      badge: 'Zero-Error Filing',
-      badgeColor: 'bg-sky-50 text-[#00ADEF] border-sky-200',
-      icon: FileCheck,
-      iconBg: 'bg-sky-50 text-[#00ADEF] border-sky-200',
-      desc: 'Need help filling your admission form? Upload details, get consultant review, and error-free submission guidance.',
-      cta: 'Need Help Filling Your Admission Form?',
-      link: '/form-assistance'
-    },
-    {
       id: 'cap-gen',
       title: '3-Tier CAP Option Form Generator',
       badge: 'Preference Strategy',

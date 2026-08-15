@@ -104,10 +104,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenConsultation }) 
               </button>
 
               <button
-                onClick={() => navigate('/form-assistance')}
+                onClick={() => navigate('/student-corner')}
                 className="px-6 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-2 shadow-xs font-heading"
               >
-                <span>Need help filling your admission form?</span>
+                <span>Explore Student Corner & Tools</span>
                 <ChevronRight className="w-4 h-4 text-[#00ADEF]" />
               </button>
             </div>

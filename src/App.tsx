@@ -21,10 +21,8 @@ import { StudentCornerPage } from './pages/StudentCornerPage';
 import { EngineeringAdmissionsPage } from './pages/EngineeringAdmissionsPage';
 import { MedicalAdmissionsPage } from './pages/MedicalAdmissionsPage';
 import { ManagementAdmissionsPage } from './pages/ManagementAdmissionsPage';
-import { ApplicationAssistancePage } from './pages/ApplicationAssistancePage';
 import { AdminPage } from './pages/AdminPage';
 import { MobileBottomBar } from './components/common/MobileBottomBar';
-import { LiveCutoffTicker } from './components/home/LiveCutoffTicker';
 
 // Scroll to top on route change
 function ScrollToTop() {
@@ -63,9 +61,6 @@ const MainAppLayout: React.FC = () => {
         onOpenConsultation={scrollToConsultation}
       />
 
-      {/* Top Bloomberg / Stock Market Continuous Live Cutoff Ticker */}
-      <LiveCutoffTicker />
-
       {/* Multi-Page Routes */}
       <main className="flex-grow pb-16 md:pb-0">
         <Routes>
@@ -88,9 +83,6 @@ const MainAppLayout: React.FC = () => {
           <Route path="/preference-generator" element={<CapPreferenceGeneratorPage onOpenConsultation={scrollToConsultation} />} />
           <Route path="/marks-vs-percentile" element={<MarksEstimatorPage onOpenConsultation={scrollToConsultation} />} />
           <Route path="/estimator" element={<MarksEstimatorPage onOpenConsultation={scrollToConsultation} />} />
-          <Route path="/form-assistance" element={<ApplicationAssistancePage />} />
-          <Route path="/apply-help" element={<ApplicationAssistancePage />} />
-          <Route path="/application-assistance" element={<ApplicationAssistancePage />} />
           <Route path="/admin" element={<AdminPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
