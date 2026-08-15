@@ -3,6 +3,7 @@ import { ServicesSection } from '../components/home/ServicesSection';
 import { ProcessSection } from '../components/home/ProcessSection';
 import { CapStageTracker } from '../components/home/CapStageTracker';
 import { SpotRoundGuide } from '../components/home/SpotRoundGuide';
+import { InstitutionalQuotaGuide } from '../components/home/InstitutionalQuotaGuide';
 import { MahaDbtFeeCalculator } from '../components/home/MahaDbtFeeCalculator';
 import { ConsultationSection } from '../components/home/ConsultationSection';
 import { Compass, ShieldCheck, CheckCircle2, AlertTriangle, FileSpreadsheet, ArrowRight } from 'lucide-react';
@@ -44,12 +45,15 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenConsultation }
       {/* Core Services Section */}
       <ServicesSection onOpenConsultation={onOpenConsultation} />
 
+      {/* Institutional & Management Quota Detailed Guide */}
+      <InstitutionalQuotaGuide onOpenConsultation={onOpenConsultation} />
+
       {/* Maharashtra Fee Structure & Scholarship Calculator */}
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <MahaDbtFeeCalculator />
       </div>
 
-      {/* ACAP & Institutional Quota Guide */}
+      {/* ACAP & Spot Round Guide */}
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <SpotRoundGuide />
       </div>
