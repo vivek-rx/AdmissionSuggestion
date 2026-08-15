@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FileText, BarChart3, FileCheck, School, Calculator, Sparkles, ArrowRight, ShieldCheck, Download, HelpCircle } from 'lucide-react';
 import { ConsultationSection } from '../components/home/ConsultationSection';
+import { AdmissionDeadlineTracker } from '../components/home/AdmissionDeadlineTracker';
 import { DocumentValidityChecker } from '../components/home/DocumentValidityChecker';
 import { MahaDbtFeeCalculator } from '../components/home/MahaDbtFeeCalculator';
 
@@ -119,6 +120,11 @@ export const StudentCornerPage: React.FC = () => {
             );
           })}
         </div>
+      </div>
+
+      {/* Live Admission Deadline Tracker */}
+      <div className="max-w-7xl mx-auto px-4 lg:px-8">
+        <AdmissionDeadlineTracker />
       </div>
 
       {/* Embedded Document Validity Scanner */}

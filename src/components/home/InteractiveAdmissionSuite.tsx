@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Compass, Clock, FileCheck, Calculator, Sparkles, School, ShieldCheck } from 'lucide-react';
 import { CollegePredictorWidget } from './CollegePredictorWidget';
-import { CapStageTracker } from './CapStageTracker';
+import { AdmissionDeadlineTracker } from './AdmissionDeadlineTracker';
 import { DocumentValidityChecker } from './DocumentValidityChecker';
 import { MahaDbtFeeCalculator } from './MahaDbtFeeCalculator';
 import { SpotRoundGuide } from './SpotRoundGuide';
@@ -24,8 +24,8 @@ export const InteractiveAdmissionSuite: React.FC<InteractiveAdmissionSuiteProps>
     },
     {
       id: 'tracker' as const,
-      label: 'CAP 2026-27 Timeline',
-      shortLabel: 'Timeline',
+      label: 'Deadline Tracker & Alerts',
+      shortLabel: 'Deadlines',
       icon: Clock,
       badge: 'Live Dates'
     },
@@ -126,7 +126,7 @@ export const InteractiveAdmissionSuite: React.FC<InteractiveAdmissionSuiteProps>
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.2 }}
             >
-              <CapStageTracker />
+              <AdmissionDeadlineTracker />
             </motion.div>
           )}
 
