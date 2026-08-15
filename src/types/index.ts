@@ -57,7 +57,8 @@ export interface College {
   dteCode?: string;
   location: string;
   city: string;
-  type: 'Autonomous' | 'Government' | 'Private University' | 'Aided';
+  stream?: 'Engineering' | 'Medical' | 'Management';
+  type: 'Autonomous' | 'Government' | 'Private University' | 'Aided' | 'Deemed Medical' | 'Govt Medical' | 'Deemed University';
   courses: string[];
   cutoffRange?: string;
   cutoffPercentile?: string | number;
