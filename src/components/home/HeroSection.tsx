@@ -1,74 +1,62 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
+  Compass,
+  ArrowRight,
+  ChevronRight,
+  ShieldCheck,
   Award,
   Users,
   Building2,
-  TrendingUp,
-  ChevronRight,
-  ArrowRight,
-  ShieldCheck,
+  CalendarCheck,
   PhoneCall,
+  Sparkles,
+  Zap,
+  Target,
+  FileCheck,
   CheckCircle2,
-  MapPin,
-  Star,
-  GraduationCap,
-  CalendarCheck
+  Check
 } from 'lucide-react';
-import { useApp } from '../../context/AppContext';
-import { PillMarkPro } from '../ui/pillmark-pro';
-import { collegeBrochureLogos } from '../../data/initialData';
 import { useNavigate } from 'react-router-dom';
+import { collegeBrochureLogos } from '../../data/initialData';
+import { PillMarkPro } from '../ui/pillmark-pro';
 
 interface HeroSectionProps {
   onOpenConsultation: () => void;
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenConsultation }) => {
-  const { banners } = useApp();
-  const activeBanners = banners.filter(b => b.active);
-  const [currentIndex, setCurrentIndex] = useState(0);
   const navigate = useNavigate();
-
-  // Auto slide carousel
-  useEffect(() => {
-    if (activeBanners.length <= 1) return;
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % activeBanners.length);
-    }, 6000);
-    return () => clearInterval(interval);
-  }, [activeBanners.length]);
-
-  const currentBanner = activeBanners[currentIndex] || activeBanners[0];
+  const [quickPercentile, setQuickPercentile] = useState<number>(93.5);
 
   const stats = [
     {
-      icon: Award,
-      value: '20+',
-      label: 'Years in Pune',
-      sublabel: 'Trusted Counselling Legacy',
-      color: 'bg-sky-50 text-[#00ADEF] border-sky-200'
-    },
-    {
-      icon: Users,
-      value: '15,000+',
-      label: 'Students Guided',
-      sublabel: 'In Top Maharashtra Institutes',
-      color: 'bg-slate-50 text-slate-800 border-slate-200'
-    },
-    {
-      icon: Building2,
       value: '350+',
       label: 'CAP Institutes',
-      sublabel: 'Govt, Autonomous & Pvt.',
+      sublabel: 'DTE Maharashtra Codes',
+      icon: Building2,
       color: 'bg-sky-50 text-[#00ADEF] border-sky-200'
     },
     {
-      icon: TrendingUp,
-      value: '95%',
-      label: 'CAP Round Success',
-      sublabel: 'Target College Allotment',
+      value: '20+ Yrs',
+      label: 'Pune Mentorship',
+      sublabel: 'Er. Akshaykumar Bhandari',
+      icon: Award,
+      color: 'bg-purple-50 text-purple-700 border-purple-200'
+    },
+    {
+      value: '100%',
+      label: 'Zero-Rejection FC',
+      sublabel: 'Document Scrutiny Check',
+      icon: ShieldCheck,
       color: 'bg-emerald-50 text-emerald-600 border-emerald-200'
+    },
+    {
+      value: '₹50.5L',
+      label: 'Highest Package',
+      sublabel: 'Top Autonomous Tier',
+      icon: Zap,
+      color: 'bg-amber-50 text-amber-800 border-amber-200'
     }
   ];
 
@@ -77,173 +65,169 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenConsultation }) 
       {/* Subtle Dot Pattern */}
       <div className="absolute inset-0 z-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#00ADEF 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
 
-      <div className="max-w-7xl mx-auto w-full relative z-10">
+      <div className="max-w-7xl mx-auto w-full relative z-10 space-y-12">
+        
+        {/* Main Grid: Left Value Proposition + Right Live Admission OS Terminal */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           
-          {/* Left Column: Hero Text Content */}
+          {/* Left Column: Bold Typography & Core OS Value (7 cols) */}
           <div className="lg:col-span-7 space-y-6">
             
-            {/* Trust Pill */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 shadow-xs text-xs font-bold text-slate-700">
-              <div className="flex items-center text-amber-400">
-                <Star className="w-4 h-4 fill-current" />
-                <Star className="w-4 h-4 fill-current" />
-                <Star className="w-4 h-4 fill-current" />
-                <Star className="w-4 h-4 fill-current" />
-                <Star className="w-4 h-4 fill-current" />
-              </div>
-              <span className="text-slate-900 font-bold font-heading">4.9 / 5</span>
-              <span className="text-slate-500 font-normal">| 20+ Years Trusted Educational Consulting in Pune</span>
+            {/* Duolingo-style Live Readiness Meter */}
+            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-2xl bg-white border border-slate-200 shadow-xs text-xs">
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
+              <span className="font-bold text-slate-800 font-heading">CAP 2026 Live Status:</span>
+              <span className="text-slate-600 font-medium font-mono">FC Scrutiny Window Active</span>
+              <span className="text-[11px] font-bold text-[#00ADEF] bg-sky-50 px-2 py-0.5 rounded-md border border-sky-200">
+                85% Seats Open
+              </span>
             </div>
 
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentBanner?.id || currentIndex}
-                initial={{ opacity: 0, x: -16 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 16 }}
-                transition={{ duration: 0.35 }}
-                className="space-y-6"
+            {/* Main Headline */}
+            <div className="space-y-3">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 font-heading leading-[1.12] tracking-tight">
+                Your Modern <span className="text-[#00ADEF]">Admission OS</span> For Maharashtra
+              </h1>
+              <p className="text-base sm:text-lg text-slate-600 font-normal leading-relaxed max-w-2xl">
+                Precision cut-off analytics, shift normalizers, and senior 1-on-1 CAP Option Form sequencing by <strong>Er. Akshaykumar Bhandari</strong>. Built for Maharashtra students & parents.
+              </p>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-wrap items-center gap-3 pt-1">
+              <button
+                onClick={onOpenConsultation}
+                className="px-7 py-4 rounded-xl bg-[#00ADEF] hover:bg-[#0098D4] text-white font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition-all flex items-center gap-2 group font-heading"
               >
-                {/* Badge Tag */}
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-sky-50 border border-sky-200 text-[#00ADEF] text-xs font-bold uppercase tracking-wider">
-                  <ShieldCheck className="w-3.5 h-3.5 text-[#00ADEF]" />
-                  <span>{currentBanner?.badge || 'Centralized Admission Process (CAP) Specialist'}</span>
-                </div>
+                <span>Book In-Person Counselling</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </button>
 
-                {/* Main Heading */}
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 font-heading leading-[1.15] tracking-tight">
-                  {currentBanner?.title || 'Securing Your Best College Seat In Maharashtra'}
-                </h1>
+              <button
+                onClick={() => navigate('/form-assistance')}
+                className="px-6 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-2 shadow-xs font-heading"
+              >
+                <span>Need help filling your admission form?</span>
+                <ChevronRight className="w-4 h-4 text-[#00ADEF]" />
+              </button>
+            </div>
 
-                {/* Subtitle */}
-                <p className="text-base sm:text-lg text-slate-600 font-normal leading-relaxed max-w-2xl">
-                  {currentBanner?.subtitle || 'Get personalized 1-on-1 guidance for MHT-CET, JEE Main, NEET UG & DSE CAP Rounds. We build strategic option forms to ensure maximum rank utilization.'}
-                </p>
+            {/* Quick Feature Micro-Pills */}
+            <div className="flex flex-wrap items-center gap-2 pt-2 text-xs text-slate-600 font-medium">
+              <span className="inline-flex items-center gap-1 bg-white px-3 py-1.5 rounded-xl border border-slate-200 shadow-2xs">
+                <Check className="w-3.5 h-3.5 text-emerald-600" /> SPPU vs Mumbai Quota
+              </span>
+              <span className="inline-flex items-center gap-1 bg-white px-3 py-1.5 rounded-xl border border-slate-200 shadow-2xs">
+                <Check className="w-3.5 h-3.5 text-emerald-600" /> 100% TFWS / EBC Guidance
+              </span>
+              <span className="inline-flex items-center gap-1 bg-white px-3 py-1.5 rounded-xl border border-slate-200 shadow-2xs">
+                <Check className="w-3.5 h-3.5 text-emerald-600" /> 3-Tier Option Strategy
+              </span>
+            </div>
 
-                {/* CTA Action Buttons */}
-                <div className="flex flex-wrap items-center gap-3 pt-2">
-                  <button
-                    onClick={onOpenConsultation}
-                    className="px-7 py-4 rounded-xl bg-[#00ADEF] hover:bg-[#0098D4] text-white font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition-all flex items-center gap-2 group font-heading"
-                  >
-                    <span>{currentBanner?.ctaText || 'Book In-Person Counselling'}</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </button>
-
-                  <button
-                    onClick={() => navigate('/form-assistance')}
-                    className="px-6 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-2 shadow-xs font-heading"
-                  >
-                    <span>Need help filling your admission form?</span>
-                    <ChevronRight className="w-4 h-4 text-[#00ADEF]" />
-                  </button>
-                </div>
-              </motion.div>
-            </AnimatePresence>
-
-            {/* Carousel Navigation Indicators */}
-            {activeBanners.length > 1 && (
-              <div className="flex items-center gap-2.5 pt-2">
-                {activeBanners.map((banner, index) => (
-                  <button
-                    key={banner.id}
-                    onClick={() => setCurrentIndex(index)}
-                    className={`h-2 rounded-full transition-all duration-300 ${
-                      index === currentIndex
-                        ? 'w-8 bg-[#00A3FF]'
-                        : 'w-2 bg-slate-300 hover:bg-slate-400'
-                    }`}
-                    aria-label={`Go to slide ${index + 1}`}
-                  />
-                ))}
-              </div>
-            )}
           </div>
 
-          {/* Right Column: Genuine Counsellor Consultation Card */}
-          <div className="lg:col-span-5 relative">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.96 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.4 }}
-              className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-xl space-y-6"
-            >
-              <div className="flex items-center justify-between border-b border-slate-100 pb-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-11 h-11 rounded-xl bg-sky-50 border border-sky-200 flex items-center justify-center text-[#00ADEF]">
-                    <ShieldCheck className="w-6 h-6" />
+          {/* Right Column: Interactive Admission OS Cockpit (5 cols) */}
+          <div className="lg:col-span-5">
+            <div className="bg-[#0F172A] rounded-3xl p-6 sm:p-8 text-white border border-slate-800 shadow-2xl space-y-6 relative overflow-hidden">
+              
+              <div className="flex items-center justify-between border-b border-slate-800 pb-4">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-9 h-9 rounded-xl bg-[#00ADEF]/20 text-[#00ADEF] flex items-center justify-center border border-[#00ADEF]/30">
+                    <Target className="w-5 h-5" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-slate-900 text-base font-heading">CAP Round Counselling Desk</h3>
-                    <p className="text-xs text-slate-500 font-medium">Head Office: Sohrab Hall, Pune Station</p>
+                    <h3 className="text-sm font-bold font-heading text-white">Live Merit Engine</h3>
+                    <p className="text-[11px] text-slate-400 font-mono">DTE 2026-27 Cutoff Slabs</p>
                   </div>
                 </div>
+                <span className="px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-[10px] font-mono font-bold">
+                  ● REALTIME
+                </span>
               </div>
 
-              {/* Counselling Guarantees */}
-              <div className="space-y-2.5">
-                <div className="flex items-center gap-3 text-xs font-semibold text-slate-700 bg-slate-50 p-3 rounded-xl border border-slate-200">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                  <span>Direct Option Form sequencing by experienced counsellors</span>
+              {/* Interactive Percentile Slider (Zerodha Precision Feel) */}
+              <div className="space-y-3 bg-slate-900/90 p-4 rounded-2xl border border-slate-800">
+                <div className="flex items-center justify-between text-xs">
+                  <span className="text-slate-400 font-medium">Test Candidate Percentile:</span>
+                  <span className="text-lg font-black text-[#00ADEF] font-mono">{quickPercentile.toFixed(1)}%ile</span>
                 </div>
-                <div className="flex items-center gap-3 text-xs font-semibold text-slate-700 bg-slate-50 p-3 rounded-xl border border-slate-200">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                  <span>Category Benefits, TFWS & EWS Fee Waiver Guidance</span>
-                </div>
-                <div className="flex items-center gap-3 text-xs font-semibold text-slate-700 bg-slate-50 p-3 rounded-xl border border-slate-200">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                  <span>Cut-off analysis for COEP, VJTI, PICT, SPIT & VIT Pune</span>
-                </div>
-                <div className="flex items-center gap-3 text-xs font-semibold text-slate-700 bg-slate-50 p-3 rounded-xl border border-slate-200">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                  <span>Zero-rejection Document Scrutiny Center verification check</span>
+                <input
+                  type="range"
+                  min="60"
+                  max="99.8"
+                  step="0.5"
+                  value={quickPercentile}
+                  onChange={(e) => setQuickPercentile(parseFloat(e.target.value))}
+                  className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-[#00ADEF]"
+                />
+                <div className="flex justify-between text-[10px] text-slate-500 font-mono">
+                  <span>60.0%</span>
+                  <span>80.0%</span>
+                  <span>95.0%</span>
+                  <span>99.8%</span>
                 </div>
               </div>
 
-              {/* Call & Direct Appointment buttons */}
-              <div className="space-y-3 pt-2">
+              {/* Live Matched Tiers */}
+              <div className="space-y-2 text-xs font-mono">
+                <div className="p-3 rounded-xl bg-emerald-950/40 border border-emerald-500/30 flex items-center justify-between">
+                  <div>
+                    <span className="text-emerald-400 font-bold block font-sans">🟢 High Probability Match:</span>
+                    <span className="text-slate-200">
+                      {quickPercentile >= 95 ? 'VIT Pune (Bibwewadi) — IT / AI-DS' : quickPercentile >= 88 ? 'PCCOE Akurdi — AI / Data Science' : 'AISSMS IOIT — Computer Engg'}
+                    </span>
+                  </div>
+                  <span className="text-emerald-400 font-bold">96% Chance</span>
+                </div>
+
+                <div className="p-3 rounded-xl bg-amber-950/40 border border-amber-500/30 flex items-center justify-between">
+                  <div>
+                    <span className="text-amber-400 font-bold block font-sans">🟡 Competitive Target:</span>
+                    <span className="text-slate-200">
+                      {quickPercentile >= 95 ? 'PICT Pune — E&TC / Data Science' : quickPercentile >= 88 ? 'VIT Pune — Mechanical / Robotics' : 'Modern COE — Computer Engg'}
+                    </span>
+                  </div>
+                  <span className="text-amber-400 font-bold">Round 2</span>
+                </div>
+              </div>
+
+              {/* Direct Strategy Button */}
+              <div className="pt-2">
                 <button
-                  onClick={onOpenConsultation}
-                  className="w-full py-3.5 rounded-xl bg-[#00ADEF] hover:bg-[#0098D4] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md flex items-center justify-center gap-2 font-heading"
+                  onClick={() => navigate('/cap-generator')}
+                  className="w-full py-3.5 rounded-xl bg-[#00ADEF] hover:bg-[#0098D4] text-white font-bold text-xs uppercase tracking-wider transition-all font-heading shadow-md flex items-center justify-center gap-2"
                 >
-                  <CalendarCheck className="w-4 h-4" />
-                  <span>Schedule In-Person Consultation</span>
+                  <Sparkles className="w-4 h-4" />
+                  <span>Build Full 300-Choice Option Form</span>
                 </button>
-
-                <a
-                  href="tel:+919860777069"
-                  className="w-full py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-200 font-bold text-xs uppercase tracking-wider transition-colors flex items-center justify-center gap-2 font-heading"
-                >
-                  <PhoneCall className="w-4 h-4 text-[#00ADEF]" />
-                  <span>Call Helpline: +91 9860 777 069</span>
-                </a>
               </div>
-            </motion.div>
+
+            </div>
           </div>
 
         </div>
 
-        {/* Bottom Key Metrics Strip */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 pt-8 border-t border-slate-200">
+        {/* Big Numbers & Zerodha Metrics Strip */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4 border-t border-slate-200">
           {stats.map((stat, i) => {
             const Icon = stat.icon;
             return (
               <div
                 key={i}
-                className="p-4 rounded-2xl bg-white/60 backdrop-blur-xl border border-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex items-center gap-4 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,163,255,0.12)] transition-all duration-300 group"
+                className="p-5 rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center gap-4 hover:-translate-y-1 hover:border-[#00ADEF] transition-all"
               >
-                <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 border transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3 ${stat.color}`}>
+                <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 border ${stat.color}`}>
                   <Icon className="w-6 h-6" />
                 </div>
                 <div>
-                  <div className="text-xl sm:text-2xl font-extrabold text-slate-900 font-heading">
+                  <div className="text-2xl sm:text-3xl font-black text-slate-900 font-heading tracking-tight">
                     {stat.value}
                   </div>
                   <div className="text-xs font-bold text-slate-700 leading-tight">
                     {stat.label}
                   </div>
-                  <div className="text-[10px] text-slate-500 font-medium group-hover:text-slate-600 transition-colors">
+                  <div className="text-[11px] text-slate-500 font-normal mt-0.5">
                     {stat.sublabel}
                   </div>
                 </div>
@@ -252,11 +236,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenConsultation }) 
           })}
         </div>
 
-        {/* Framer-Powered Draggable College Logos Pillmark Pro Marquee */}
-        <div className="mt-14 pt-8 border-t border-slate-200/80 space-y-5">
+        {/* Draggable College Logos Pillmark Pro Marquee */}
+        <div className="pt-8 border-t border-slate-200/80 space-y-4">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <div>
-              <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-blue-50 text-[#00A3FF] text-[10px] font-bold uppercase tracking-wider font-heading">
+              <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-sky-50 text-[#00ADEF] text-[10px] font-bold uppercase tracking-wider font-heading">
                 <span>Associated Top Institutes & DTE Codes</span>
               </div>
               <h3 className="text-base sm:text-lg font-extrabold text-slate-900 font-heading mt-1">
@@ -265,43 +249,35 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenConsultation }) 
             </div>
             <button
               onClick={() => navigate('/colleges')}
-              className="text-xs font-bold text-[#00A3FF] hover:text-blue-700 flex items-center gap-1 self-start sm:self-auto transition-colors font-heading"
+              className="text-xs font-bold text-[#00ADEF] hover:text-[#0098D4] flex items-center gap-1 self-start sm:self-auto transition-colors font-heading"
             >
               <span>Explore Cut-offs & Fees</span>
               <ChevronRight className="w-4 h-4" />
             </button>
           </div>
 
-          <div className="bg-white/60 backdrop-blur-md p-4 sm:p-6 rounded-3xl border border-slate-200/80 shadow-xs">
+          <div className="bg-white p-4 sm:p-6 rounded-3xl border border-slate-200 shadow-xs">
             <PillMarkPro
               logos={collegeBrochureLogos}
               rowSplit="shifted"
               showSecondRow={true}
               oppositeDirection={true}
               direction="left"
-              speed={34}
+              speed={28}
               hoverBehavior="slow"
               hoverSpeed={0.15}
               dragEnabled={true}
-              momentum={true}
-              friction={0.05}
-              secondRowOffset={140}
-              rowGap={14}
               itemGap={16}
+              rowGap={12}
               pillPadX={20}
               pillPadY={12}
               pillRadius={16}
-              pillColor="#FFFFFF"
               borderWidth={1}
               borderColor="rgba(226, 232, 240, 0.9)"
               shadow={true}
               shadowColor="rgba(15, 23, 42, 0.04)"
-              shadowBlur={12}
-              shadowY={3}
-              hoverLift={3}
               fadeEdges={true}
               fadeWidth={80}
-              onItemClick={(item) => navigate('/colleges')}
             />
           </div>
         </div>

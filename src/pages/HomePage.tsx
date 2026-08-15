@@ -1,6 +1,7 @@
 import React from 'react';
 import { HeroSection } from '../components/home/HeroSection';
 import { InteractiveAdmissionSuite } from '../components/home/InteractiveAdmissionSuite';
+import { BranchRealityMatrix } from '../components/home/BranchRealityMatrix';
 import { ServicesSection } from '../components/home/ServicesSection';
 import { CounsellorSection } from '../components/home/CounsellorSection';
 import { EventsSection } from '../components/home/EventsSection';
@@ -166,10 +167,15 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenConsultation }) => {
         </div>
       </section>
 
-      {/* 5. Senior Mentors & Verified Student Allotments (PICT, COEP, VJTI) */}
+      {/* 5. Branch Reality Matrix: CSE vs AI/DS vs IT vs ENTC */}
+      <div className="max-w-7xl mx-auto px-4 lg:px-8">
+        <BranchRealityMatrix />
+      </div>
+
+      {/* 6. Senior Mentors & Verified Student Allotments (PICT, COEP, VJTI) */}
       <CounsellorSection onOpenConsultation={onOpenConsultation} />
 
-      {/* 6. Live Webinars & Workshops */}
+      {/* 7. Live Webinars & Workshops */}
       <EventsSection />
 
       {/* 7. Free Callback Consultation & Pune Office Location Map */}
