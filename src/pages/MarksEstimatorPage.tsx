@@ -496,38 +496,94 @@ export const MarksEstimatorPage: React.FC<{ onOpenConsultation: () => void }> = 
                 </button>
               </div>
 
-              {/* College Cards Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {topEligibleColleges.map((col) => (
-                  <div
-                    key={col.id}
-                    className="p-3.5 rounded-2xl bg-slate-50 hover:bg-white border border-slate-200 hover:border-[#00A3FF]/40 transition-all shadow-xs space-y-1.5"
-                  >
-                    <div className="flex items-center justify-between gap-2">
-                      <h4 className="text-xs font-extrabold text-slate-900 font-heading truncate">
-                        {col.name}
-                      </h4>
-                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-sky-50 text-[#00A3FF] font-bold border border-sky-100 shrink-0">
-                        {col.city}
-                      </span>
-                    </div>
-
-                    <p className="text-[11px] text-slate-600 font-medium">
-                      Cutoff: <strong className="text-slate-900 font-bold">{col.cutoffPercentile}%ile</strong> • Highest: <strong className="text-emerald-700 font-bold">{col.highestPackage}</strong>
-                    </p>
-
-                    <div className="flex flex-wrap gap-1 pt-1">
-                      {col.courses.slice(0, 3).map((crs) => (
-                        <span
-                          key={crs}
-                          className="text-[9px] font-bold px-1.5 py-0.5 rounded bg-white text-slate-600 border border-slate-200"
-                        >
-                          {crs}
-                        </span>
-                      ))}
-                    </div>
+              {/* Dopamine Loop Section Header */}
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-3">
+                <div>
+                  <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px] font-bold uppercase tracking-wider font-heading">
+                    <Sparkles className="w-3 h-3" />
+                    <span>Dopamine Unlock</span>
                   </div>
-                ))}
+                  <h4 className="text-sm sm:text-base font-extrabold text-slate-900 font-heading mt-1">
+                    Your ~<span className="text-[#00ADEF]">{estimates.avgPct}%ile</span> just unlocked <span className="text-emerald-600 font-mono">35+ College Options</span>
+                  </h4>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={handleLaunchCapGenerator}
+                  className="inline-flex items-center gap-1 text-xs font-bold text-[#00ADEF] hover:underline font-heading self-start sm:self-auto"
+                >
+                  <span>Build full 300-choice form</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </button>
+              </div>
+
+              {/* College Cards Grid with Realistic Chances */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {topEligibleColleges.map((col, idx) => {
+                  const targetCutoff = typeof col.cutoffPercentile === 'number' 
+                    ? col.cutoffPercentile 
+                    : parseFloat(String(col.cutoffPercentile || '85'));
+                  const isSafe = (estimates.avgPct - targetCutoff) >= 1.5;
+                  const isModerate = Math.abs(estimates.avgPct - targetCutoff) < 1.5;
+
+                  const minBand = (targetCutoff - 1.0).toFixed(1);
+                  const maxBand = (targetCutoff + 0.8).toFixed(1);
+
+                  return (
+                    <div
+                      key={col.id}
+                      className={`p-4 rounded-2xl border transition-all space-y-2 flex flex-col justify-between ${
+                        isSafe
+                          ? 'bg-emerald-50/30 border-emerald-200 hover:border-emerald-400'
+                          : isModerate
+                          ? 'bg-amber-50/30 border-amber-200 hover:border-amber-400'
+                          : 'bg-indigo-50/30 border-indigo-200 hover:border-indigo-400'
+                      }`}
+                    >
+                      <div className="space-y-2">
+                        <div className="flex items-center justify-between gap-1">
+                          <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase font-heading border ${
+                            isSafe
+                              ? 'bg-emerald-100 text-emerald-900 border-emerald-300'
+                              : isModerate
+                              ? 'bg-amber-100 text-amber-900 border-amber-300'
+                              : 'bg-indigo-100 text-indigo-900 border-indigo-300'
+                          }`}>
+                            {isSafe ? '🟢 VERY REALISTIC' : isModerate ? '🟡 TARGET' : '🟣 REACH'}
+                          </span>
+                          <span className="text-[10px] font-mono font-bold text-slate-500">
+                            Chances: {isSafe ? 'HIGH' : isModerate ? 'MODERATE' : 'ROUND 2/3'}
+                          </span>
+                        </div>
+
+                        <div>
+                          <h4 className="text-xs sm:text-sm font-bold text-slate-900 font-heading">
+                            {col.name}
+                          </h4>
+                          <span className="text-[11px] font-mono text-[#00ADEF] font-bold">
+                            ~{minBand}% – {maxBand}% percentile
+                          </span>
+                        </div>
+
+                        <div className="text-[11px] text-slate-600">
+                          City: <strong className="text-slate-900">{col.city}</strong> • Highest: <strong className="text-emerald-700">{col.highestPackage}</strong>
+                        </div>
+                      </div>
+
+                      <div className="flex flex-wrap gap-1 pt-1 border-t border-slate-200/50">
+                        {col.courses.slice(0, 3).map((crs) => (
+                          <span
+                            key={crs}
+                            className="text-[9px] font-bold px-1.5 py-0.5 rounded bg-white text-slate-700 border border-slate-200"
+                          >
+                            {crs}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
 
               {/* Contextual Counsellor Review Hook */}

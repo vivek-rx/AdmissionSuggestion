@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Target, Search, CheckCircle2, ArrowRight, Building2, MapPin, Award, FileText, PhoneCall, Calculator } from 'lucide-react';
+import { Target, Search, CheckCircle2, ArrowRight, Building2, MapPin, Award, FileText, PhoneCall, Calculator, Sparkles } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { initialColleges } from '../../data/initialData';
 import { College } from '../../types';
@@ -207,102 +207,125 @@ export const CollegePredictorWidget: React.FC<CollegePredictorWidgetProps> = ({ 
         </form>
 
         {/* Prediction Results Area */}
+        {/* Dopamine Loop Prediction Results Area */}
         <AnimatePresence>
           {predictedResults && (
             <motion.div
-              initial={{ opacity: 0, y: 10 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 10 }}
-              className="pt-6 border-t border-slate-200 space-y-4"
+              transition={{ duration: 0.3 }}
+              className="pt-8 border-t border-slate-200 space-y-6"
             >
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                <span className="text-xs font-extrabold text-slate-900 uppercase tracking-wider font-heading">
-                  Estimated Institutes for {percentile}%ile ({category} • {branch})
-                </span>
-                <span className="text-xs text-[#0284C7] font-bold">
-                  {predictedResults.length} Institutes Analyzed
-                </span>
+              {/* Dopamine Headline Badge */}
+              <div className="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-slate-900 via-[#0F172A] to-slate-900 text-white border border-slate-800 shadow-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div className="space-y-1">
+                  <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-[#00ADEF]/20 text-[#00ADEF] text-[11px] font-bold uppercase tracking-wider font-heading">
+                    <Sparkles className="w-3.5 h-3.5" />
+                    <span>Real-Time Merit Engine</span>
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-extrabold font-heading text-white tracking-tight">
+                    Your <span className="text-[#00ADEF]">{percentile}%ile</span> just unlocked <span className="text-emerald-400 font-mono">{predictedResults.length} options</span>
+                  </h3>
+                </div>
+
+                <div className="flex items-center gap-2 self-start sm:self-auto">
+                  <span className="px-3 py-1.5 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs font-bold font-heading">
+                    {predictedResults.filter(p => p.probability === 'Safe').length} High Probability
+                  </span>
+                  <span className="px-3 py-1.5 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-300 text-xs font-bold font-heading">
+                    {predictedResults.filter(p => p.probability === 'Moderate').length} Target
+                  </span>
+                </div>
               </div>
 
+              {/* Animated Results Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {predictedResults.slice(0, 6).map(({ college, probability }) => (
-                  <div
-                    key={college.id}
-                    className="p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-blue-300 transition-all space-y-3"
-                  >
-                    <div className="flex items-start justify-between gap-3">
-                      <div className="flex items-center gap-3">
-                        {college.logoUrl ? (
-                          <div className="h-10 px-2 py-1 rounded-xl bg-white border border-slate-200 shadow-2xs flex items-center justify-center shrink-0">
-                            <img
-                              src={college.logoUrl}
-                              alt={`${college.name} logo`}
-                              className="max-h-7 max-w-[90px] w-auto object-contain"
-                              loading="lazy"
-                            />
-                          </div>
-                        ) : (
-                          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#00A3FF] to-blue-700 text-white flex items-center justify-center font-black text-xs shrink-0">
-                            {college.name.substring(0, 2).toUpperCase()}
-                          </div>
-                        )}
+                {predictedResults.slice(0, 9).map(({ college, probability }, idx) => {
+                  const isSafe = probability === 'Safe';
+                  const isModerate = probability === 'Moderate';
+
+                  // Calculate realistic cutoff band around candidate score
+                  const targetCutoff = typeof college.cutoffPercentile === 'number' 
+                    ? college.cutoffPercentile 
+                    : parseFloat(String(college.cutoffPercentile || '88'));
+                  const minBand = (targetCutoff - 1.2).toFixed(1);
+                  const maxBand = (targetCutoff + 0.8).toFixed(1);
+
+                  return (
+                    <motion.div
+                      key={college.id}
+                      initial={{ opacity: 0, y: 20, scale: 0.98 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      transition={{ duration: 0.25, delay: idx * 0.05 }}
+                      className={`p-5 rounded-2xl border transition-all space-y-3.5 flex flex-col justify-between ${
+                        isSafe
+                          ? 'bg-emerald-50/40 border-emerald-200 hover:border-emerald-400 shadow-xs'
+                          : isModerate
+                          ? 'bg-amber-50/40 border-amber-200 hover:border-amber-400 shadow-xs'
+                          : 'bg-indigo-50/30 border-indigo-200 hover:border-indigo-400 shadow-xs'
+                      }`}
+                    >
+                      <div className="space-y-3">
+                        {/* Status Tier & Chance Pill */}
+                        <div className="flex items-center justify-between gap-2">
+                          <span
+                            className={`px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-wide font-heading border ${
+                              isSafe
+                                ? 'bg-emerald-100 text-emerald-900 border-emerald-300'
+                                : isModerate
+                                ? 'bg-amber-100 text-amber-900 border-amber-300'
+                                : 'bg-indigo-100 text-indigo-900 border-indigo-300'
+                            }`}
+                          >
+                            {isSafe ? 'VERY REALISTIC' : isModerate ? 'TARGET CHOICE' : 'AMBITIOUS SPOT ROUND'}
+                          </span>
+                          <span className={`text-[11px] font-bold font-mono ${
+                            isSafe ? 'text-emerald-700' : isModerate ? 'text-amber-800' : 'text-indigo-700'
+                          }`}>
+                            Chances: {isSafe ? 'HIGH' : isModerate ? 'MODERATE' : 'ROUND 2/3'}
+                          </span>
+                        </div>
+
+                        {/* College Name & Branch */}
                         <div>
-                          <div className="flex items-center gap-1.5 flex-wrap">
-                            <span className="text-[10px] font-mono font-bold bg-blue-100 text-[#0284C7] px-2 py-0.5 rounded">
-                              DTE: {college.dteCode}
-                            </span>
-                            <span
-                              className={`text-[10px] font-extrabold px-2 py-0.5 rounded-full ${
-                                probability === 'Safe'
-                                  ? 'bg-emerald-100 text-emerald-800 border border-emerald-300'
-                                  : probability === 'Moderate'
-                                  ? 'bg-amber-100 text-amber-800 border border-amber-300'
-                                  : 'bg-indigo-100 text-indigo-800 border border-indigo-300'
-                              }`}
-                            >
-                              {probability === 'Safe' ? '● Safe Choice' : probability === 'Moderate' ? '● Target Choice' : '● Ambitious Choice'}
-                            </span>
-                          </div>
-                          <h4 className="text-sm font-bold text-slate-900 font-heading leading-snug mt-1">
+                          <h4 className="text-base font-bold text-slate-900 font-heading leading-snug">
                             {college.name}
                           </h4>
+                          <div className="text-xs font-bold text-[#00ADEF] mt-0.5 font-heading">
+                            {branch === 'All' ? 'Computer Engg / IT / AI-DS' : branch}
+                          </div>
+                        </div>
+
+                        {/* Realistic Cutoff Band */}
+                        <div className="p-2.5 rounded-xl bg-white border border-slate-200/80 font-mono text-xs space-y-1">
+                          <div className="flex items-center justify-between text-slate-500 text-[11px] font-sans">
+                            <span>Historical Cutoff Band:</span>
+                            <span className="font-bold text-slate-900 font-mono">~{minBand}% – {maxBand}%ile</span>
+                          </div>
+                          <div className="flex items-center justify-between text-slate-500 text-[11px] font-sans">
+                            <span>Campus / Fees:</span>
+                            <span className="font-bold text-slate-800">{college.city} • {college.fees}</span>
+                          </div>
                         </div>
                       </div>
-                    </div>
 
-                    <div className="grid grid-cols-2 gap-2 text-[11px] bg-white p-2.5 rounded-xl border border-slate-200 font-medium text-slate-600">
-                      <div>
-                        <span className="text-slate-400 block text-[10px]">City:</span>
-                        <span className="font-bold text-slate-800">{college.city}</span>
+                      {/* Card Footer CTA */}
+                      <div className="flex items-center justify-between pt-2 border-t border-slate-200/60">
+                        <span className="text-[10px] font-bold text-slate-500 font-mono">
+                          DTE: {college.dteCode || college.code}
+                        </span>
+                        <button
+                          onClick={onOpenConsultation}
+                          className="text-xs font-bold text-[#00ADEF] hover:text-[#0098D4] flex items-center gap-1 transition-colors font-heading"
+                        >
+                          <span>Lock in Option Form</span>
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </button>
                       </div>
-                      <div>
-                        <span className="text-slate-400 block text-[10px]">Cut-off Bench:</span>
-                        <span className="font-bold text-emerald-700">{college.cutoffPercentile}%ile</span>
-                      </div>
-                      <div>
-                        <span className="text-slate-400 block text-[10px]">Annual Fee:</span>
-                        <span className="font-bold text-slate-800">{college.fees}</span>
-                      </div>
-                      <div>
-                        <span className="text-slate-400 block text-[10px]">Avg Package:</span>
-                        <span className="font-bold text-[#0284C7]">{college.averagePackage}</span>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center justify-between pt-1">
-                      <span className="text-[11px] font-bold text-slate-500">
-                        {college.ranking}
-                      </span>
-                      <button
-                        onClick={onOpenConsultation}
-                        className="text-xs font-extrabold text-[#00A3FF] hover:text-[#0284C7] flex items-center gap-1 transition-colors font-heading"
-                      >
-                        <span>Option Strategy</span>
-                        <ArrowRight className="w-3.5 h-3.5" />
-                      </button>
-                    </div>
-                  </div>
-                ))}
+                    </motion.div>
+                  );
+                })}
               </div>
 
               {/* Contextual Counsellor Advisory Hook */}
