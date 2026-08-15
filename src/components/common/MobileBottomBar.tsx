@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Home, FileSpreadsheet, Phone, Calculator, MessageSquare, Compass, School } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
+import { Home, FileSpreadsheet, MessageSquare, School, Sparkles } from 'lucide-react';
 
 interface MobileBottomBarProps {
   onOpenConsultation: () => void;
@@ -8,7 +8,6 @@ interface MobileBottomBarProps {
 
 export const MobileBottomBar: React.FC<MobileBottomBarProps> = ({ onOpenConsultation }) => {
   const location = useLocation();
-  const navigate = useNavigate();
   const pathname = location.pathname;
 
   const isActive = (path: string) => pathname === path;
@@ -30,17 +29,17 @@ export const MobileBottomBar: React.FC<MobileBottomBarProps> = ({ onOpenConsulta
           <span className="text-[10px] font-heading font-medium mt-0.5 tracking-tight">Home</span>
         </Link>
 
-        {/* 2. Colleges & Cutoffs */}
+        {/* 2. Student Corner Hub */}
         <Link
-          to="/colleges"
+          to="/student-corner"
           className={`flex flex-col items-center justify-center py-1 px-1 rounded-xl transition-all ${
-            isActive('/colleges')
+            isActive('/student-corner') || isActive('/marks-vs-percentile') || isActive('/documents')
               ? 'text-[#00ADEF]'
               : 'text-slate-400 hover:text-slate-200'
           }`}
         >
-          <School className={`w-5 h-5 ${isActive('/colleges') ? 'stroke-[2.5]' : 'stroke-2'}`} />
-          <span className="text-[10px] font-heading font-medium mt-0.5 tracking-tight">Colleges</span>
+          <Sparkles className={`w-5 h-5 ${isActive('/student-corner') ? 'stroke-[2.5]' : 'stroke-2'}`} />
+          <span className="text-[10px] font-heading font-medium mt-0.5 tracking-tight">Student Hub</span>
         </Link>
 
         {/* 3. Center CTA: CAP Generator (Elevated Action Pill) */}
@@ -56,17 +55,17 @@ export const MobileBottomBar: React.FC<MobileBottomBarProps> = ({ onOpenConsulta
           </span>
         </Link>
 
-        {/* 4. Marks Estimator */}
+        {/* 4. Colleges & Cutoffs */}
         <Link
-          to="/marks-vs-percentile"
+          to="/colleges"
           className={`flex flex-col items-center justify-center py-1 px-1 rounded-xl transition-all ${
-            isActive('/marks-vs-percentile')
+            isActive('/colleges')
               ? 'text-[#00ADEF]'
               : 'text-slate-400 hover:text-slate-200'
           }`}
         >
-          <Calculator className={`w-5 h-5 ${isActive('/marks-vs-percentile') ? 'stroke-[2.5]' : 'stroke-2'}`} />
-          <span className="text-[10px] font-heading font-medium mt-0.5 tracking-tight">Estimator</span>
+          <School className={`w-5 h-5 ${isActive('/colleges') ? 'stroke-[2.5]' : 'stroke-2'}`} />
+          <span className="text-[10px] font-heading font-medium mt-0.5 tracking-tight">Colleges</span>
         </Link>
 
         {/* 5. Direct WhatsApp / Call Helpline */}
@@ -78,7 +77,6 @@ export const MobileBottomBar: React.FC<MobileBottomBarProps> = ({ onOpenConsulta
         >
           <div className="relative">
             <MessageSquare className="w-5 h-5 stroke-2" />
-            <span className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
           </div>
           <span className="text-[10px] font-heading font-bold mt-0.5 tracking-tight">Helpline</span>
         </a>

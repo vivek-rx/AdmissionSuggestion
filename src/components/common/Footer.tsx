@@ -49,79 +49,65 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Column 2: Quick Links */}
+          {/* Column 2: Student Corner & Tools */}
           <div className="space-y-3">
-            <h4 className="text-sm font-bold text-white uppercase tracking-wider font-heading border-l-2 border-[#00A3FF] pl-3">
-              Dedicated Pages
+            <h4 className="text-sm font-bold text-white uppercase tracking-wider font-heading border-l-2 border-[#00ADEF] pl-3">
+              Student Corner 🎓
             </h4>
             <ul className="space-y-2 text-xs text-slate-400 font-medium">
               <li>
-                <Link to="/" className="hover:text-[#00A3FF] transition-colors flex items-center gap-1.5">
-                  <ArrowUpRight className="w-3 h-3 text-[#00A3FF]" /> Home Overview
+                <Link to="/student-corner" className="hover:text-[#00ADEF] transition-colors flex items-center gap-1.5 font-bold text-slate-200">
+                  <ArrowUpRight className="w-3 h-3 text-[#00ADEF]" /> Student Portal Hub
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="hover:text-[#00A3FF] transition-colors flex items-center gap-1.5">
-                  <ArrowUpRight className="w-3 h-3 text-[#00A3FF]" /> CAP Round Services & Roadmap
+                <Link to="/cap-generator" className="hover:text-[#00ADEF] transition-colors flex items-center gap-1.5">
+                  <ArrowUpRight className="w-3 h-3 text-[#00ADEF]" /> CAP Option Form Generator
                 </Link>
               </li>
               <li>
-                <Link to="/colleges" className="hover:text-[#00A3FF] transition-colors flex items-center gap-1.5">
-                  <ArrowUpRight className="w-3 h-3 text-[#00A3FF]" /> Colleges Directory & Comparison
+                <Link to="/marks-vs-percentile" className="hover:text-[#00ADEF] transition-colors flex items-center gap-1.5">
+                  <ArrowUpRight className="w-3 h-3 text-[#00ADEF]" /> Marks vs Percentile Estimator
                 </Link>
               </li>
               <li>
-                <Link to="/documents" className="hover:text-[#00A3FF] transition-colors flex items-center gap-1.5">
-                  <ArrowUpRight className="w-3 h-3 text-[#00A3FF]" /> Mandatory Documents Checklist
+                <Link to="/documents" className="hover:text-[#00ADEF] transition-colors flex items-center gap-1.5">
+                  <ArrowUpRight className="w-3 h-3 text-[#00ADEF]" /> 19-Point Document Checklist
                 </Link>
               </li>
               <li>
-                <Link to="/counsellors" className="hover:text-[#00A3FF] transition-colors flex items-center gap-1.5">
-                  <ArrowUpRight className="w-3 h-3 text-[#00A3FF]" /> Counsellors & Allotment Proofs
-                </Link>
-              </li>
-              <li>
-                <Link to="/events" className="hover:text-[#00A3FF] transition-colors flex items-center gap-1.5">
-                  <ArrowUpRight className="w-3 h-3 text-[#00A3FF]" /> Live Webinars & Drives
-                </Link>
-              </li>
-              <li>
-                <Link to="/about" className="hover:text-[#00A3FF] transition-colors flex items-center gap-1.5">
-                  <ArrowUpRight className="w-3 h-3 text-[#00A3FF]" /> About Us & Pune Head Office
+                <Link to="/colleges" className="hover:text-[#00ADEF] transition-colors flex items-center gap-1.5">
+                  <ArrowUpRight className="w-3 h-3 text-[#00ADEF]" /> Colleges Directory & Cutoffs
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Column 3: Counselling Services */}
+          {/* Column 3: Counselling & Leadership */}
           <div className="space-y-3">
-            <h4 className="text-sm font-bold text-white uppercase tracking-wider font-heading border-l-2 border-[#00A3FF] pl-3">
-              Our Core Services
+            <h4 className="text-sm font-bold text-white uppercase tracking-wider font-heading border-l-2 border-[#00ADEF] pl-3">
+              Counselling & Mentorship
             </h4>
             <ul className="space-y-2 text-xs text-slate-400 font-medium">
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#00A3FF] shrink-0" />
-                <span>CAP Round Option Form Strategy</span>
+              <li>
+                <Link to="/services" className="hover:text-[#00ADEF] transition-colors flex items-center gap-1.5">
+                  <ArrowUpRight className="w-3 h-3 text-[#00ADEF]" /> CAP Services & Roadmap
+                </Link>
               </li>
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#00A3FF] shrink-0" />
-                <span>1-on-1 Personalized Guidance</span>
+              <li>
+                <Link to="/counsellors" className="hover:text-[#00ADEF] transition-colors flex items-center gap-1.5">
+                  <ArrowUpRight className="w-3 h-3 text-[#00ADEF]" /> Leadership & Mentors
+                </Link>
               </li>
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#00A3FF] shrink-0" />
-                <span>Autonomous & Private University Seats</span>
+              <li>
+                <Link to="/events" className="hover:text-[#00ADEF] transition-colors flex items-center gap-1.5">
+                  <ArrowUpRight className="w-3 h-3 text-[#00ADEF]" /> Live Webinars & Workshops
+                </Link>
               </li>
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#00A3FF] shrink-0" />
-                <span>Direct 2nd Year (DSE) Admissions</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#00A3FF] shrink-0" />
-                <span>Institute Level (IL) & Management Quota</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#00A3FF] shrink-0" />
-                <span>E-Scrutiny & Document Verification</span>
+              <li>
+                <Link to="/about" className="hover:text-[#00ADEF] transition-colors flex items-center gap-1.5">
+                  <ArrowUpRight className="w-3 h-3 text-[#00ADEF]" /> About Us & Pune Head Office
+                </Link>
               </li>
             </ul>
           </div>

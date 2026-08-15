@@ -43,12 +43,8 @@ export const Header: React.FC<HeaderProps> = ({
       link: "/",
     },
     {
-      name: "CAP Generator 🔥",
-      link: "/cap-generator",
-    },
-    {
-      name: "Marks Estimator ⚡",
-      link: "/marks-vs-percentile",
+      name: "Student Corner 🎓",
+      link: "/student-corner",
     },
     {
       name: "CAP Services",
@@ -59,11 +55,7 @@ export const Header: React.FC<HeaderProps> = ({
       link: "/colleges",
     },
     {
-      name: "Documents",
-      link: "/documents",
-    },
-    {
-      name: "Counsellors",
+      name: "Leadership Panel",
       link: "/counsellors",
     },
     {

@@ -18,6 +18,7 @@ import { AboutPage } from './pages/AboutPage';
 import { AdminPage } from './pages/AdminPage';
 import { CapPreferenceGeneratorPage } from './pages/CapPreferenceGeneratorPage';
 import { MarksEstimatorPage } from './pages/MarksEstimatorPage';
+import { StudentCornerPage } from './pages/StudentCornerPage';
 import { MobileBottomBar } from './components/common/MobileBottomBar';
 import { LiveCutoffTicker } from './components/home/LiveCutoffTicker';
 
@@ -71,6 +72,8 @@ const MainAppLayout: React.FC = () => {
           <Route path="/counsellors" element={<CounsellorsPage onOpenConsultation={scrollToConsultation} />} />
           <Route path="/events" element={<EventsPage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/student-corner" element={<StudentCornerPage />} />
+          <Route path="/students" element={<StudentCornerPage />} />
           <Route path="/cap-generator" element={<CapPreferenceGeneratorPage onOpenConsultation={scrollToConsultation} />} />
           <Route path="/preference-generator" element={<CapPreferenceGeneratorPage onOpenConsultation={scrollToConsultation} />} />
           <Route path="/marks-vs-percentile" element={<MarksEstimatorPage onOpenConsultation={scrollToConsultation} />} />
