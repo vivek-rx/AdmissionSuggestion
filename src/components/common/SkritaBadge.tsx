@@ -14,17 +14,12 @@ export const SkritaBadge: React.FC = () => {
       <span className="text-[#FF007A] animate-pulse text-xs">❤️</span>
       <span className="font-medium text-slate-400">by</span>
 
-      {/* Skrita Exact Logo Image & Crisp Gradient Branding */}
-      <div className="inline-flex items-center gap-1.5 pl-0.5">
-        <img
-          src={skritaLogo}
-          alt="Skrita"
-          className="h-4 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-        />
-        <span className="font-extrabold tracking-tight font-heading text-transparent bg-clip-text bg-gradient-to-r from-[#FF5F6D] via-[#FF007A] to-[#FFA500] group-hover:brightness-110 transition-all">
-          Skrita
-        </span>
-      </div>
+      {/* Skrita Exact Crisp Logo (contains emblem + wordmark) */}
+      <img
+        src={skritaLogo}
+        alt="Skrita"
+        className="h-4.5 w-auto object-contain transition-transform duration-300 group-hover:scale-105 ml-0.5"
+      />
     </a>
   );
 };
