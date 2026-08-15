@@ -24,18 +24,18 @@ export const AboutSection: React.FC = () => {
                 <div className="space-y-3 pt-2">
                   <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
                     <span className="text-[11px] text-slate-500 font-bold uppercase tracking-wider font-heading flex items-center gap-1.5">
-                      <MapPin className="w-3.5 h-3.5 text-[#00A3FF]" /> Headquarter Location
+                      <MapPin className="w-3.5 h-3.5 text-[#00ADEF]" /> Headquarter Location
                     </span>
                     <p className="text-xs text-slate-800 leading-relaxed font-semibold">
-                      Office No. 333, Sohrab Hall, Tadiwala Road, Near Pune Railway Station, Pune - 411001
+                      Office No. 312, 3rd Floor, Sohrab Hall, Tadiwala Road, Behind Pune Railway Station, Pune - 411001
                     </p>
                   </div>
 
                   <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
                     <span className="text-[11px] text-slate-500 font-bold uppercase tracking-wider font-heading flex items-center gap-1.5">
-                      <Phone className="w-3.5 h-3.5 text-[#00A3FF]" /> Direct Counselling Helpline
+                      <Phone className="w-3.5 h-3.5 text-[#00ADEF]" /> Direct Counselling Helpline
                     </span>
-                    <a href="tel:+919860777069" className="text-sm font-extrabold text-[#00A3FF] block hover:underline">
+                    <a href="tel:+919860777069" className="text-sm font-extrabold text-[#00ADEF] block hover:underline">
                       +91 9860 777 069
                     </a>
                   </div>
