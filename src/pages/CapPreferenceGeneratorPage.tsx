@@ -29,6 +29,7 @@ import { College } from '../types';
 import { useApp } from '../context/AppContext';
 import trustedLogo from '../assets/logo.png';
 import confetti from 'canvas-confetti';
+import { WhatsAppShareToParents } from '../components/common/WhatsAppShareToParents';
 
 interface ChoiceItem {
   id: string;
@@ -816,6 +817,23 @@ export const CapPreferenceGeneratorPage: React.FC<{ onOpenConsultation: () => vo
                 </div>
 
                 {/* Bottom Assistance Card */}
+                {/* Send This to Dad/Mom WhatsApp Forwarder */}
+                <WhatsAppShareToParents
+                  studentName={studentName || 'Candidate'}
+                  exam={exam}
+                  percentile={percentile}
+                  branch={selectedBranches.join(' / ') || 'Engineering Branches'}
+                  category={category}
+                  colleges={generatedList.map(item => ({
+                    name: item.college.name,
+                    city: item.college.city,
+                    fees: item.college.fees,
+                    cutoff: item.expectedCutoff,
+                    probability: item.tier === 'safe' ? 'Safe' : item.tier === 'target' ? 'Moderate' : 'Ambitious',
+                    courses: [item.branch]
+                  }))}
+                />
+
                 <div className="p-4 rounded-2xl bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 flex flex-col sm:flex-row items-center justify-between gap-4">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-xl bg-[#00A3FF] text-white flex items-center justify-center shrink-0 shadow-sm">

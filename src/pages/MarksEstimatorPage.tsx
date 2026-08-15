@@ -21,6 +21,7 @@ import { useNavigate } from 'react-router-dom';
 import { initialColleges } from '../data/initialData';
 import { useApp } from '../context/AppContext';
 import confetti from 'canvas-confetti';
+import { WhatsAppShareToParents } from '../components/common/WhatsAppShareToParents';
 
 type ExamType = 'MHT-CET (PCM)' | 'MHT-CET (PCB)' | 'JEE Main' | 'Diploma (DSE)';
 type DifficultyLevel = 'Easy Shift' | 'Moderate Shift' | 'Hard / Tough Shift';
@@ -585,6 +586,23 @@ export const MarksEstimatorPage: React.FC<{ onOpenConsultation: () => void }> = 
                   );
                 })}
               </div>
+
+              {/* Send This to Dad/Mom WhatsApp Forwarder */}
+              <WhatsAppShareToParents
+                studentName={studentName || 'Candidate'}
+                exam={exam}
+                percentile={estimates.avgPct}
+                branch="Engineering / Tech"
+                category={category}
+                colleges={topEligibleColleges.map(col => ({
+                  name: col.name,
+                  city: col.city,
+                  fees: col.fees,
+                  cutoff: col.cutoffPercentile,
+                  probability: (estimates.avgPct - (typeof col.cutoffPercentile === 'number' ? col.cutoffPercentile : parseFloat(String(col.cutoffPercentile || '85')))) >= 1.5 ? 'Safe' : 'Moderate',
+                  courses: col.courses
+                }))}
+              />
 
               {/* Contextual Counsellor Review Hook */}
               <div className="p-5 rounded-2xl bg-sky-50 border border-sky-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">

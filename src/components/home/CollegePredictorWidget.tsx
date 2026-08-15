@@ -4,6 +4,7 @@ import { Target, Search, CheckCircle2, ArrowRight, Building2, MapPin, Award, Fil
 import { useNavigate } from 'react-router-dom';
 import { initialColleges } from '../../data/initialData';
 import { College } from '../../types';
+import { WhatsAppShareToParents } from '../common/WhatsAppShareToParents';
 
 interface CollegePredictorWidgetProps {
   onOpenConsultation: () => void;
@@ -327,6 +328,22 @@ export const CollegePredictorWidget: React.FC<CollegePredictorWidgetProps> = ({ 
                   );
                 })}
               </div>
+
+              {/* Send This to Dad/Mom WhatsApp Forwarder */}
+              <WhatsAppShareToParents
+                exam={exam}
+                percentile={percentile}
+                branch={branch}
+                category={category}
+                colleges={predictedResults.map(p => ({
+                  name: p.college.name,
+                  city: p.college.city,
+                  fees: p.college.fees,
+                  cutoff: p.college.cutoffPercentile,
+                  probability: p.probability,
+                  courses: p.college.courses
+                }))}
+              />
 
               {/* Contextual Counsellor Advisory Hook */}
               <div className="p-5 rounded-2xl bg-sky-50 border border-sky-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
