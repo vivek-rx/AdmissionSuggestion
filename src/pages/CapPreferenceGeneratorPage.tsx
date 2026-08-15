@@ -421,18 +421,22 @@ export const CapPreferenceGeneratorPage: React.FC<{ onOpenConsultation: () => vo
                     Select Exam
                   </label>
                   <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-lg">
-                    {(['MHT-CET', 'JEE Main', 'DSE'] as const).map(ex => (
+                    {[
+                      { key: 'MHT-CET' as const, label: 'MHT-CET' },
+                      { key: 'JEE Main' as const, label: 'JEE Main' },
+                      { key: 'DSE' as const, label: 'DSE (Diploma Engg)' }
+                    ].map(ex => (
                       <button
-                        key={ex}
+                        key={ex.key}
                         type="button"
-                        onClick={() => setExam(ex)}
+                        onClick={() => setExam(ex.key)}
                         className={`px-2.5 py-1 text-[11px] font-bold rounded-md transition-all font-heading ${
-                          exam === ex
-                            ? 'bg-[#00A3FF] text-white shadow-xs'
+                          exam === ex.key
+                            ? 'bg-[#00ADEF] text-white shadow-xs'
                             : 'text-slate-600 hover:text-slate-900'
                         }`}
                       >
-                        {ex}
+                        {ex.label}
                       </button>
                     ))}
                   </div>

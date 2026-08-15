@@ -237,11 +237,11 @@ export const ConsultationSection: React.FC = () => {
                         onChange={e => setForm({ ...form, exam: e.target.value })}
                         className="w-full bg-white border border-slate-300 focus:border-[#00A3FF] text-slate-900 text-xs px-3 py-3 rounded-xl outline-none font-semibold shadow-sm"
                       >
-                        <option value="MHT-CET">MHT-CET (PCM/PCB)</option>
-                        <option value="JEE Main">JEE Main</option>
-                        <option value="NEET UG">NEET UG</option>
-                        <option value="DSE">Direct 2nd Year (DSE)</option>
-                        <option value="CAT / CMAT">MBA (CAT/CMAT/CET)</option>
+                        <option value="MHT-CET">MHT-CET (Engineering)</option>
+                        <option value="JEE Main">JEE Main (Engineering / All India)</option>
+                        <option value="DSE">Direct 2nd Year Engineering (DSE - Diploma to B.Tech)</option>
+                        <option value="NEET UG">NEET UG (Medical)</option>
+                        <option value="CAT / CMAT">MBA / Management (CAT/CMAT/CET)</option>
                       </select>
                     </div>
 
