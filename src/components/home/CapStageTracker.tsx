@@ -18,8 +18,8 @@ export const CapStageTracker: React.FC = () => {
     {
       id: 2,
       title: 'Physical / E-Scrutiny & FC Verification',
-      status: 'Current Active Stage 🔴',
-      statusColor: 'bg-rose-500/10 text-rose-600 border-rose-300 animate-pulse',
+      status: 'In Progress (Active)',
+      statusColor: 'bg-rose-50 text-rose-700 border-rose-200',
       period: 'July 10 – July 22',
       desc: 'Verification of original documents at Facilitation Centers (FC) across Maharashtra.',
       tips: '⚠️ Must obtain physical stamped Acknowledgement Slip (ARC copy).'

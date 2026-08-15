@@ -21,14 +21,14 @@ export const LiveCutoffTicker: React.FC = () => {
     <div className="bg-[#0A192F] text-white border-y border-slate-800/90 py-2 overflow-hidden font-sans relative shadow-inner z-30">
       <div className="flex items-center">
         
-        {/* Left Fixed Bloomberg / Market Badge */}
-        <div className="flex items-center gap-2 px-3 py-1 bg-slate-900 border border-slate-700 text-white font-extrabold text-[10px] uppercase tracking-wider shrink-0 z-20 ml-2 sm:ml-4 rounded-lg font-heading shadow-md">
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-          <span className="text-[#00ADEF] flex items-center gap-1 font-mono">
+        {/* Left Fixed Institutional Badge */}
+        <div className="flex items-center gap-2 px-3 py-1 bg-slate-900 border border-slate-700 text-white font-bold text-[10px] uppercase tracking-wider shrink-0 z-20 ml-2 sm:ml-4 rounded-lg font-heading shadow-md">
+          <span className="w-2 h-2 rounded-full bg-emerald-500" />
+          <span className="text-[#00ADEF] flex items-center gap-1 font-mono font-bold">
             <Activity className="w-3 h-3 text-[#00ADEF]" />
             DTE 2026-27
           </span>
-          <span className="hidden sm:inline text-slate-400">• LIVE CUT-OFFS</span>
+          <span className="hidden sm:inline text-slate-400">• CUT-OFFS</span>
         </div>
 
         {/* Continuous Infinite Scrolling Track */}

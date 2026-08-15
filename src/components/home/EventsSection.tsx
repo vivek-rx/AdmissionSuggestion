@@ -85,12 +85,12 @@ export const EventsSection: React.FC = () => {
                     <span className="px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-[10px] font-extrabold uppercase tracking-wider">
                       {evt.category}
                     </span>
-                    <span className={`px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider flex items-center gap-1.5 ${
+                    <span className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider flex items-center gap-1.5 ${
                       isLive
-                        ? 'bg-rose-100 text-rose-800 border border-rose-200 animate-pulse'
-                        : 'bg-emerald-100 text-emerald-800 border border-emerald-200'
+                        ? 'bg-rose-50 text-rose-700 border border-rose-200'
+                        : 'bg-emerald-50 text-emerald-700 border border-emerald-200'
                     }`}>
-                      <span className={`w-2 h-2 rounded-full ${isLive ? 'bg-rose-600 animate-ping' : 'bg-emerald-600'}`} />
+                      <span className={`w-2 h-2 rounded-full ${isLive ? 'bg-rose-600' : 'bg-emerald-600'}`} />
                       {evt.status}
                     </span>
                   </div>

@@ -75,10 +75,10 @@ export const FacebookLiveFeed: React.FC = () => {
           <div className="lg:col-span-6 bg-white p-6 rounded-3xl border border-slate-200 shadow-md space-y-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2 text-slate-900 font-bold font-heading text-sm">
-                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
-                <span>Live Facebook Page Stream</span>
+                <FacebookIcon className="w-4 h-4 text-[#1877F2]" />
+                <span>Official Facebook Updates</span>
               </div>
-              <span className="text-xs text-slate-400 font-mono">@admission-suggestion</span>
+              <span className="text-xs text-slate-500 font-medium">@admission-suggestion</span>
             </div>
 
             <div className="w-full flex justify-center bg-slate-100/60 rounded-2xl p-2 border border-slate-200 overflow-hidden min-h-[500px]">
