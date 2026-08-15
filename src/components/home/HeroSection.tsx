@@ -58,9 +58,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenConsultation }) 
     },
     {
       icon: Building2,
-      value: '100+',
-      label: 'Associate Colleges',
-      sublabel: 'Autonomous & Universities',
+      value: '350+',
+      label: 'CAP Institutes',
+      sublabel: 'Govt, Autonomous & Pvt.',
       color: 'bg-sky-50 text-[#00ADEF] border-sky-200'
     },
     {

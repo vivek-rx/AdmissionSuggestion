@@ -53,43 +53,43 @@ export const AboutSection: React.FC = () => {
 
           {/* Right Column: About Content */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200 text-[#0284C7] text-xs font-bold uppercase tracking-wider">
-              <ShieldCheck className="w-3.5 h-3.5 text-[#00A3FF]" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-sky-50 border border-sky-200 text-[#00ADEF] text-xs font-bold uppercase tracking-wider font-heading">
+              <ShieldCheck className="w-3.5 h-3.5 text-[#00ADEF]" />
               <span>20+ Years Educational Excellence</span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 font-heading tracking-tight leading-tight">
-              Why 15,000+ Students Trust <span className="text-[#00A3FF]">Admission Suggestion</span>
+              Why 15,000+ Students Trust <span className="text-[#00ADEF]">Admission Suggestion</span>
             </h2>
 
-            <p className="text-sm sm:text-base text-slate-600 font-medium leading-relaxed">
-              Selecting the right college and branch defines your entire professional career. At <strong>Admission Suggestion</strong>, our senior mentors remove guesswork and anxiety from the Centralized Admission Process (CAP).
+            <p className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
+              Selecting the right college and branch defines your entire professional career. At <strong>Admission Suggestion</strong>, our senior mentors provide unbiased, transparent counseling for all <strong>350+ Government, Autonomous, and Private Engineering & Medical Institutes</strong> across Maharashtra.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-              <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
-                <div className="flex items-center gap-2 text-[#0284C7] font-extrabold text-sm font-heading">
-                  <Award className="w-5 h-5 text-[#00A3FF]" />
+              <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
+                <div className="flex items-center gap-2 text-[#00ADEF] font-bold text-sm font-heading">
+                  <Award className="w-5 h-5 text-[#00ADEF]" />
                   <span>20+ Years Ground Legacy</span>
                 </div>
-                <p className="text-xs text-slate-600 font-medium leading-relaxed">
-                  In-depth mastery of DTE Maharashtra rules, percentile normalization, category matrices, and spot round dynamics.
+                <p className="text-xs text-slate-600 font-normal leading-relaxed">
+                  In-depth mastery of DTE Maharashtra rules, percentile normalization curves, category seat matrices, and spot round dynamics.
                 </p>
               </div>
 
-              <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
-                <div className="flex items-center gap-2 text-[#0284C7] font-extrabold text-sm font-heading">
-                  <Users className="w-5 h-5 text-[#00A3FF]" />
+              <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
+                <div className="flex items-center gap-2 text-[#00ADEF] font-bold text-sm font-heading">
+                  <Users className="w-5 h-5 text-[#00ADEF]" />
                   <span>15,000+ Placed Students</span>
                 </div>
-                <p className="text-xs text-slate-600 font-medium leading-relaxed">
-                  Our counseled students are studying in COEP Tech, VJTI Mumbai, SPIT, PICT Pune, VIT, Cummins & premier universities.
+                <p className="text-xs text-slate-600 font-normal leading-relaxed">
+                  Our alumni study in COEP Tech, VJTI Mumbai, SPIT, PICT Pune, VIT Pune, Walchand, Cummins & top state universities.
                 </p>
               </div>
             </div>
 
-            <p className="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed">
-              We carefully evaluate previous years' branch closing ranks, TFWS 100% tuition fee waiver criteria, EWS quotas, and placement tracks so that you secure the highest quality institution your merit rank qualifies for.
+            <p className="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">
+              We impartially analyze 3-year cutoff trends, TFWS 100% tuition waivers, EBC concessions, and placement records so you secure the absolute best college your rank qualifies for.
             </p>
           </div>
 
