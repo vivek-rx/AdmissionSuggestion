@@ -19,6 +19,7 @@ import { AdminPage } from './pages/AdminPage';
 import { CapPreferenceGeneratorPage } from './pages/CapPreferenceGeneratorPage';
 import { MarksEstimatorPage } from './pages/MarksEstimatorPage';
 import { MobileBottomBar } from './components/common/MobileBottomBar';
+import { LiveCutoffTicker } from './components/home/LiveCutoffTicker';
 
 // Scroll to top on route change
 function ScrollToTop() {
@@ -43,7 +44,7 @@ const MainAppLayout: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 font-sans selection:bg-[#00A3FF] selection:text-white">
+    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 font-sans selection:bg-[#00ADEF] selection:text-white">
       <ScrollToTop />
 
       {/* Framer-inspired Logo Preloader Animation */}
@@ -56,6 +57,9 @@ const MainAppLayout: React.FC = () => {
         onOpenAdminLogin={() => setAdminLoginOpen(true)}
         onOpenConsultation={scrollToConsultation}
       />
+
+      {/* Top Bloomberg / Stock Market Continuous Live Cutoff Ticker */}
+      <LiveCutoffTicker />
 
       {/* Multi-Page Routes */}
       <main className="flex-grow pb-16 md:pb-0">

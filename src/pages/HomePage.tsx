@@ -20,10 +20,7 @@ interface HomePageProps {
 export const HomePage: React.FC<HomePageProps> = ({ onOpenConsultation }) => {
   return (
     <div className="space-y-12">
-      {/* 1. Bloomberg-Style Live Maharashtra Cutoff Ticker */}
-      <LiveCutoffTicker />
-
-      {/* 2. Hero Banner Carousel */}
+      {/* 1. Hero Banner Carousel */}
       <HeroSection onOpenConsultation={onOpenConsultation} />
 
       {/* 3. CAP Round Timeline & Stage Tracker */}
