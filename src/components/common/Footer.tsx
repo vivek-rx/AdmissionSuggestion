@@ -83,30 +83,35 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Column 3: Counselling & Leadership */}
+          {/* Column 3: Admission Routes & Streams */}
           <div className="space-y-3">
             <h4 className="text-sm font-bold text-white uppercase tracking-wider font-heading border-l-2 border-[#00ADEF] pl-3">
-              Counselling & Mentorship
+              Admission Routes
             </h4>
             <ul className="space-y-2 text-xs text-slate-400 font-medium">
               <li>
+                <Link to="/engineering" className="hover:text-[#00ADEF] transition-colors flex items-center gap-1.5 font-bold text-slate-200">
+                  <ArrowUpRight className="w-3 h-3 text-[#00ADEF]" /> Engineering (CET • JEE • CAP)
+                </Link>
+              </li>
+              <li>
+                <Link to="/medical" className="hover:text-[#00ADEF] transition-colors flex items-center gap-1.5 font-bold text-slate-200">
+                  <ArrowUpRight className="w-3 h-3 text-[#00ADEF]" /> Medical (NEET • MBBS • AYUSH)
+                </Link>
+              </li>
+              <li>
+                <Link to="/management" className="hover:text-[#00ADEF] transition-colors flex items-center gap-1.5 font-bold text-slate-200">
+                  <ArrowUpRight className="w-3 h-3 text-[#00ADEF]" /> Management (BBA • BCA • MBA)
+                </Link>
+              </li>
+              <li>
                 <Link to="/services" className="hover:text-[#00ADEF] transition-colors flex items-center gap-1.5">
-                  <ArrowUpRight className="w-3 h-3 text-[#00ADEF]" /> CAP Services & Roadmap
-                </Link>
-              </li>
-              <li>
-                <Link to="/counsellors" className="hover:text-[#00ADEF] transition-colors flex items-center gap-1.5">
-                  <ArrowUpRight className="w-3 h-3 text-[#00ADEF]" /> Leadership & Mentors
-                </Link>
-              </li>
-              <li>
-                <Link to="/events" className="hover:text-[#00ADEF] transition-colors flex items-center gap-1.5">
-                  <ArrowUpRight className="w-3 h-3 text-[#00ADEF]" /> Live Webinars & Workshops
+                  <ArrowUpRight className="w-3 h-3 text-[#00ADEF]" /> 1-on-1 Mentorship Plans
                 </Link>
               </li>
               <li>
                 <Link to="/about" className="hover:text-[#00ADEF] transition-colors flex items-center gap-1.5">
-                  <ArrowUpRight className="w-3 h-3 text-[#00ADEF]" /> About Us & Pune Head Office
+                  <ArrowUpRight className="w-3 h-3 text-[#00ADEF]" /> About Pune Head Office
                 </Link>
               </li>
             </ul>

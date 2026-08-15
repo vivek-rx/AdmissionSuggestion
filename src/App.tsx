@@ -15,10 +15,13 @@ import { DocumentsPage } from './pages/DocumentsPage';
 import { CounsellorsPage } from './pages/CounsellorsPage';
 import { EventsPage } from './pages/EventsPage';
 import { AboutPage } from './pages/AboutPage';
-import { AdminPage } from './pages/AdminPage';
 import { CapPreferenceGeneratorPage } from './pages/CapPreferenceGeneratorPage';
 import { MarksEstimatorPage } from './pages/MarksEstimatorPage';
 import { StudentCornerPage } from './pages/StudentCornerPage';
+import { EngineeringAdmissionsPage } from './pages/EngineeringAdmissionsPage';
+import { MedicalAdmissionsPage } from './pages/MedicalAdmissionsPage';
+import { ManagementAdmissionsPage } from './pages/ManagementAdmissionsPage';
+import { AdminPage } from './pages/AdminPage';
 import { MobileBottomBar } from './components/common/MobileBottomBar';
 import { LiveCutoffTicker } from './components/home/LiveCutoffTicker';
 
@@ -74,6 +77,12 @@ const MainAppLayout: React.FC = () => {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/student-corner" element={<StudentCornerPage />} />
           <Route path="/students" element={<StudentCornerPage />} />
+          <Route path="/engineering" element={<EngineeringAdmissionsPage onOpenConsultation={scrollToConsultation} />} />
+          <Route path="/admissions/engineering" element={<EngineeringAdmissionsPage onOpenConsultation={scrollToConsultation} />} />
+          <Route path="/medical" element={<MedicalAdmissionsPage onOpenConsultation={scrollToConsultation} />} />
+          <Route path="/admissions/medical" element={<MedicalAdmissionsPage onOpenConsultation={scrollToConsultation} />} />
+          <Route path="/management" element={<ManagementAdmissionsPage onOpenConsultation={scrollToConsultation} />} />
+          <Route path="/admissions/management" element={<ManagementAdmissionsPage onOpenConsultation={scrollToConsultation} />} />
           <Route path="/cap-generator" element={<CapPreferenceGeneratorPage onOpenConsultation={scrollToConsultation} />} />
           <Route path="/preference-generator" element={<CapPreferenceGeneratorPage onOpenConsultation={scrollToConsultation} />} />
           <Route path="/marks-vs-percentile" element={<MarksEstimatorPage onOpenConsultation={scrollToConsultation} />} />

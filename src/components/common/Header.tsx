@@ -43,20 +43,24 @@ export const Header: React.FC<HeaderProps> = ({
       link: "/",
     },
     {
+      name: "Engineering",
+      link: "/engineering",
+    },
+    {
+      name: "Medical",
+      link: "/medical",
+    },
+    {
+      name: "Management & UG",
+      link: "/management",
+    },
+    {
       name: "Student Corner",
       link: "/student-corner",
     },
     {
-      name: "CAP Services",
-      link: "/services",
-    },
-    {
       name: "Colleges & Cutoffs",
       link: "/colleges",
-    },
-    {
-      name: "Leadership Panel",
-      link: "/counsellors",
     },
     {
       name: "About Us",
